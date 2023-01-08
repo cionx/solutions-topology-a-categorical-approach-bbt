@@ -1,0 +1,29 @@
+\subsection*{Theorem 0.1}
+
+It remains to show that the third bullet point is equivalent to the previous two ones.
+
+We note that for every morphism~$f \colon X \to Y$ in~$\cat{C}$, the pullback
+\[
+	f^* \colon \cat{C}(Y, Z) \to \cat{C}(X, Z)
+\]
+is the same as the push-forward
+\[
+	f_* \colon \cat{C}^{\op}(Z, Y) \to \cat{C}^{\op}(Z, X) \,.
+\]
+We also note that a morphism~$g \colon Y \to X$ is an inverse for~$f$ in~$\cat{C}$ if and only if it is an inverse for~$f$ in~$\cat{C}^{\op}$;
+therefore,~$f$ is an isomorphism in~$\cat{C}$ if and only if it is an isomorphism in~$\cat{C}^{\op}$.
+
+We now find from the already proven equivalence that
+\begin{align*}
+	{}&
+	\text{$f$ is an isomorphism in~$\cat{C}$}
+	\\
+	\iff{}&
+	\text{$f$ is an isomorphism in~$\cat{C}^{\op}$}
+	\\
+	\iff{}&
+	\text{$f_* \colon \cat{C}^{\op}(Z, Y) \to \cat{C}^{\op}(Z, X)$ is an isomorphism for every~$Z$}
+	\\
+	\iff{}&
+	\text{$f^* \colon \cat{C}(Y, Z) \to \cat{C}(X, Z)$ is an isomorphism for every~$Z$} \,.
+\end{align*}
