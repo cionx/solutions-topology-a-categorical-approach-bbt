@@ -1,0 +1,40 @@
+\subsection{\enquote{Being isomorphic} is an equivalence relation}
+
+Let~$\cat{C}$ be a category.
+
+For every object~$X$ of~$\cat{C}$, the identity morphism~$\id_X$ is inverse to itself, and therefore an isomorphism.
+Consequently,~$X$ is isomorphic to itself.
+This shows that \enquote{being isomorphic} is reflexive.
+
+Let~$f \colon X \to Y$ be an isomorphism in~$\cat{C}$ with inverse~$f^{-1} \colon Y \to X$.
+This means that~$f f^{-1} = \id_Y$ and~$f^{-1} f = \id_X$.
+These equations mean that~$f^{-1}$ is an isomorphism with inverse~$f$.
+Consequently, \enquote{being isomorphic} is symmetric.
+
+Let~$f \colon X \to Y$ and~$g \colon Y \to Z$ be two isomorphisms with respective inverses~$f^{-1} \colon Y \to Z$ and~$g^{-1} \colon Z \to Y$.
+Then
+\[
+	(g f) (f^{-1} g^{-1})
+	=
+	g f f^{-1} g^{-1}
+	=
+	g \id_Y g^{-1}
+	=
+	g g^{-1}
+	=
+	\id_Z
+\]
+and similarly
+\[
+	(f^{-1} g^{-1}) (g f)
+	=
+	f^{-1} g^{-1} g f
+	=
+	f^{-1} \id_Y f
+	=
+	f^{-1} f
+	=
+	\id_X \,.
+\]
+This tells us that the composite~$g f$ is again an isomorphism, with inverse given by~$f^{-1} g^{-1}$.
+Consequently, \enquote{being isomorphic} is transitive.
