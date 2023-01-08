@@ -1,0 +1,39 @@
+\usepackage{customtex}
+
+
+
+% general layout options
+\KOMAoptions{
+	twoside       = semi,
+	open          = any,
+	DIV           = 8,
+	fontsize      = 12pt,
+	chapterprefix = true,
+	numbers       = noenddot
+}
+
+
+
+% settings for numbering of sectioning commands
+% and for their inclusion in the table of contents
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+
+
+% configuration of commutative diagrams
+\tikzcdset{
+	diagrams = {
+		sep = large
+	}
+}
+
+
+%%% categories
+% fonts
+\newcommand{\catfont}{\mathsf}
+\newcommand{\genericcatfont}{\mathsf}
+% fixed categories
+\newcommand{\Top}{\catfont{Top}}
+% for use in the document
+\newcommand{\cat}{\genericcatfont}
