@@ -1,0 +1,382 @@
+\subsection{Example 1.18}
+
+We will prove that the third space is indeed~$ℝℙ^2$.
+We will proceed in four steps:
+\begin{enumerate*}
+
+	\item
+		We first replace the unit square~$\int^2$ by the unit disk~$\disk^2$.
+
+	\item
+		Next we identify the disk~$\disk^2$ with the upper hemisphere~$H$ of the unit sphere~$\sphere^2$.
+
+	\item
+		We show that the inclusion map from~$H$ to~$\sphere^2$ induces a homeomorphism from~$H / {∼}$ to~$\sphere^2 / {∼}$, where the equivalence relation~$∼$ identifies antipodal points.
+
+	\item
+		We construct a homeomorphism between~$\sphere^2 / {∼}$ and~$ℝℙ^2$.
+
+\end{enumerate*}
+At the heart of our argumentation lies the following observations:
+
+\begin{lemma}
+	\label{functoriality of the quotient}
+	Let~$X$ and~$Y$ be two topological spaces together with equivalence relations on them.
+	Let~$f \colon X \to Y$ be a continuous map with
+	\begin{equation}
+		\label{map is compatible with equivalence relation}
+		x_1 ∼ x_2 \implies f x_1 ∼ f x_2
+	\end{equation}
+	for all~$x_1, x_2 ∈ X$.
+	Then~$f$ indues a continuous map
+	\[
+		X / {∼} \to Y / {∼} \,,
+		\quad
+		\class{x} \mapsto \class{f x} \,.
+	\]
+	In terms of a commutative diagram:
+	\[
+		\begin{tikzcd}
+			X
+			\arrow{r}[above]{f}
+			\arrow{d}
+			&
+			Y
+			\arrow{d}
+			\\
+			X / {∼}
+			\arrow[dashed]{r}
+			&
+			Y / {∼}
+		\end{tikzcd}
+	\]
+\end{lemma}
+
+\begin{proof}
+	Let~$π_X \colon X \to X / {∼}$ and~$π_Y \colon Y \to Y / {∼}$ be the canonical quotient maps.
+	The map~$π_Y f \colon X \to Y / {∼}$ is continuous and induces a well-defined map~$g \colon X / {∼} \to  Y / {∼}$ with $g \class{x} = \class{fx}$.
+	It follows from the universal property of the quotient~$X / {∼}$ that~$g$ is continuous.
+\end{proof}
+
+\begin{proposition}
+	\label{induced homeomorphism between quotients}
+	Let~$X$ and~$Y$ be two homeomorphic topological spaces and suppose we are given equivalence relations on~$X$ and~$Y$.
+	Suppose that there exists a homeomorphism~$φ \colon X \to Y$ with
+	\[
+		x_1 ∼ x_2 \iff φ x_1 ∼ φ x_2
+	\]
+	for all~$x_1, x_2 ∈ X$.
+	The homeomorphism~$φ$ induces a homeomorphism
+	\[
+		X / {∼} \to Y / {∼} \,,
+		\quad
+		\class{x} \mapsto \class{φ x} \,.
+	\]
+	Consequently,~$X / {∼}$ and~$Y / {∼}$ are again homeomorphic.
+\end{proposition}
+
+\begin{proof}
+	We find from \cref{functoriality of the quotient} that the continuous maps~$φ$ and~$φ^{-1}$ induce continuous maps
+	\[
+		ψ \colon X / {∼} \to Y / {∼} \,, \quad \class{x} \mapsto \class{φ x}
+	\]
+	and
+	\[
+		ψ' \colon Y / {∼} \to X / {∼} \,, \quad \class{y} \mapsto \class{φ^{-1} y} \,.
+	\]
+	The maps~$ψ$ and~$ψ'$ are again mutually inverse.
+	Therefore,~$ψ$ is a homeomorphism from~$X / {∼}$ to~$Y / {∼}$ with inverse~$ψ'$.
+\end{proof}
+
+We will also use the dual observation regarding subspaces.
+
+\begin{lemma}
+	\label{restriction of continuous maps to subspaces}
+	Let~$X$ and~$Y$ be two topological spaces, let~$S ⊆ X$ and~$T ⊆ Y$ be subspaces and let~$f \colon X \to Y$ be a continuous map with~$f X ⊆ Y$.
+	Then~$f$ restricts to a continuous map from~$S$ to~$T$.
+	In terms of a commutative diagram:
+	\[
+		\begin{tikzcd}
+			X
+			\arrow{r}[above]{f}
+			&
+			Y
+			\\
+			S
+			\arrow{u}
+			\arrow[dashed]{r}
+			&
+			T
+			\arrow{u}
+		\end{tikzcd}
+	\]
+\end{lemma}
+
+\begin{proof}
+	Let~$i \colon S \to X$ and~$j \colon T \to Y$ be the inclusion maps.
+	It follows from the condition~$f S ⊆ T$ that~$f$ restricts to a map~$g$ from~$S$ to~$T$.
+	The composite~$j g = f i$ is continuous, so it follows from the universal property of the subspace topology on~$T$ that~$g$ is continuous.
+\end{proof}
+
+\begin{proposition}
+	\label{restriction of homeomorphism to subspaces}
+	Let~$φ \colon X \to Y$ be a homeomorphism.
+	Let~$S ⊆ X$ and~$T ⊆ Y$ be subspaces with~$φ S = T$.
+	Then~$φ$ restricts to a homeomorphism from~$S$ to~$T$.
+\end{proposition}
+
+\begin{proof}
+	It follows from the bijectivity of~$φ$ and the condition~$φ S = T$ that also~$φ^{-1} T = S$.
+	It follows from \cref{restriction of homeomorphism to subspaces} that the two homeomorphisms~$φ$ and~$φ^{-1}$ restricts to continuous maps~$ψ \colon S \to T$ and~$ψ' \colon T \to S$.
+	These two maps are again mutually inverse.
+	Therefore,~$ψ$ is a homeomorphism with inverse~$ψ'$.
+\end{proof}
+
+We will also use the following glueing principle.
+
+\begin{lemma}
+	\label{closed subsets in the subset topology}
+	Let~$X$ be a topological space and let~$Y$ be a subspace of~$X$.
+	Every closed subset of~$Y$ is of the form~$C ∩ Y$ for a closed subset of~$X$.
+\end{lemma}
+
+\begin{proof}
+	Let~$C'$ be a closed subset of~$Y$.
+	This means that the complement~$Y ∖ C'$ is open in~$Y$, whence there exists an open subset~$U$ of~$X$ with~$Y ∖ C' = U ∩ Y$.
+	The set~$C ≔ Y ∖ U$ is closed in~$X$ with
+	\[
+		C' = Y ∖ (Y ∖ C') = Y ∖ (U ∩ Y) = (X ∖ U) ∩ Y \,,
+	\]
+	as desired.
+\end{proof}
+
+\begin{lemma}
+	\label{closed subsets of closed subspaces are closed}
+	Let~$X$ be a topological space and let~$Y$ be a closed subspace of~$X$.
+	Let~$C$ be a closed subset of~$Y$.
+	Then~$C$ is also closed in~$X$.
+\end{lemma}
+
+\begin{proof}
+	There exists by \cref{closed subsets in the subset topology} a closed subset~$C'$ of~$X$ with~$C = C' ∩ Y$.
+	Both~$C'$ and~$Y$ are closed in~$X$, so their intersection is again closed in~$X$.
+\end{proof}
+
+\begin{proposition}
+	\label{glueing continuous functions on closed subspaces}
+	Let~$X$ and~$Y$ be two topological spaces an let~$f \colon X \to Y$ be a map.
+	Suppose that~$X = A ∪ B$ for two closed subsets~$A$ and~$B$ of~$X$ and that the restrictions~$\restrict{f}{A}$ and~$\restrict{f}{B}$ are continuous (with respect to the subspace topologies).
+	Then~$f$ is continuous.
+\end{proposition}
+
+\begin{proof}
+	We need to show that for every closed subset~$C$ of~$Y$ its preimage~$f^{-1} C$ is closed in~$X$.
+	We have the equality~$f^{-1} C = (\restrict{f}{A})^{-1} C ∪ (\restrict{f}{B})^{-1} C$, whence it suffices to show that both~$(\restrict{f}{A})^{-1} C$ and~$(\restrict{f}{B})^{-1} C$ are closed in~$X$.
+	But~$A$ and~$B$ are closed in~$C$, so by \cref{closed subsets of closed subspaces are closed} it suffices to show that~$(\restrict{f}{A})^{-1} C$ is closed in~$A$ and~$(\restrict{f}{B})^{-1} C$ is closed in~$B$.
+	This holds because both~$\restrict{f}{A}$ and~$\restrict{f}{B}$ are continuous.
+\end{proof}
+
+
+
+\subsubsection{Zeroth Step}
+
+To make the next step easier, we replace the unit square~$\int^2 = [0, 1] × [0, 1]$ with the square
+\[
+	S ≔ [-1, 1] × [-1, 1]
+\]
+that is centered around the origin.
+More explicitly, we consider the map
+\[
+	φ \colon \int^2 \to S \,, \quad 2 x - (1, 1) \,.
+\]
+The map~$φ$ is continuous and bijective, and its inverse
+\[
+	φ^{-1} \colon S \to \int^2 \,, \quad x \mapsto \frac{1}{2} (x + (1, 1))
+\]
+is again continuous.
+Therefore,~$φ$ is a homeomorphism.
+
+The equivalence relation on~$\int^2$ described in the book identifies antipodal points on the boundary of~$\int^2$.
+It follows that the corresponding equivalence relation on~$S$ also identifies antipodal points on the boundary (because of the specific form that~$φ$ has).
+More explicitly, we have $(x, 1) ∼ (-x, -1)$ and~$(1, y) ∼ (-1, -y)$ for all~$x, y ∈ [-1, 1]$.
+
+
+
+\subsubsection{First Step}
+
+For the first step we construct a homeomorphism between the square~$S$ and the unit disk
+\[
+	\disk^2 = \{ x ∈ ℝ^2 \suchthat \norm{x} ≤ 1 \} \,.
+\]
+We observe that we can rewrite the square~$S$ as
+\[
+	S = \{ x ∈ ℝ^2 \suchthat \norm{ x }_∞ ≤ 1 \} \,.
+\]
+We know that the norms~$\norm{ \phdot }$ and~$\norm{ \phdot }_∞$ induce the same topology on~$ℝ^2$.
+This motivates the following observation:
+
+\begin{proposition}
+	Let~$V$ be a vector space and let~$\norm{\phdot}_1$ and~$\norm{\phdot}_2$ be two norms on~$V$ that induce the same topology.
+	The rescaling map
+	\[
+		ρ
+		\colon
+		V
+		\to
+		V \,,
+		\quad
+		x
+		\mapsto
+		\begin{cases*}
+			\dfrac{\norm{x}_1}{\norm{x}_2} x & if~$x ≠ 0$, \\[0.2em]
+			0                              & if~$x = 0$,
+		\end{cases*}
+		\]
+		is a homeomorphism.
+\end{proposition}
+
+\begin{proof}
+	We start by showing that~$ρ$ is continuous.
+	We use that continuity is a pointwise property:
+	we show that for every point~$x$ in~$V$ the map~$ρ$ is continuous at~$x$.
+
+	If~$x ≠ 0$, then there exists an open neighbourhood~$U$ of~$x$ that doesn’t contain the origin.
+	The map~$ρ$ is given by~$ρ y = \norm{y}_1 / \norm{y}_2 ⋅ y$ for every~$y ∈ U$.
+	Both~$\norm{\phdot}_1$ and~$\norm{\phdot}_2$ are continuous on~$V$, so we find that~$ρ$ is continuous on~$U$.
+	This entails that~$ρ$ is continuous at~$x$.
+
+	Suppose now that~$x = 0$.
+	We will use that we are working with a normed vector spaces, whence continuity is equivalent to sequential continuity.
+	So let~$(x_n)_n$ be a sequence in~$V$ with~$x_n \to 0$.
+	Then
+	\[
+		\norm{ρ x}_2 = \norm{x}_1 \to 0
+	\]
+	as~$n \to ∞$, and therefore~$ρ x_n \to 0 = ρ(x)$.
+	This shows that~$ρ$ is sequentially continuous at~$x$, and therefore continuous at~$x$.
+
+	We have thus shown that~$ρ$ is continuous.
+	By switching the roles of~$\norm{\phdot}_1$ and~$\norm{\phdot}_2$ we get another rescaling map~$ρ'$, which is again continuous.
+	The two rescaling maps~$ρ$ and~$ρ'$ are mutually inverse, whence~$ρ$ is a homeomorphism with inverse~$ρ'$.
+\end{proof}
+
+It follows that the rescaling map
+\[
+	ρ
+	\colon
+	ℝ^2
+	\to
+	ℝ^2 \,,
+	\quad
+	x
+	\mapsto
+	\begin{cases*}
+		\dfrac{\norm{x}_∞}{\norm{x}} x & if~$x ≠ 0$, \\[0.2em]
+		0                              & if~$x = 0$,
+	\end{cases*}
+\]
+is a homeomorphism.
+We have~$\norm{ρ(x)} = \norm{x}_∞$ for every point~$x$ in~$ℝ^2$, and consequently~$ρ \disk^2 = S$.
+The homeomorphism~$ρ$ therefore restricts to a homeomorphism from~$\disk^2$ to~$S$ by \cref{restriction of homeomorphism to subspaces}.
+
+The boundary of~$\disk^2$ is mapped onto the boundary of~$S$, with antipodal points mapped to antipodal points.
+The equivalence relation on~$\disk^2$ corresponding to the equivalence relation on~$S$ therefore also identifies antipodal boundary points.
+More explicitly, we have~$x ∼ -x$ for every~$x ∈ \disk^2$ with~$\norm{x} = 1$, i.e., for every~$x ∈ \sphere^1$.
+
+
+
+\subsubsection{Second Step}
+
+We consider now the sphere~$\sphere^2 = \{ x ∈ ℝ^3 \suchthat \norm{x} = 1 \}$, and its upper hemisphere
+\[
+	H^+ = \{ (x, y, z) ∈ \sphere^2 \suchthat z ≥ 0 \} \,.
+\]
+We can flatten~$H$ down onto the disk via the continuous map
+\[
+	φ \colon H^+ \to \disk^2 \,, \quad (x, y, z) \mapsto (x, y) \,.
+\]
+We can conversely dent the disk into the upper hemisphere via the continuous map
+\[
+	\disk^2 \to H^+ \,, \quad (x, y) \mapsto (x, y, \sqrt{1 - x^2 - y^2}) \,.
+\]
+These two maps are mutually inverse, whence~$φ$ is a homeomorphism.
+
+The homeomorphism~$φ$ maps the boundary of~$\disk^2$ onto the boundary
+\[
+	∂ H^+ = \{ (x, y, 0) \suchthat (x, y) ∈ \sphere^1 \} \,,
+\]
+and maps antipodal points to antipodal points.
+The equivalence relation on the hemisphere~$H^+$ corresponding to the equivalence relation of~$\disk^2$ is therefore once again given by identifying antipodal boundary points.
+More explicitly, we have~$(x, y, 0) ∼ (-x, -y, 0)$ for every~$(x, y) ∈ \sphere^1$.
+
+
+
+\subsubsection{Third Step}
+
+We consider the equivalence relation~$∼$ on~$\sphere^2$ given by~$x ∼ -x$ for every~$x ∈ \sphere^2$.
+We find from \cref{induced homeomorphism between quotients} that the map~$i$ induces a continuous bijection
+\[
+	φ
+	\colon
+	H^+ / {∼} \to \sphere^2 / {∼} \,,
+	\quad
+	\class{x} \mapsto \class{x} \,.
+\]
+
+To construct the inverse of~$φ$ we consider the canonical quotient map
+\[
+	ψ^+ \colon H^+ \to H^+ / {∼} \,, \quad x \mapsto \class{x} \,,
+\]
+as well as the lower hemisphere
+\[
+	H^- = \{ (x, y, z) ∈ \sphere^2 \suchthat z ≤ 0 \}
+\]
+and the map
+\[
+	ψ^- \colon H^- \to H^+ / {∼} \,, \quad x \mapsto \class{-x} \,.
+\]
+The quotient map~$ψ^+$ is continuous, and the map~$ψ^-$ is also continuous since it is the composite of~$ψ^+$ and the continuous map~$x \mapsto -x$ from~$H^-$ to~$H^+$.
+Both~$H^+$ and~$H^-$ are closed subsets of~$\sphere^2$, and~$ψ^+$ and~$ψ^-$ agree on the intersection~$H^+ ∩ H^- = ∂ H^+$ (because~$ψ^+$ agrees on antipodal poits of~$∂ H^+$).
+It follows from \cref{glueing continuous functions on closed subspaces} that the two continuous maps~$ψ^+$ and~$ψ^-$ combine into a single continuous map
+\[
+	ψ'
+	\colon
+	\sphere^2 \to H^+ / {∼} \,,
+	\quad
+	(x, y, z)
+	\mapsto
+	\begin{cases*}
+		\class{(x, y, z)}    & if~$z ≥ 0$, \\
+		\class{(-x, -y, -z)} & if~$z ≤ 0$.
+	\end{cases*}
+\]
+This map identifies antipodal points and therefore induces a well-defined map
+\[
+	ψ \colon \sphere^2 / {∼} \to H^+ / {∼} \,, \quad \class{x} \mapsto ψ' x \,.
+\]
+This map is again continuous by the universal property of the quotient~$\sphere^2 / {∼}$.
+
+The two maps~$φ$ and~$ψ$ are mutually inverse, so~$φ$ is an isomorphism with inverse~$ψ$.
+
+
+
+\subsubsection{Fourth Step}
+
+It follows from \cref{functoriality of the quotient} that the inclusion map from~$\sphere^2$ to~$ℝ^3 ∖ \{0\}$ induces a continuous map
+\[
+	φ \colon \sphere^2 / {∼} \to ℝℙ^2 \,, \quad \class{x} \mapsto \class{x} \,.
+\]
+We can consider on the other hand the continuous map
+\[
+	ψ' \colon ℝ^3 ∖ \{0\} \to \sphere^2 \,, \quad x \mapsto \frac{x}{\norm{x}} \,.
+\]
+It follows from \cref{functoriality of the quotient} that the map~$ψ'$ induces a continuous map
+\[
+	ψ
+	\colon
+	ℝℙ^2 \to \sphere^2 / {∼} \,,
+	\quad
+	\class{x} \mapsto \class[\bigg]{ \frac{x}{\norm{x}} } \,.
+\]
+The two maps~$φ$ and~$ψ$ are mutually inverse.
+Therefore,~$φ$ is a homeomorphism.
