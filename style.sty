@@ -21,6 +21,11 @@
 
 
 
+% counter for custom environments
+\renewcommand{\theeverything}{\thechapter.\Alph{everything}}
+
+
+
 % configuration of commutative diagrams
 \tikzcdset{
 	diagrams = {
@@ -40,4 +45,13 @@
 
 
 %%% Stuff
+
+% formatting
+\newcommand{\basis}{\mathcal}
+\newcommand{\subbasis}{\mathcal}
+\AtBeginDocument{
+	\renewcommand{\top}{\mathcal}
+}
+
+% special elements
 \renewcommand{\id}{\operatorname{id}}
