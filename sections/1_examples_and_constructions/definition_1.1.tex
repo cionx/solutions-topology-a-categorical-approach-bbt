@@ -1,0 +1,34 @@
+\subsection{Definition 1.1}
+
+We check that~$\top{T}_Y$ is indeed a topology on~$Y$.
+
+We have~$∅ ∈ \top{T}_X$ and~$∅ ∩ Y = ∅$, and therefore~$∅ ∈ \top{T}_Y$.
+We similarly have~$X ∈ \top{T}_X$ and~$X ∩ Y = Y$, and therefore~$Y ∈ \top{T}_Y$.
+
+Let~$(V_α)_{α ∈ A}$ be a family of elements of~$\top{T}_Y$.
+For every index~$α ∈ A$ there exists an element~$U_α$ of~$\top{T}_X$ with~$V_α = U_α ∩ Y$.
+The union~$U ≔ ⋃_{α ∈ A} U_α$ is again an element of~$\top{T}_X$, for which we have
+\[
+	U ∩ Y
+	=
+	\Biggl( ⋃_{α ∈ A} U_α \Biggr) ∩ Y
+	=
+	⋃_{α ∈ A} {} (U_α ∩ Y)
+	=
+	⋃_{α ∈ A} V_α \,.
+\]
+This shows that the union~$⋃_{α ∈ A} V_α$ is again contained in~$\top{T}_Y$.
+
+Let~$V_1, \dotsc, V_n$ be elements of~$\top{T}_Y$.
+There exists for every index~$i = 1, \dotsc, n$ an element~$U_i$ of~$\top{T}_X$ with~$V_i = U_i ∩ Y$.
+The intersection~$U ≔ U_1 ∩ \dotsb ∩ U_n$ is again an element of~$\top{T}_X$, and we have
+\[
+	U ∩ Y
+	=
+	(U_1 ∩ \dotsb ∩ U_n) ∩ Y
+	=
+	(U_1 ∩ Y) ∩ \dotsb ∩ (U_n ∩ Y)
+	=
+	V_1 ∩ \dotsb ∩ V_n \,.
+\]
+This shows that the intersection~$V_1 ∩ \dotsb ∩ V_n$ is again an element of~$\top{T}_Y$.
