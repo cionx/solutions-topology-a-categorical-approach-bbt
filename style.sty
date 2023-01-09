@@ -1,5 +1,7 @@
 \usepackage{customtex}
 
+\usepackage{scalerel}
+
 
 
 % general layout options
@@ -34,6 +36,11 @@
 }
 
 
+% change the customtex command for bold mathematics
+% from \mathbb to \mathbf
+\renewcommand{\boldfont}{\mathbf}
+
+
 %%% categories
 % fonts
 \newcommand{\catfont}{\mathsf}
@@ -41,6 +48,10 @@
 % fixed categories
 \newcommand{\Grp}{\catfont{Grp}}
 \newcommand{\Top}{\catfont{Top}}
+% categories with an argument
+\newcommand{\Vect}[1]{\catfont{Vect}_{#1}}
+% commonly used cases of the above
+\newcommand{\Vectk}{\Vect{\kf}}
 % for use in the document
 \newcommand{\cat}{\genericcatfont}
 
@@ -56,3 +67,7 @@
 
 % special elements
 \renewcommand{\id}{\operatorname{id}}
+
+% the symbol is too bold and should be replaced by a better solution
+% the size and vertical position is adjusted to fit with \sum and \prod
+\newcommand{\bigast}{\mathop{\smash{\raisebox{-0.45em}{\scaleobj{2.58}{\ast}}}}}
