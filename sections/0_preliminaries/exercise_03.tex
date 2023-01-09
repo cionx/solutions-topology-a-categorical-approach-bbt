@@ -1,0 +1,76 @@
+\subsection{Exercise 0.3}
+
+
+
+\subsubsection{a)}
+
+Let~$f \colon X \to Y$ be a left-invertible morphism.
+This means that there exists a morphism~$g \colon Y \to Z$ with~$g f = \id_X$.
+Every morphism~$h \colon Z \to X$ can be retrieved from its composite~$f h$ since
+\[
+	g (f h) = g f h = \id_X h = h \,.
+\]
+The morphism~$f$ is therefore monic.
+
+Suppose that~$f$ is a right-invertible morphism in a category~$\cat{C}$.
+Then~$f$ is left-invertible in~$\cat{C}^{\op}$, and therefore monic in~$\cat{C}^{\op}$ as seen above.
+This means that~$f$ is epic in~$\cat{C}$.
+
+
+
+\subsubsection{b)}
+
+Consider the category~$\Grp$ of groups.
+The canonical quotient map~$p$ from~$ℤ$ to~$ℤ/2$ is surjective and thus epic.
+But the only homomorphism of groups from~$ℤ/2$ to~$ℤ$ is the zero homomorphism, which is not a right-inverse to~$p$.
+Therefore,~$p$ is not right-invertible.
+
+
+
+\subsubsection{c)}
+
+We defined a morphism to be invertible if and only if it is both left-invertible and right-invertible.
+The given assertion is therefore true by definition.
+
+
+
+\subsubsection{d)}
+
+Let~$S$ be a set that consists of at least two distinct elements.
+We can endow~$S$ with the discrete topology (for which every subset of~$S$ is open), resulting in a topological space~$X$.
+We can also endow~$S$ with the indiscrete topology (for which the only open subsets of~$S$ are~$∅$ and~$S$), resulting in a topological space~$Y$.
+The map~$\id_S$ is a continuous map from~$X$ to~$Y$, which is bijective and therefore both monic and epic.
+But~$\id_S$ is not a homeomorphism because for every element~$s$ of~$S$ the set~$\{ s \}$ is open in~$X$ but not in~$Y$.
+
+
+
+\subsubsection{e)}
+
+We consider the category~$\Grp$ of groups and the two groups
+\begin{align*}
+	G &≔ ℤ/2 ⊕ ℤ/4 ⊕ ℤ/4 ⊕ ℤ/4 ⊕ \dotsb
+\shortintertext{and}
+	H &≔ ℤ/4 ⊕ ℤ/4 ⊕ ℤ/4 ⊕ ℤ/4 ⊕ \dotsb
+\end{align*}
+We have injective homomorphisms of groups
+\[
+	f
+	\colon
+	G \to H \,,
+	\quad
+	(x_1, x_2, \dotsc) \mapsto (0, x_1, x_2, \dotsc)
+\]
+and
+\[
+	g
+	\colon
+	H \to G \,,
+	\quad
+	(\class{x_1}, x_2, x_3, \dotsc) \mapsto (\class{2x_1}, x_2, x_3, \dotsc) \,.
+\]
+The homomorphisms~$f$ and~$g$ are monic since they are injective.
+
+But the groups~$G$ and~$H$ are not isomorphic:
+For every element~$y$ of~$H$ with~$2y = 0$ there exists another element~$y'$ of~$H$ with~$y = 2y'$.
+But in~$G$, while the element~$x = (\class{1}, 0, 0, \dotsc)$ satisfies~$2x = 0$ there exists no element~$x'$ of~$G$ with~$x = 2x'$.
+
