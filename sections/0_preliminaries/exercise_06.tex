@@ -1,0 +1,65 @@
+\subsection{Exercise 0.6}
+
+Let~$η$ be a natural transformation from~$\cat{C}(\ph, X)$ to~$F$.
+The component~$η_X$ is a map from~$\cat{C}(X, X)$ to~$F X$.
+We can therefore consider the element~$η_X \id_X$ of~$F X$.
+
+We observe that the entire natural transformation~$η$ is already determined by the single element~$η_X \id_X$:
+we have for every object~$Y$ of~$\cat{C}$ and every element~$f$ of~$\cat{C}(Y, X)$ the chain of equalities
+\[
+	η_Y f
+	=
+	η_Y f^* \id_X
+	=
+	(F f) η_X \id_X \,.
+\]
+
+Suppose on the other hand that~$x$ is any element of~$F X$.
+For every object~$Y$ of~$\cat{C}$ we consider the map
+\[
+	η_Y
+	\colon
+	\cat{C}(Y, X) \to F Y \,,
+	\quad
+	g \mapsto (F g) x \,.
+\]
+The resulting transformation~$η$ from~$\cat{C}(\ph, X)$ to~$F$ is natural.
+To prove this, we need to check that for every morphism~$f \colon Y \to Z$ the square
+\[
+	\begin{tikzcd}
+		\cat{C}(Z, X)
+		\arrow{r}[above]{f^*}
+		\arrow{d}[left]{η_Z}
+		&
+		\cat{C}(Y, X)
+		\arrow{d}[right]{η_Y}
+		\\
+		F Z
+		\arrow{r}[above]{F(f)}
+		&
+		F Y
+	\end{tikzcd}
+\]
+commutes.
+This commutativity holds because for every element~$g$ of the top-left corner we have the chain of equalities
+\[
+	η_Y f^* g
+	=
+	η_Y (g f)
+	=
+	F(g f)(x)
+	=
+	F(f) F(g) x
+	=
+	F(f) η_Z g \,.
+\]
+The constructed natural transformation~$η$ satisfies
+\[
+	η_X \id_X
+	=
+	(F \id_X) x
+	=
+	\id_{F X} x
+	=
+	x \,.
+\]
