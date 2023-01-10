@@ -1,0 +1,75 @@
+\subsection{Universal Property for the Product Topology}
+
+Let’s make the following observations:
+
+\begin{proposition}
+	\label{pullback and pushforward of topologies}
+	Let~$f \colon X \to Y$ be a map between two sets.
+	\begin{enumerate}
+
+		\item
+			For every topology~$\top{T}_X$ on~$X$ there exists a finest topology~$f_* \top{T}_X$ on~$Y$ such that~$f$ is continuous with respect to~$\top{T}_X$ and~$f_* \top{T}_X$, namely
+			\[
+				f_* \top{T}_X = \{ U ⊆ Y \suchthat f^{-1} U ∈ \top{T}_X \} \,.
+			\]
+
+		\item
+			For every topology~$\top{T}_Y$ on~$Y$ there exists a coarsest topology~$f^* \top{T}_Y$ on~$X$ such that~$f$ is continuous with respect to~$f^* \top{T}_Y$ and~$\top{T}_Y$, namely
+			\[
+				f^* \top{T}_Y = \{ f^{-1} U \suchthat U ∈ \top{T}_Y \} \,.
+			\]
+
+		\item
+			For every topology~$\top{T}_X$ on~$X$ and every topology~$\top{T}_Y$ on~$Y$ we have the equivalences
+			\[
+				f^* \top{T}_Y ⊆ \top{T}_X
+				\iff
+				\text{$\textstyle f \colon (X, \top{T}_X) \to (Y, \top{T}_Y)$ is continuous}
+				\iff
+				\top{T}_Y ⊆ f_* \top{T}_X \,.
+			\]
+
+	\end{enumerate}
+	Let~$g \colon Y \to Z$ be another map.
+	\begin{enumerate}[resume]
+
+		\item
+			For every topology~$\top{T}_X$ on~$X$, we have~$g_* f_* \top{T}_X = (gf)_* \top{T}_X$.
+
+		\item
+			For every topology~$\top{T}_Z$ on~$Z$, we have~$f^* g^* \top{T}_Z = (gf)^* \top{T}_Z$.
+
+	\end{enumerate}
+\end{proposition}
+
+Let more generally~$X$ be a topological space and let~$(X_α)_{α ∈ A}$ be a family of topological spaces together with continuous maps~$π_α \colon X \to X_α$.
+Suppose that the topology on~$X$ is the coarsest topology for which all the maps~$π_α$ are continuous.
+We claim that for every other topological space~$Z$, a map~$f \colon Z \to X$ is continuous if and only if each composite~$π_α f$ is continuous.
+
+Let~$\top{T}_X$ denote the topology on~$X$, let~$\top{T}_Z$ denote the topology on~$Z$, and for every index~$α ∈ A$ let~$\top{T}_α$ denote the topology on~$X_α$.
+We have for every topology~$\top{T}$ on~$X$ the equivalences
+\begin{align*}
+	{}&
+	\top{T}_X ⊆ \top{T}
+	\\
+	\iff{}&
+	\text{each~$π_α$ is continuous with respect to~$\top{T}$ and~$\top{T}_α$}
+	\\
+	\iff{}&
+	\text{$π_α^* \top{T}_α ⊆ \top{T}$ for every~$α ∈ A$} \,.
+\end{align*}
+We have consequently the chain of equivalences
+\begin{align*}
+	{}&
+	\text{$f$ is continuous} \\
+	\iff{}&
+	\top{T}_X ⊆ f_* \top{T}_Z \\
+	\iff{}&
+	\text{$π_α^* \top{T}_α ⊆ f_* \top{T}_Z$ for every~$α ∈ A$} \\
+	\iff{}&
+	\text{$f^* π_α^* \top{T}_α ⊆ \top{T}_Z$ for every~$α ∈ A$} \\
+	\iff{}&
+	\text{$(π_α f)^* \top{T}_α ⊆ \top{T}_Z$ for every~$α ∈ A$} \\
+	\iff{}&
+	\text{$π_α f$ is continuous for every~$α ∈ A$} \,.
+\end{align*}
