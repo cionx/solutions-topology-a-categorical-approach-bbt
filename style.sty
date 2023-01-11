@@ -83,3 +83,10 @@
 % the symbol is too bold and should be replaced by a better solution
 % the size and vertical position is adjusted to fit with \sum and \prod
 \newcommand{\bigast}{\mathop{\smash{\raisebox{-0.45em}{\scaleobj{2.58}{\ast}}}}}
+
+% for the diagram of the topologies on { a, b, c }
+% prints the number of the set, and the elements underneath
+\newcommand{\topel}[2]{%
+%	$#1$
+	$\underset{\smash{#2}}{#1}$%
+}
