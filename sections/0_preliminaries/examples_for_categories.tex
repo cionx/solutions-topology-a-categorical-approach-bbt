@@ -1,0 +1,201 @@
+\subsection{Examples for Categories}
+
+
+
+\subsubsection{The Category~$\Set$}
+
+Composition of functions is associative.
+
+We have for every set~$X$ the identity function~$\id_X$, which satisfies~$f \id_X = f$ for every function~$f \colon X \to Y$ and~$\id_X g = g$ for every function~$g \colon Z \to X$.
+
+
+
+\subsubsection{The Category~$\Set_*$}
+
+Let~$f \colon (S, s_0) \to (T, t_0)$ and~$g \colon (T, t_0) \to (U, u_0)$ be two morphisms of pointed sets.
+Then
+\[
+	g f s_0 = g t_0 = u_0 \,.
+\]
+The composite function~$g f$ is therefore a morphism of pointed sets from~$(S, s_0)$ to~$(U, u_0)$.
+
+We have for every pointed set~$(S, s_0)$ the equality~$\id_S s_0 = s_0$, where~$\id_S$ denotes the identity function.
+Therefore,~$\id_S$ is a morphism of pointed sets, and it serves as the identity morphism of~$(S, s_0)$ in~$\Set_*$.
+
+
+
+\subsubsection{The Category~$\Top$}
+
+Let~$f \colon X \to Y$ and~$g \colon Y \to Z$ be two composable continuous maps.
+Let~$U$ be an open subset of~$Z$.
+The preimage~$g^{-1} U$ is open in~$Y$ because~$g$ is continuous.
+Hence, the preimage~$f^{-1} g^{-1} U$ is open in~$X$ because~$f$ is continuous.
+But we have~$f^{-1} g^{-1} U = (g f)^{-1} U$.
+We have thus shown that the composite~$g f$ is continuous.
+
+For every open subset~$U$ of~$X$, its preimage~$\id_X^{-1} U = U$ is open in~$X$, where~$\id_X$ denoted the identity function on the underlying set of~$X$.
+Therefore, the map~$\id_X$ is continuous, and it serves as the identity morphism of~$X$ in~$\Top$.
+
+
+
+\subsubsection{The Category~$\Top_*$}
+
+Let~$f \colon (X, x_0) \to (Y, y_0)$ and~$g \colon (Y, y_0) \to (Z, z_0)$ be two morphisms of pointed topological spaces.
+The composite~$g f$ is a continuous map from~$X$ to~$Y$ that satisfies~$g f x_0 = g y_0 = z_0$.
+The composite~$g f$ is therefore a morphism from~$(X, x_0)$ to~$(Z, z_0)$.
+
+For every pointed topological space~$(X, x_0)$, the identity map~$\id_X$ is a continuous map from~$X$ to itself with~$\id_X x_0 = x_0$.
+The map~$\id_X$ is therefore a morphism from~$(X, x_0)$ to itself, and it serves at the identity morphism of~$(X, x_0)$ in~$\Top_*$.
+
+
+
+\subsubsection{The Category~$\hTop$}
+
+We need the following result about the compatability of homotopy with composition:
+
+\begin{proposition}
+	Let~$X$,~$Y$ and~$Z$ be topological spaces.
+	\begin{enumerate}
+
+		\item
+			Let~$f_1, f_2 \colon X \to Y$ and~$g \colon Y \to Z$ be continuous maps such that~$f_1$ and~$f_2$ are homotopic.
+			Then~$g f_1$ and~$g f_2$ are again homotopic.
+
+		\item
+			Let~$f \colon X \to Y$ and~$g_1, g_2 \colon Y \to Z$ be continuous maps such that~$g_1$ and~$g_2$ are homotopic.
+			Then~$g_1 f$ and~$g_2 f$ are again homotopic.
+
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+
+		\item
+			Let~$H \colon X × \int \to Y$ be a homotopy from~$f_1$ to~$f_2$.
+			The composite~$g H$ is a homotopy from~$g f_1$ to~$g f_2$.
+
+		\item
+			Let~$H \colon Y × \int \to Z$ be a homotopy from~$g_1$ to~$g_2$.
+			The composite~$H (f × \id_{\int})$ is a homotopy from~$g_1 f$ to~$g_2 f$.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+	\label{homotopy respects composition}
+	Let~$f_1, f_2 \colon X \to Y$ and~$g_1, g_2 \colon Y \to Z$ be continuous maps such that~$f_1$ and~$f_2$ are homotopic and also~$g_1$ and~$g_2$ are homotopic.
+	Then~$g_1 f_1$ and~$g_2 f_2$ are again homotopic.
+	\qed
+\end{corollary}
+
+It follows from the above \lcnamecref{homotopy respects composition} that the composition of continuous maps in~$\Top$ descends to a well-defined composition of homotopy classes of continuous maps in~$\hTop$.
+The composition of homotopy classes in~$\hTop$ is associative because the original composition of continuous maps in~$\Top$ is associative.
+
+Let~$X$ be a topological space and let~$\class{\id_X}$ be the homotopy class of the identity map of~$X$.
+We have for every morphism~$\class{f} \colon X \to Y$ in~$\hTop$, which is represented by a continuous map~$f \colon X \to Y$, the equalities
+\[
+	\class{f} \class{\id_X}
+	=
+	\class{f \id_X}
+	=
+	\class{f} \,.
+\]
+We find in the same way that~$\class{\id_X} \class{g} = \class{g}$ for every morphism~$\class{g} \colon Z \to X$ in~$\hTop$.
+This shows that~$\class{\id_X}$ serves as the identity morphism for~$X$ in~$\hTop$.
+
+
+
+\subsubsection{The Category~$\Grp$}
+
+Let~$f \colon G \to H$ and~$g \colon H \to K$ be two homomorphisms of groups.
+The composite~$g f$ is again a homomorphism of groups since
+\[
+	g f (x_1 x_2) = g ((f x_1) (f x_2)) = (g f x_1) (g f x_2)
+\]
+for all~$x_1, x_2 ∈ G$.
+The composition of homomorphisms of groups is associative, since the composition of functions is associative.
+
+For every group~$G$, the identity map~$\id_G$ is a homomorphism of groups from~$G$ to~$G$ since
+\[
+	\id_G (x_1 x_2) = x_1 x_2 = (\id_G x_1) (\id_G x_2)
+\]
+for all~$x_1, x_2 ∈ G$.
+The homomorphism~$\id_G$ serves as the identity morphism of~$G$ in~$\Grp$.
+
+
+
+\subsubsection{Groups as Categories}
+
+Let~$G$ be a group and let~$\cat{G}$ be the proposed category.
+Composition of morphisms in~$\cat{G}$ is associative since the multiplication of~$G$ is associative.
+The neutral element of~$G$ serves as the identity morphism of the unique object~$\bullet$ of~$\cat{G}$.
+
+
+
+\subsubsection{Path Category of a Directed Multigraph}
+
+Let~$Γ$ be a directed multigraph.
+By a \emph{path} of length~$n$ in~$Γ$ we mean a tuple
+\[
+	p = (x \pmid α_1, \dotsc, α_n \pmid y)
+\]
+where~$x$ and~$y$ are vertices of~$Γ$ and $α_1, \dotsc, α_n$ are edges in~$Γ$ subject to the following conditions:
+the source of~$α_1$ is~$x$, the target of~$α_i$ is the source of~$α_{i + 1}$ for every~$i = 1, \dotsc, n - 1$, and the target of~$α_n$ is~$y$.
+The vertex~$x$ is the \emph{source} of~$p$, and the vertex~$y$ is the \emph{target} of~$p$.
+
+Let~$p = (x \pmid α_1, \dotsc, α_n \pmid y)$ and~$q = (y \pmid β_1, \dotsc, β_m \pmid z)$ be two paths in~$Γ$ for which the target of~$p$ is the source of~$q$.
+The composite of the paths~$p$ and~$q$ is the path
+\[
+	q p = (x \pmid α_1, \dotsc, α_n, β_1, \dotsc, β_m \pmid z) \,.
+\]
+Composition of paths is associative.
+
+We have for every vertex~$x$ the path~$e_x = (x \pmid x)$ of length~$0$ at~$x$.
+For every path~$p$ with source~$x$ we have~$p e_x = p$, and for every path~$q$ with target~$x$ we have~$e_x q = q$.
+
+We have a category~$\cat{P}$ as follows:
+the objects of~$\cat{P}$ are the vertices of~$Γ$;
+for every two vertices~$p$ and~$q$ the morphisms in~$\cat{P}$ from~$p$ to~$q$ are the paths from~$p$ to~$q$;
+composition of morphisms in~$\cat{P}$ is given by composition of paths.
+For every vertex~$x$, the path~$(x \pmid x)$ serves as the identity morphism of~$x$ in~$\cat{P}$.
+
+
+
+\subsubsection{The Opposite Category}
+
+Let
+\[
+	f \colon X \to Y \,, \quad
+	g \colon Y \to Z \,, \quad
+	h \colon Z \to W
+\]
+be morphisms in~$\cat{C}^{\op}$.
+This means that in~$\cat{C}$, we have
+\[
+	f \colon Y \to X \,, \quad
+	g \colon Z \to Y \,, \quad
+	h \colon W \to Z \,.
+\]
+In~$\cat{C}$, we have the equality
+\[
+	f (g h) = (f g) h \,.
+\]
+In~$\cat{C}^{\op}$, this becomes the equality
+\[
+	(h g) f = h (g f) \,.
+\]
+This shows that composition of morphisms in~$\cat{C}^{\op}$ is associative.
+
+Let~$f \colon X \to Y$ be a morphism in~$\cat{C}$.
+In~$\cat{C}$, we then have~$f \colon Y \to X$, and thus the equalities
+\[
+	\id_X f = f \,, \quad f \id_Y = f \,.
+\]
+In~$\cat{C}^{\op}$, these become the equalities
+\[
+	f \id_X = f \,, \quad \id_Y f = f \,.
+\]
+This shows that the identity morphisms in~$\cat{C}$ also serve as the identity morphism in~$\cat{C}^{\op}$.
