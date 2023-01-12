@@ -1,0 +1,93 @@
+\subsection{Functor Categories}
+
+We need to explain how composition of natural transformations works, and then we need to check that the proposed category~$\cat{D}^{\cat{C}}$ is indeed a category.
+
+Let~$F, G, H \colon \cat{C} \to \cat{D}$ be functors, and let~$η \colon F \to G$ and~$γ \colon G \to H$ be natural transformations.
+This means that we have for every morphism~$f \colon X \to Y$ in~$\cat{C}$ the following commutative diagram:
+\[
+	\begin{tikzcd}
+		F X
+		\arrow{r}[above]{F f}
+		\arrow{d}[left]{η_X}
+		\arrow[bend right = 55]{dd}[left]{γ_X η_X}
+		&
+		F Y
+		\arrow{d}[right]{η_Y}
+		\arrow[bend left = 55]{dd}[right]{γ_Y η_Y}
+		\\
+		G X
+		\arrow{r}[above]{G f}
+		\arrow{d}[left]{γ_X}
+		&
+		G Y
+		\arrow{d}[right]{γ_Y}
+		\\
+		H X
+		\arrow{r}[above]{H f}
+		&
+		H Y
+	\end{tikzcd}
+\]
+The commutativity of the outer square
+\[
+	\begin{tikzcd}
+		F X
+		\arrow{r}[above]{F f}
+		\arrow{d}[left]{γ_X η_X}
+		&
+		F Y
+		\arrow{d}[right]{γ_Y η_Y}
+		\\
+		H X
+		\arrow{r}[above]{H f}
+		&
+		H Y
+	\end{tikzcd}
+\]
+tells us that the family~$(γ_X η_X)_X$ is a natural transformation from~$F$ to~$H$.
+We denote this natural transformation by~$γ η$, so that~$(γ η)_X = γ_X η_X$ for every object~$X$ of~$\cat{C}$.
+
+For every functor~$F$ from~$\cat{C}$ to~$\cat{D}$, the family~$(\id_{F X})_X$ is a natural transformation from~$F$ to~$F$, since for every morphism~$f \colon X \to Y$ the following diagram commutes:
+\[
+	\begin{tikzcd}
+		F X
+		\arrow{r}[above]{F f}
+		\arrow{d}[left]{\id_{F X}}
+		&
+		F Y
+		\arrow{d}[right]{\id_{F Y}}
+		\\
+		F X
+		\arrow{r}[above]{F f}
+		&
+		F Y
+	\end{tikzcd}
+\]
+We denote this natural transformation by~$\id_F$, so that~$(\id_F)_X = \id_{F X}$ for every object~$X$ of~$\cat{C}$.
+
+We have for every natural transformation~$η \colon F \to G$ between functors from~$\cat{C}$ to~$\cat{D}$ the chain of equalities
+\[
+	(\id_G η)_X = (\id_G)_X η_X = \id_{G X} η_X = η_X
+\]
+for every object~$X$ of~$\cat{C}$, and therefore the equality~$\id_G η = η$.
+We find in the same way that also~$η \id_F = η$.
+
+This shows that for every functor~$F$ from~$\cat{C}$ to~$\cat{D}$, the natural transformation~$\id_F$ serves as the identity morphism of~$F$ in~$\cat{D}^{\cat{C}}$.
+
+Let~$η \colon F \to G$,~$γ \colon G \to H$ and~$κ \colon H \to K$ be natural transformations between functors from~$\cat{C}$ to~$\cat{D}$.
+We have the chain of equalities
+\[
+	((κ γ) η)_X
+	=
+	(κ γ)_X η_X
+	=
+	κ_X γ_X η_X
+	=
+	κ_X (γ η)_X
+	=
+	(κ (γ η))_X
+\]
+for every object~$X$ of~$\cat{C}$, and therefore the equality~$(κ γ) η = κ (γ η)$.
+This shows that composition of morphisms in~$\cat{D}^{\cat{C}}$ is associative.
+
+We have overall shown that~$\cat{D}^{\cat{C}}$ is indeed a category.
