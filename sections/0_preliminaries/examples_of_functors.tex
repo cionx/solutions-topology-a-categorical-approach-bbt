@@ -1,0 +1,264 @@
+\subsection{Examples of Functors}
+
+
+
+\subsubsection{The Functor~$\cat{C}(X, \ph)$}
+
+We have for every object~$X$ of~$\cat{C}$ the equalities
+\[
+	(\id_X)_* f = \id_X f = f \,,
+\]
+for every element~$f$ of~$\cat{C}(X, X)$, and therefore the equality~$(\id_X)_* = \id_{\cat{C}(X, X)}$.
+
+We have for every two composable morphisms~$g \colon Y \to Z$ and~$h \colon Z \to W$ the chain of equalities
+\[
+	h_* g_* f
+	=
+	h_* g f
+	=
+	h g f
+	=
+	(h g)_* f
+\]
+for every element~$f$ of~$\cat{C}(X, Y)$, and therefore the equality~$h_* g_* = (h g)_*$.
+
+
+
+\subsubsection{The Functor~$\cat{C}(\ph, X)$}
+
+We have for every object~$X$ of~$\cat{C}$ the equalities
+\[
+	\id_X^* f = f \id_X = f \,,
+\]
+for every element~$f$ of~$\cat{C}(X, X)$, and thus the equality~$\id_X^* = \id_{\cat{C}(X, X)}$.
+
+We have for every two composable morphisms~$h \colon Y \to Z$ and~$g \colon Z \to W$ the chain of equalities
+\[
+	h^* g^* f
+	=
+	h^* (f g)
+	=
+	f g h
+	=
+	(g h)^* f
+\]
+for every element~$f$ of~$\cat{C}(W, X)$, and thus the equality~$h^* g^* = (g h)^*$.
+
+
+
+\subsubsection{The Functor~$X × \ph$}
+
+We have for every set~$Y$ the chain of equalities
+\[
+	({\id} × {\id_Y})(x, y)
+	=
+	(x, {\id_Y} y)
+	=
+	(x, y)
+	=
+	\id_{X × Y} (x, y)
+\]
+for every element~$(x, y)$ of~$X × Y$, and therefore the equality~${\id} × {\id_Y} = \id_{X × Y}$.
+
+We have for every two composable functions~$f \colon Y \to Z$ and~$g \colon Z \to W$ the chain of equalities
+\[
+	({\id} × g) ({\id} × f) (x, y)
+	=
+	({\id} × g) (x, f y)
+	=
+	(x, g f y)
+	=
+	({\id} × (g f)) (x, y)
+\]
+for every element~$(x, y)$ on~$X × Y$, and therefore~$({\id} × g) ({\id} × f) = {\id} × (g f)$.
+
+
+
+\subsubsection{The Functor~$V ⊗ -$}
+
+We have for every vector space~$W$ the chain of equalities
+\[
+	({\id} ⊗ {\id_W})(v ⊗ w)
+	=
+	v ⊗ (\id_W w)
+	=
+	v ⊗ w
+\]
+for every simple tensor~$v ⊗ w$, and therefore the equality~${\id} ⊗ {\id_W} = \id_{V ⊗ W}$.
+
+We have for every two composable linear maps~$f \colon S \to T$ and~$g \colon T \to U$ the chain of equalities
+\begin{align*}
+	({\id} ⊗ g) ({\id} ⊗ f) (v ⊗ s)
+	&=
+	({\id} ⊗ g) (v ⊗ (f s)) \\
+	&=
+	v ⊗ (g f s) \\
+	&=
+	({\id} ⊗ (g f)) (v ⊗ s)
+\end{align*}
+for every simple tensor~$v ⊗ s$, and thus the equality~$({\id} ⊗ g) ({\id} ⊗ f) = {\id} ⊗ (g f)$.
+
+
+
+\subsubsection{The Forgetful Functor~$U \colon \Grp \to \Set$}
+
+For every group~$G$, the identity morphism of~$G$ in~$\Grp$ is the identity function on~$G$, whence~$U(\id_G) = \id_{U(G)}$.
+
+The composition of morphisms in~$G$ is given by composition of the underlying functions.
+This means that~$U$ respects composition.
+
+
+
+\subsubsection{The Free Functor~$F$}
+
+We have for every set~$S$ the free group~$F S$ on the set~$S$.
+Every function between sets~$f \colon S \to T$ extends uniquely to a homomorphism of groups~$F f \colon F S \to F T$ with~$(F f) s = f s$ for every element~$s$ of~$S$.
+More generally, for every homomorphism of groups of the form~$φ \colon F S \to G$ is uniquely determined by its images~$φ s$ for~$f ∈ S$.
+
+For every set~$S$ we have the equalities
+\[
+	(F \id_S) s
+	=
+	\id_S s
+	=
+	s
+	=
+	\id_{F S} s \,,
+\]
+for every element~$s$ of~$S$, and therefore the equality~$F \id_S = \id_{F S}$.
+
+We have for every two composable functions~$f \colon S \to T$ and~$g \colon T \to U$ the chain of equalities
+\[
+	(F g) (F f) s
+	=
+	(F g) f s
+	=
+	g f s
+	=
+	F(g f) s
+\]
+for every element~$s$ of~$S$, and thus the equality~$F (g f) = (F g) (F f)$.
+
+
+
+\subsubsection{The Forgetful Functor~$U \colon \Top \to \Set$}
+
+For every topological space~$X$, the identity morphism of~$X$ in~$\Top$ is the identity function on the underlying set of~$X$.
+Therefore,~$U \id_X = \id_{U X}$.
+
+The composition of continuous maps is given by composition of their underlying functions between sets.
+This means that~$U$ preserves composition.
+
+
+
+\subsubsection{The Fundamental Group}
+
+For every topological space, we have
+\[
+	(\fgroup_1 \id_X) \class{γ}
+	=
+	\class{\id_X γ}
+	=
+	\class{γ}
+\]
+for every element~$\class{γ}$ of~$\fgroup_1 X$, and therefore the equality~$\fgroup_1 \id_X = \id_{\fgroup_1 X}$.
+
+We have for every two continuous maps~$f \colon X \to Y$ and~$g \colon Y \to Z$ the chain of equalities
+\[
+	(\fgroup_1 g) (\fgroup_1 f) \class{γ}
+	=
+	(\fgroup_1 g) \class{f γ}
+	=
+	\class{g f γ}
+	=
+	\fgroup_1 (g f) \class{γ}
+\]
+for every element~$\class{γ}$ of~$\fgroup_1 X$, and thus the equality~$(\fgroup_1 g) (\fgroup_1 f) = \fgroup_1 (g f)$.
+
+
+
+\subsubsection{The Grothendieck Group}
+
+For every abelian monoid~$M$ let~$G M$ denote its Grothendieck group, and let~$i_M \colon M \to G M$ denote the canonical homomorphism of monoids.
+The Grothendieck group has the following universal property:
+for every abelian group~$A$, every homomorphism of monoids from~$M$ to~$A$ extends uniquely to a homomorphism of groups from~$M$ to~$A$ along~$i_M$.
+
+It follows that there exists for every homomorphism~$f \colon M \to N$ between abelian monoids a unique homomorphism of groups~$G f$ from~$G M$ to~$G N$ that makes the following square diagram commutes:
+\[
+	\begin{tikzcd}
+		G M
+		\arrow{r}[above]{G f}
+		&
+		G N
+		\\
+		M
+		\arrow{u}[left]{i_M}
+		\arrow{r}[above]{f}
+		&
+		N
+		\arrow{u}[right]{i_N}
+	\end{tikzcd}
+\]
+
+It follows for every abelian monoid~$M$ from the commutativity of the square diagram
+\[
+	\begin{tikzcd}
+		G M
+		\arrow{r}[above]{\id_{G M}}
+		&
+		G M
+		\\
+		M
+		\arrow{u}[left]{i_M}
+		\arrow{r}[above]{\id_M}
+		&
+		N
+		\arrow{u}[right]{i_M}
+	\end{tikzcd}
+\]
+that~$\id_{G M}$ satisfies the defining property of the homomorphism~$G \id_M$.
+This tells us that~$G \id_M = \id_{G M}$.
+
+We have for every two homomorphisms of abelian monoids~$f \colon M \to N$ and~$g \colon N \to P$ the following commutative diagram:
+\[
+	\begin{tikzcd}
+		G M
+		\arrow[bend left = 40]{rr}[above]{(G g) (G f)}
+		\arrow{r}[above]{G f}
+		&
+		G N
+		\arrow{r}[above]{G g}
+		&
+		G P
+		\\
+		M
+		\arrow{u}[left]{i_M}
+		\arrow{r}[above]{f}
+		\arrow[bend right = 40]{rr}[below]{gf}
+		&
+		N
+		\arrow{u}[right]{i_N}
+		\arrow{r}[above]{g}
+		&
+		P
+		\arrow{u}[right]{i_P}
+	\end{tikzcd}
+\]
+It follows from the commutativity of the outer diagram
+\[
+	\begin{tikzcd}[column sep = huge]
+		G M
+		\arrow{r}[above]{(G g) (G f)}
+		&
+		G P
+		\\
+		M
+		\arrow{u}[left]{i_M}
+		\arrow{r}[above]{g f}
+		&
+		P
+		\arrow{u}[right]{i_P}
+	\end{tikzcd}
+\]
+that the composite~$(G g) (G f)$ satisfies the defining property of the homomorphism~$G (g f)$.
+This tells us that~$G (g f) = (G g) (G f)$.
