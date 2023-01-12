@@ -1,0 +1,111 @@
+\subsection{Yoneda Embedding}
+
+
+
+\subsubsection{Functoriality of the Yoneda Embedding}
+
+We check that~$f_*$ is indeed a natural transformation from~$\cat{C}(\ph, X)$ to~$\cat{C}(\ph, Y)$.
+We need to check that for every morphism~$g \colon W \to Z$ in~$\cat{C}$ the following diagram commutes:
+\[
+	\begin{tikzcd}
+		\cat{C}(Z, X)
+		\arrow{r}[above]{g^*}
+		\arrow{d}[left]{f_*}
+		&
+		\cat{C}(W, X)
+		\arrow{d}[right]{f_*}
+		\\
+		\cat{C}(Z, Y)
+		\arrow{r}[above]{g^*}
+		&
+		\cat{C}(W, Y)
+	\end{tikzcd}
+\]
+We have for every element~$h$ of~$\cat{C}(Z, X)$ the chain of equalities
+\[
+	g^* f_* h
+	=
+	g^* (f h)
+	=
+	f h g
+	=
+	f g^* h
+	=
+	f_* g^* h \,,
+\]
+and thus the required equality~$g^* f_* = f_* g^*$.
+
+We note that in terms of components, given a morphism~$f \colon X \to Y$, we have~$(f_*)_Z = f_*$ for every object~$Z$ of~$\cat{C}$.
+(We follow the book’s in denoting both the induced natural transformation from~$\cat{C}(\ph, X)$ to~$\cat{C}(\ph, Y)$ and also its components from~$\cat{C}(Z, X)$ to~$\cat{C}(Z, Y)$ by~$f_*$.)
+
+We need to check that for every object~$X$, the natural transformation~$(\id_X)_*$ from~$\cat{C}(\ph, X)$ to itself agrees with~$\id_{\cat{C}(\ph, X)}$.
+This holds since
+\[
+	( \id_{\cat{C}(\ph, X)} )_Y
+	=
+	\id_{\cat{C}(Y, X)}
+	=
+	(\id_X)_*
+	=
+	((\id_X)_*)_Y
+\]
+for every object~$Y$ of~$\cat{C}$.
+
+Now we check that for every two morphisms~$f \colon X \to Y$ and~$g \colon Y \to Z$ in~$\cat{C}$ we have the equality of natural transformations~$(g f)_* = g_* f_*$.
+This holds since
+\[
+	((g f)_*)_W
+	=
+	(g f)_*
+	=
+	g_* f_*
+	=
+	(g_*)_W (f_*)_W
+	=
+	( g_* f_* )_W
+\]
+for every object~$W$ of~$\cat{C}$.
+For the second equality we used the functoriality of~$\cat{C}(W, \ph)$.
+
+
+
+\subsubsection{Fully Faithfulness}
+
+We now check that the Yoneda embedding is indeed fully faithful.
+The Yoneda lemma, and its proof in \cref{exercise 0.6}, tells us that the map
+\[
+	\Nat( \cat{C}(\ph, X), \cat{C}(\ph, Y) )
+	\to
+	\cat{C}(X, Y) \,,
+	\quad
+	η \mapsto η_X \id_X
+\]
+is bijective.
+We note that for every morphism~$f \colon X \to Y$ the preimage of~$f$ under this bijection is given by~$f_*$.
+The inverse of the above bijection is thus given by
+\[
+	\cat{C}(X, Y) \,,
+	\to
+	\Nat( \cat{C}(\ph, X), \cat{C}(\ph, Y) ) \,,
+	\quad
+	f \mapsto f_* \,.
+\]
+This bijectivity tells us that the Yoneda embedding is indeed fully faithful.
+
+
+
+\subsubsection{Yoneda’s Lemma for Covariant Functors}
+
+Yoneda’s lemma asserts that for every covariant functor~$F \colon \cat{C} \to \Set$ and every object~$X$ of~$\cat{C}$, the map
+\[
+	\Nat( \cat{C}(X, -) , F ) \to F X \,,
+	\quad
+	η \mapsto η_X \id_X
+\]
+is bijective.
+
+
+
+\subsubsection{Contravariant Yoneda Embedding}
+
+The resulting contravariant Yoneda embedding~$\cat{C}^{\op} \to \Set^{\cat{C}}$ maps every object~$X$ of~$\cat{C}$ to the functor~$\cat{C}(X, \ph)$, and every morphism~$f \colon X \to Y$ in~$\cat{C}$ to the natural transformation~$f^* \colon \cat{C}(Y, \ph) \to \cat{C}(X, \ph)$.
