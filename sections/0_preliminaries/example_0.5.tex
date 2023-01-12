@@ -1,0 +1,130 @@
+\subsection{Example~0.5}
+
+
+
+\subsubsection{An Easier Homeomorphism}
+
+We consider more generally the open unit ball
+\[
+	B ≔ \{ x ∈ ℝ^n \suchthat \norm{x} < 1 \} \,.
+\]
+The map
+\[
+	φ \colon B \to ℝ^n \,, \quad x \mapsto \frac{x}{1 - \norm{x}}
+\]
+is a homeomorphism:
+for the continuous map
+\[
+	ψ \colon ℝ^n \to B \,, \quad y \mapsto \frac{y}{1 + \norm{y}}
+\]
+we have
+\[
+	ψ φ x
+	=
+	ψ \frac{x}{1 - \norm{x}}
+	=
+	\frac{ \frac{x}{1 - \norm{x}} }{ 1 + \norm[\big]{ \frac{x}{1 - \norm{x}} } }
+	=
+	\frac{ \frac{x}{1 - \norm{x}} }{ 1 + \frac{\norm{x}}{1 - \norm{x}} }
+	=
+	\frac{x}{1 - \norm{x} + \norm{x}}
+	=
+	\frac{x}{1}
+	=
+	x
+\]
+and similarly
+\[
+	φ ψ y
+	=
+	ψ \frac{y}{1 + \norm{y}}
+	=
+	\frac{ \frac{y}{1 + \norm{y}} }{ 1 - \norm[\big]{ \frac{y}{1 + \norm{y}} } }
+	=
+	\frac{ \frac{y}{1 + \norm{y}} }{ 1 - \frac{\norm{y}}{1 + \norm{y}} }
+	=
+	\frac{y}{1 + \norm{y} - \norm{y}}
+	=
+	\frac{y}{1}
+	=
+	y \,.
+\]
+
+
+
+\subsubsection{The Given Homeomorphism}
+
+We denote the given map by
+\[
+	f \colon (-1, 1) \to ℝ \,, \quad x \mapsto \frac{x}{1 - x^2} \,.
+\]
+For every nonzero~$y$, we can rearrange the equation
+\[
+	y = f x = \frac{x}{1 - x^2}
+\]
+to~$y - y x^2 = x$, and therefore to the equation
+\[
+	y x^2 + x - y = 0 \,.
+\]
+This is a quadratic equation in~$x$, with its two solutions given by
+\[
+	\frac{-1 ± \sqrt{1^2 - 4 y (-y)}}{2 y}
+	=
+	\frac{-1 ± \sqrt{1 + 4 y^2}}{2y} \,.
+\]
+We can further expand this fraction by the \enquote{conjugate}~$-1 ∓ \sqrt{1 + 4 y^2}$ of the numerator to get
+\begin{align*}
+	\frac{-1 ± \sqrt{1 + 4 y^2}}{2y}
+	&=
+	\frac{(-1 ± \sqrt{1 + 4 y^2})(-1 ∓ \sqrt{1 + 4 y^2})}{2y(-1 ∓ \sqrt{1 + 4 y^2})}
+	\\[0.5em]
+	&=
+	\frac{(-1)^2 - (1 + 4 y^2)}{2 y (-1 ∓ \sqrt{1 + 4 y^2})}
+	\\[0.5em]
+	&=
+	\frac{- 4 y^2}{2 y (-1 ∓ \sqrt{1 + 4 y^2})}
+	\\[0.5em]
+	&=
+	\frac{- 2 y}{-1 ∓ \sqrt{1 + 4 y^2}}
+	\\[0.5em]
+	&=
+	\frac{2 y}{1 ± \sqrt{1 + 4 y^2}} \,.
+\end{align*}
+We observe that
+\begin{align*}
+	{}&
+	\abs[\bigg]{ \frac{2 y}{1 ± \sqrt{1 + 4 y^2}} } < 1
+	\\
+	\iff{}&
+	\biggl( \frac{2 y}{1 ± \sqrt{1 + 4 y^2}} \biggr)^2 < 1
+	\\
+	\iff{}&
+	\frac{4 y^2}{(1 ± \sqrt{1 + 4 y^2})^2} < 1
+	\\
+	\iff{}&
+	4 y^2 < (1 ± \sqrt{1 + 4 y^2})^2
+	\\
+	\iff{}&
+	4 y^2 < 1 ± 2 \sqrt{1 + 4 y^2} + 1 + 4 y^2
+	\\
+	\iff{}&
+	0 < 2 ± 2 \sqrt{1 + 4 y^2}
+	\\
+	\iff{}&
+	0 < 1 ± \sqrt{1 + 4 y^2} \,.
+\end{align*}
+This last condition is true if and only if we choose the sign~$±$ as positive.
+
+Given two points~$x$ and~$y$ in~$ℝ$ with~$y ≠ 0$ we have thus shown that
+\[
+	\text{$y = fx$ and~$\abs{x} < 1$}
+	\iff
+	x = \frac{2y}{1 + \sqrt{1 + 4 y^2}} \,.
+\]
+We note that this equivalence also holds for~$y = 0$.
+In other words, every~$y ∈ ℝ$ has a unique preimage~$g y$ with respect to~$f$, showing that~$f$ is bijective, and an explicit description of~$g y$ is given by
+\[
+	g \colon ℝ \to (-1, 1) \,, \quad y \mapsto \frac{2y}{1 + \sqrt{1 + 4 y^2}} \,.
+\]
+The maps~$f$ and~$g$ are thus mutually inverse.
+They are also continuous, whence~$f$ is a homeomorphism with inverse~$g$.
