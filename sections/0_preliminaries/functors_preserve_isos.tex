@@ -1,0 +1,28 @@
+\subsection{Functors Preserve Isomorphisms}
+
+Let~$F$ be a functor from a category~$\cat{C}$ to a category~$\cat{D}$.
+We show that~$F$ preserves isomorphisms, i.e., that for every isomorphism~$f$ in~$\cat{C}$ its image~$F f$ is an isomorphism in~$\cat{D}$.
+
+Let~$f \colon X \to Y$ be an isomorphism in~$\cat{C}$ with inverse~$f^{-1} \colon Y \to X$.
+Then
+\[
+	(F f) (F f^{-1})
+	=
+	F (f f^{-1})
+	=
+	F \id_Y
+	=
+	\id_{F Y} \,,
+\]
+and similarly
+\[
+	(F f^{-1}) (F f)
+	=
+	F (f^{-1} f)
+	=
+	F \id_X
+	=
+	\id_{F X} \,.
+\]
+This shows that the morphism~$F f$ is an isomorphism, with inverse given by~$F f^{-1}$.
+This means in particular that~$(F f)^{-1} = F f^{-1}$.
