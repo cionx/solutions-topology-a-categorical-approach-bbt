@@ -1,0 +1,214 @@
+\subsection{Coarsest and Finest Topologies for Continuity}
+
+We make the following general observations:
+
+\begin{proposition}
+	\label{pullback and pushforward of topologies}
+	Let~$f \colon X \to Y$ be a function between sets.
+	\begin{enumerate}
+
+		\item
+			For every topology~$\top{T}_X$ on~$X$ there exists a finest topology~$f_* \top{T}_X$ on~$Y$ such that~$f$ is continuous with respect to~$\top{T}_X$ and~$f_* \top{T}_X$, and this topology is given by
+			\[
+				f_* \top{T}_X = \{ U ⊆ Y \suchthat f^{-1} U ∈ \top{T}_X \} \,.
+			\]
+
+		\item
+			For every topology~$\top{T}_Y$ on~$Y$ there exists a coarsest topology~$f^* \top{T}_Y$ on~$X$ such that~$f$ is continuous with respect to~$f^* \top{T}_Y$ and~$\top{T}_Y$, and this topology is given by
+			\[
+				f^* \top{T}_Y = \{ f^{-1} U \suchthat U ∈ \top{T}_Y \} \,.
+			\]
+
+		\item
+			For every topology~$\top{T}_X$ on~$X$ and every topology~$\top{T}_Y$ on~$Y$ we have the equivalences
+			\[
+				f^* \top{T}_Y ⊆ \top{T}_X
+				\iff
+				\text{$\textstyle f \colon (X, \top{T}_X) \to (Y, \top{T}_Y)$ is continuous}
+				\iff
+				\top{T}_Y ⊆ f_* \top{T}_X \,.
+			\]
+
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+
+		\item
+			Is suffices to show that the given set~$f_* \top{T}_X$ is a topology on~$Y$.
+
+			We have~$∅ ∈ f_* \top{T}_X$ because~$f^{-1} ∅ = ∅ ∈ \top{T}_X$, and similarly~$Y ∈ f_* \top{T}_X$ because~$f^{-1} Y = X ∈ \top{T}_X$.
+
+			Let~$(U_α)_{α ∈ A}$ be a family of sets belonging to~$f_* \top{T}_X$.
+			This means that~$f^{-1} U_α$ belongs to~$\top{T}_X$ for every index~$α$.
+			It follows that
+			\[
+				f^{-1} ⋃_{α ∈ A} U_α
+				=
+				⋃_{α ∈ A} f^{-1} U_α
+				\in
+				\top{T}_X
+			\]
+			since~$\top{T}_X$ is a topology.
+			This shows that the union~$⋃_{α ∈ A} U_α$ again belongs to~$f_* \top{T}_X$.
+
+			Let~$U_1, \dotsc, U_n$ be finitely many subsets of~$Y$ belonging to~$f_* \top{T}_X$.
+			This means that~$f^{-1} U_i$ belongs to~$\top{T}_X$ for every index~$i$.
+			It follows that
+			\[
+				f^{-1} (U_1 ∩ \dotsb ∩ U_n)
+				=
+				f^{-1} U_1 ∩ \dotsb ∩ f^{-1} U_n
+				\in
+				\top{T}_X
+			\]
+			since~$\top{T}_X$ is a topology.
+			This shows that the intersection~$U_1 ∩ \dotsb ∩ U_n$ again belongs to~$f_* \top{T}_X$.
+
+		\item
+			It suffices to show that~$f^* \top{T}_Y$ is a topology on~$X$.
+			We have~$∅ = f^{-1} ∅ ∈ f^* \top{T}_X$ because~$∅$ belongs to~$\top{T}_Y$.
+			We have similarly~$X = f^{-1} Y ∈ f^* \top{T}_X$ because~$Y$ belongs to~$\top{T}_Y$.
+
+			Let~$(V_α)_{α ∈ A}$ be a family of sets belonging to~$f^* \top{T}_Y$.
+			This means that for every index~$α$ there exists a set~$U_α$ belonging to~$\top{T}_Y$ with~$V_α = f^{-1} U_α$.
+			The union~$⋃_{α ∈ A} U_α$ again belongs to~$\top{T}_Y$ because~$\top{T}_Y$ is a topology.
+			It follows that the union
+			\[
+				⋃_{α ∈ A} V_α
+				=
+				⋃_{α ∈ A} f^{-1} U_α
+				=
+				f^{-1} ⋃_{α ∈ A} U_α
+			\]
+			again belongs to~$f^* \top{T}_Y$.
+
+			Let~$V_1, \dotsc, V_n$ be finitely many sets belonging to~$f^* \top{T}_X$.
+			This means that for every index~$i$ there exists a set~$U_i$ belonging to~$\top{T}_Y$ with~$V_i = f^{-1} U_i$.
+			The intersection~$U_1 ∩ \dotsb ∩ U_n$ again belongs to~$\top{T}_Y$ because~$\top{T}_Y$ is a topology.
+			It follows that the intersection
+			\[
+				V_1 ∩ \dotsb ∩ V_n
+				=
+				f^{-1} U_1 ∩ \dotsb ∩ f^{-1} U_n
+				=
+				f^{-1} (U_1 ∩ \dotsb ∩ U_n)
+			\]
+			again belongs to~$f^* \top{T}_Y$.
+
+		\item
+			The map~$f$ is continuous with respect to~$\top{T}_X$ and~$\top{T}_Y$ if and only if for every set~$U$ belonging to~$\top{T}_Y$ its preimage~$f^{-1} U$ belongs to~$\top{T}_Y$.
+			This condition can be expressed as~$f^* \top{T}_Y ⊆ \top{T}_X$, but also as~$\top{T}_Y ⊆ f^* \top{T}_X$.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
+
+\begin{proposition}
+	Let~$f \colon X \to Z$ and~$g \colon Y \to Z$ be two composable functions between sets.
+	\begin{enumerate}[resume]
+
+		\item
+			For every topology~$\top{T}_X$ on~$X$, we have~$g_* f_* \top{T}_X = (gf)_* \top{T}_X$.
+
+		\item
+			For every topology~$\top{T}_Z$ on~$Z$, we have~$f^* g^* \top{T}_Z = (gf)^* \top{T}_Z$.
+
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+
+		\item
+			For every subset~$W$ of~$Z$ we have the chain of equivalences
+			\begin{align*}
+				W ∈ g_* f_* \top{T}_X
+				&\iff
+				g^{-1} W ∈ f_* \top{T}_X \\
+				&\iff
+				f^{-1} g^{-1} W ∈ \top{T}_X \\
+				&\iff
+				(g f)^{-1} W ∈ \top{T}_X \\
+				&\iff
+				W ∈ (g f)_* \top{T}_X \,.
+			\end{align*}
+			This shows that indeed~$g_* f_* \top{T}_X = (g f)_* \top{T}_X$.
+
+		\item
+			We have the chain of equalities
+			\begin{align*}
+				f^* g^* \top{T}_Z
+				&=
+				\{ f^{-1} V \suchthat V ∈ g^* \top{T}_Z \} \\
+				&=
+				\{ f^{-1} g^{-1} U \suchthat U ∈ \top{T}_Z \} \\
+				&=
+				\{ (g f)^{-1} U \suchthat U ∈ \top{T}_Z \} \\
+				&=
+				(g f)^* \top{T}_Z \,,
+			\end{align*}
+			showing the assertion.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
+
+\begin{corollary}
+	Let~$f \colon X \to Y$ be a function between sets.
+	\begin{enumerate}
+
+		\item
+			Let~$\top{T}_X$ be a topology on~$X$.
+			Let~$Z$ be a topological space and let~$g$ be a map from~$Y$ to~$Z$.
+			The map~$g$ is continuous from~$(Y, f_* \top{T}_X)$ to~$Z$ if and only if the composite~$g f$ is continuous from~$(X, \top{T}_X)$ to~$Z$.
+
+		\item
+			Let~$\top{T}_Y$ be a topology on~$Y$.
+			Let~$Z$ be a topological space and let~$h$ be a map from~$Z$ to~$X$.
+			The map~$h$ is continuous from~$Z$ to~$(X, f^* \top{T}_Y)$ if and only if the composite~$f h$ is continuous from~$Z$ to~$(Y, \top{T}_Y)$.
+
+	\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+	In both cases let~$\top{T}_Z$ denote the topology on~$Z$.
+	\begin{enumerate}
+
+		\item
+			We observe the chain of equivalences
+			\begin{align*}
+				{}&
+				\text{$g$ is continuous from~$(Y, f_* \top{T}_X)$ to~$Z$} \\
+				\iff{}&
+				g^* \top{T}_Z ⊆ f_* \top{T}_X \\
+				\iff{}&
+				f^* g^* \top{T}_Z ⊆ \top{T}_X \\
+				\iff{}&
+				(g f)^* \top{T}_Z ⊆ \top{T}_X \\
+				\iff{}&
+				\text{$g f$ is continuous from~$(X, \top{T}_X)$ to~$Z$} \,.
+			\end{align*}
+
+		\item
+			We observe similarly the chain of equivalences
+			\begin{align*}
+				{}&
+				\text{$h$ is continuous from~$Z$ to~$(X, f^* \top{T}_Y)$} \\
+				\iff{}&
+				f^* \top{T}_Y ⊆ h_* \top{T}_Z \\
+				\iff{}&
+				h^* f^* \top{T}_Y ⊆ \top{T}_Z \\
+				\iff{}&
+				(f h)^* \top{T}_Y ⊆ \top{T}_Z \\
+				\iff{}&
+				\text{$f h$ is continuous from~$Z$ to~$(Y, \top{T}_Y)$} \,.
+			\end{align*}
+			This shows the assertion.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
