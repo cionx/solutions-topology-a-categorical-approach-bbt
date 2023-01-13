@@ -1,36 +1,3 @@
 \subsection{Example~1.6}
 
-Let~$X ≔ \spec R$.
-
-For~$E = ∅$ we have~$V E = X$, and for $E = R$ we have~$V E = ∅$.
-We have for every family~$(E_α)_{α ∈ A}$ of subsets of~$R$ the equality
-\[
-	⋂_{α ∈ A} V E_α
-	=
-	V ⋃_{α ∈ A} E_α \,.
-\]
-This shows that intersections of closed sets are again closed.
-To show that finite unions of closed sets are again closed we use the following observation:
-
-\begin{lemma}
-	\label{product in prime ideal}
-	Let~$R$ be a commutative ring and let~$𝔭$ be a prime ideal of~$R$.
-	Let~$E$ and~$F$ be two subsets of~$R$.
-	Then~$E F ⊆ 𝔭$ if and only if~$E ⊆ 𝔭$ or~$F ⊆ 𝔭$.
-\end{lemma}
-
-\begin{proof}
-	If~$E ⊆ 𝔭$ or~$F ⊆ 𝔭$ then also~$EF ⊆ 𝔭$ because~$𝔭$ is in an ideal.
-	Suppose conversely that neither~$E ⊆ 𝔭$ nor~$F ⊆ 𝔭$.
-	Then there exist elements~$x ∈ E$ and~$y ∈ F$ with~$x, y ∉ 𝔭$.
-	It follows that also~$xy ∉ 𝔭$ because the ideal~$𝔭$ is prime.
-	Consequently,~$EF ⊈ 𝔭$.
-\end{proof}
-
-It follows from the above \lcnamecref{product in prime ideal} that for all subsets~$E_1, \dotsc, E_n$ of~$R$, we have
-\[
-	V E_1 ∪ \dotsb ∪ V E_n
-	=
-	V (E_1 \dotsm E_n) \,.
-\]
-This shows that finite unions of closed subsets are again closed.
+We will verify in \nameref{exercise 1.3} that the Zariski topology is indeed a topology.
