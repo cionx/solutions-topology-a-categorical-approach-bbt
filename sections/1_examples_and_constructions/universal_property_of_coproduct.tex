@@ -6,33 +6,23 @@ We claim that for every other topological space~$Z$, a map~$f \colon X \to Z$ is
 
 Let~$\top{T}_X$ be the topology on~$X$, let~$Z$ be the topology on~$Z$, and for every index~$α ∈ A$ let~$\top{T}_α$ be the topology on~$X_α$.
 Using the notation introduced in~\cref{pullback and pushforward of topologies}, we have for every topology~$\top{T}$ on~$X$ the equivalences
-\begin{align*}
-	{}&
-	\top{T} ⊆ \top{T}_X
-	\\
-	\iff{}&
-	\text{each~$ι_α$ is continuous with respect to~$\top{T}_α$ and~$\top{T}$}
-	\\
-	\iff{}&
-	\text{$\top{T} ⊆ (ι_α)_* \top{T}_α$ for every~$α ∈ A$} \,.
-\end{align*}
+\[
+	\top{T}_X = ⋀_{α ∈ A} (ι_α)_* \top{T}_α \,.
+\]
 We have consequently the chain of equivalences
 \begin{align*}
 	{}&
-	\text{$f$ is continuous}
-	\\
+	\text{$f$ is continuous} \\
 	\iff{}&
-	f^* \top{T}_Z ⊆ \top{T}_X
-	\\
+	f^* \top{T}_Z ⊆ \top{T}_X \\
 	\iff{}&
-	\text{$f^* \top{T}_Z ⊆ (ι_α)_* \top{T}_α$ for every~$α ∈ A$}
-	\\
+	\textstyle f^* \top{T}_Z ⊆ ⋀_{α ∈ A} (ι_α)_* \top{T}_α \\
 	\iff{}&
-	\text{$\top{T}_Z ⊆ f_* (ι_α)_* \top{T}_α$ for every~$α ∈ A$}
-	\\
+	\text{$f^* \top{T}_Z ⊆ (ι_α)_* \top{T}_α$ for every~$α ∈ A$} \\
 	\iff{}&
-	\text{$\top{T}_Z ⊆ (f ι_α)_* \top{T}_α$ for every~$α ∈ A$}
-	\\
+	\text{$\top{T}_Z ⊆ f_* (ι_α)_* \top{T}_α$ for every~$α ∈ A$} \\
+	\iff{}&
+	\text{$\top{T}_Z ⊆ (f ι_α)_* \top{T}_α$ for every~$α ∈ A$} \\
 	\iff{}&
 	\text{$f ι_α$ is continuous for every~$α ∈ A$} \,.
 \end{align*}

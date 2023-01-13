@@ -5,23 +5,18 @@ Suppose that the topology on~$X$ is the coarsest topology for which all the maps
 We claim that for every other topological space~$Z$, a map~$f \colon Z \to X$ is continuous if and only if each composite~$π_α f$ is continuous.
 
 Let~$\top{T}_X$ denote the topology on~$X$, let~$\top{T}_Z$ denote the topology on~$Z$, and for every index~$α ∈ A$ let~$\top{T}_α$ denote the topology on~$X_α$.
-Using the notation introduced in \cref{pullback and pushforward of topologies}, we have for every topology~$\top{T}$ on~$X$ the equivalences
-\begin{align*}
-	{}&
-	\top{T}_X ⊆ \top{T}
-	\\
-	\iff{}&
-	\text{each~$π_α$ is continuous with respect to~$\top{T}$ and~$\top{T}_α$}
-	\\
-	\iff{}&
-	\text{$π_α^* \top{T}_α ⊆ \top{T}$ for every~$α ∈ A$} \,.
-\end{align*}
+Using the notation introduced in \cref{pullback and pushforward of topologies} and \cref{notation for infima and suprema of topologies}, we have
+\[
+	\top{T}_X = ⋁_{α ∈ A} π_α^* \top{T}_α \,.
+\]
 We have consequently the chain of equivalences
 \begin{align*}
 	{}&
 	\text{$f$ is continuous} \\
 	\iff{}&
 	\top{T}_X ⊆ f_* \top{T}_Z \\
+	\iff{}&
+	\textstyle ⋁_{α ∈ A} π_α^* \top{T}_α ⊆ f_* \top{T}_Z \\
 	\iff{}&
 	\text{$π_α^* \top{T}_α ⊆ f_* \top{T}_Z$ for every~$α ∈ A$} \\
 	\iff{}&
