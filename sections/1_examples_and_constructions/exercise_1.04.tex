@@ -1,0 +1,21 @@
+\subsection{Exercise~1.4}
+
+The subspace topology on~$S ≔ \{ a, b \}$ is given by
+\[
+	\top{T}_S ≔ \{ ∅, \{ a \}, S  \} \,.
+\]
+The subspace~$(S, \top{T}_S)$ of~$(X, \top{T})$ is thus (homeomorphic to) the Sierpiński space.
+The open subset~$[0, 1/2)$ of~$[0, 1]$ therefore corresponds to a continuous map
+\[
+	p'
+	\colon
+	[0, 1] \to X \,,
+	\quad
+	t
+	\mapsto
+	\begin{cases*}
+		a & for~$0 ≤ t < 1/2$, \\
+		b & for~$1/2 ≤ t ≤ 1$.
+	\end{cases*}
+\]
+By post-composing~$p'$ with the inclusion map from~$(S, \top{T}_S)$ to~$(X, \top{T})$, which is also continuous, we get a continuous map~$p \colon [0, 1] \to X$ with~$p(0) = a$ and~$p(1) = b$.
