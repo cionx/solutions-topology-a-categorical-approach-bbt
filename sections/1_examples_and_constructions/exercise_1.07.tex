@@ -1,0 +1,34 @@
+\subsection{Exercise~1.7}
+
+\begin{definition}
+	Let~$X$ be a topological space, let~$(x_n)_n$ be a sequence in~$X$ and let~$x$ be a point in~$X$.
+	The sequence~$(x_n)_n$ \defemph{converges} to~$x$, denoted by~$x_n \to x$ as~$n \to ∞$, if for every open neighbourhood~$U$ of~$x$ there exists some~$N$ such that~$x_n ∈ U$ for every~$n ≥ N$.
+\end{definition}
+
+In metric spaces, and therefore also in normed vector spaces, the above definition of convergence of sequences agrees with the usual one.
+
+We consider in the vector space~$\Cont([0, 1])$ the sequence~$(f_n)_n$ given by
+\[
+	f_n(x) = x^n
+\]
+for all~$x ∈ [0, 1]$,~$n ≥ 0$.
+We have
+\[
+	\norm{f_n}_1
+	=
+	∫_0^1 \abs{f_n}
+	=
+	∫_0^1 x^n \dd{x}
+	=
+	\frac{1}{n + 1}
+	\to
+	0
+\]
+as~$n \to ∞$, and therefore~$f_n \to 0$ as~$n \to ∞$ with respect to the topology induced by~$\norm{\phdot}_1$.
+But we have
+\[
+	\norm{f_n}_∞ = 1
+\]
+for every~$n ≥ 0$, so the sequence~$(f_n)_n$ does not converge towards~$0$ with respect to the topology induced by~$\norm{\phdot}_∞$.
+
+This shows that the topologies induced by~$\norm{\phdot}_1$ and~$\norm{\phdot}_∞$ cannot be the same.
