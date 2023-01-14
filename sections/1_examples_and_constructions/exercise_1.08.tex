@@ -50,16 +50,35 @@ This is precisely the basis for the product topology given in its classical defi
 \subsubsection{Uniqueness of Product Topology}
 
 \begin{proposition}
-	\label{topology uniquely determined by ingoing maps}
+	\label{topology uniquely determined by maps}
 	Let~$X$ be a set and let~$\top{T}_1$ and~$\top{T}_2$ be two topologies on~$X$.
-	Suppose that for every topological space~$Z$ and every map~$f$ from~$Z$ to~$X$, the map~$f$ is continuous with respect to~$\top{T}_1$ if and only if it is continuous with respect to~$\top{T}_2$.
-	Then~$\top{T}_1 = \top{T}_2$.
+	\begin{enumerate}
+
+		\item
+			Suppose that for every topological space~$Z$ and every map~$f$ from~$Z$ to~$X$, the map~$f$ is continuous with respect to~$\top{T}_1$ if and only if it is continuous with respect to~$\top{T}_2$.
+			Then~$\top{T}_1 = \top{T}_2$.
+
+		\item
+			Suppose that for every topological space~$Z$ and every map~$f$ from~$X$ to~$Z$, the map~$f$ is continuous with respect to~$\top{T}_1$ if and only if it is continuous with respect to~$\top{T}_2$.
+			Then~$\top{T}_1 = \top{T}_2$.
+
+	\end{enumerate}
 \end{proposition}
 
 \begin{proof}
-	The identity map~$\id_X$ is continuous from~$\top{T}_1$ to~$\top{T}_1$, and therefore also from~$\top{T}_1$ to~$\top{T}_2$.
-	This means that~$\top{T}_1$ is finer than~$\top{T}_2$.
-	By swapping around the roles of~$\top{T}_1$ and~$\top{T}_2$, we also find that~$\top{T}_2$ is finer than~$\top{T}_1$.
+	\leavevmode
+	\begin{enumerate}
+
+		\item
+			The identity map~$\id_X$ is continuous from~$\top{T}_1$ to~$\top{T}_1$, and therefore also continuous from~$\top{T}_1$ to~$\top{T}_2$.
+			This means that~$\top{T}_1$ is finer than~$\top{T}_2$.
+			By swapping around the roles of~$\top{T}_1$ and~$\top{T}_2$, we also find that~$\top{T}_2$ is finer than~$\top{T}_1$.
+
+		\item
+			This part of the \lcnamecref{topology uniquely determined by maps} can be shown in the same way as the previous part.
+		\qedhere
+
+	\end{enumerate}
 \end{proof}
 
-The given assertion is a direct consequence of the above \lcnamecref{topology uniquely determined by ingoing maps}.
+It follows from the first part of the above \lcnamecref{topology uniquely determined by maps} that the product topology is uniquely determined by its universal property.
