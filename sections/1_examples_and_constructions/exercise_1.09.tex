@@ -1,0 +1,33 @@
+\subsection{Exercise~1.9}
+
+Yes, both topologies are the same.
+
+For every index~$α$ let~$i_α$ be the inclusion map from~$Y_α$ to~$X_α$, and let~$i$ be the inclusion map from~$∏_{α ∈ A} Y_α$ to~$∏_{α ∈ A} X_α$.
+For every~$α ∈ A$ we denote the projection map from~$∏_{α ∈ A} X_α$ by~$π^X_α$, and the projection map from~$∏_{α ∈ A} Y_α$ to~$Y_α$ by~$π^Y_α$.
+We observe that
+\[
+	π^X_α i = i_α π^Y_α
+\]
+for every index~$α ∈ A$.
+Let~$Z$ be another topological space and let~$f$ be a map from~$Z$ to~$∏_{α ∈ A} Y_α$.
+By using the universal properties of the subspace topology and the product topology, we find that
+\begin{align*}
+	{}&
+	\text{$f$ is continuous with respect to the subspace topology}
+	\\
+	\iff{}&
+	\text{$i f$ is continuous}
+	\\
+	\iff{}&
+	\text{$π^X_α i f$ is continuous for every~$α ∈ A$}
+	\\
+	\iff{}&
+	\text{$i_α π^Y_α f$ is continuous for every~$α ∈ A$}
+	\\
+	\iff{}&
+	\text{$π^Y_α f$ is continuous for every~$α ∈ A$}
+	\\
+	\iff{}&
+	\text{$f$ is continuous with respect to the product topology} \,.
+\end{align*}
+It follows from \cref{topology uniquely determined by ingoing maps} that the subspace topology and product topology coincide.
