@@ -1,0 +1,154 @@
+\subsection{Exercise~1.5}
+
+\begin{proposition}
+	\label{characterizations of equivalence of norms}
+	Let~$\norm{\phdot}_1$ and~$\norm{\phdot}_2$ be two norms on a vector space~$V$ with induced topologies~$\top{T}_1$ and~$\top{T}_2$ respectively.
+	The following conditions on these norms and their topologies are equivalent:
+	\begin{equivalenceslist}
+
+		\item
+			\label{topology is finer}
+			The topology~$\top{T}_1$ is finer than the topology~$\top{T}_2$.
+
+		\item
+			\label{large balls contain small balls everywhere}
+			There exists for all~$v ∈ V$ and~$ε > 0$ some~$δ > 0$ with~$\ball_1(v, δ) ⊆ \ball_2(v, ε)$.
+
+		\item
+			\label{large balls contain small balls}
+			There exists for every~$ε > 0$ some~$δ > 0$ with~$\ball_1(0, δ) ⊆ \ball_2(0, ε)$.
+
+		\item
+			\label{some large ball contains a small ball}
+			There exists some~$ε, δ > 0$ with~$\ball_1(0, δ) ⊆ \ball_2(0, ε)$.
+
+		\item
+			\label{there exists a constant}
+			There exists a constant~$C > 0$ with~$\norm{\phdot}_2 ≤ C \norm{\phdot}_1$.
+
+	\end{equivalenceslist}
+\end{proposition}
+
+\begin{proof}
+	We show a bunch of implications.
+	\begin{implicationslist}
+
+		\item[\ref{topology is finer}~$\implies$~\ref{large balls contain small balls everywhere}]
+			The ball~$\ball_2(v, ε)$ is open with respect to~$\top{T}_2$ and therefore also open with respect to~$\top{T}_1$.
+			This means that~$\ball_2(v, ε)$ contains an open ball with respect to~$\norm{\phdot}_1$ around~$v$.
+
+		\item[\ref{large balls contain small balls everywhere}~$\implies$~\ref{large balls contain small balls}]
+			We choose~$v$ as~$0$.
+
+		\item[\ref{large balls contain small balls}~$\implies$~\ref{some large ball contains a small ball}]
+			We arbitrarily choose some~$ε$.
+
+		\item[\ref{some large ball contains a small ball}~$\implies$~\ref{there exists a constant}]
+			Let~$v$ be any nonzero element of~$V$ and let
+			\[
+				λ ≔ \frac{δ}{2 \norm{v}_1} \,.
+			\]
+			Then~$\norm{λ v}_1 = δ / 2$, and therefore~$\norm{λ v}_2 < ε$.
+			But
+			\[
+				\norm{λ v}_2
+				=
+				\frac{ δ \norm{v}_2 }{ 2 \norm{v}_1 } \,.
+			\]
+			The inequality~$\norm{λ v}_2 < ε$ can therefore be rearranged to
+			\[
+				\norm{v}_2 < \frac{2 ε}{δ} \norm{v}_1 \,.
+			\]
+			We may therefore choose the required constant~$C$ as~$2 ε / δ$.
+
+		\item[\ref{there exists a constant}~$\implies$~\ref{large balls contain small balls}]
+			We may choose~$δ$ as~$ε / C$.
+
+		\item[\ref{large balls contain small balls}~$\implies$~\ref{large balls contain small balls everywhere}]
+			This implication follows from~$V \to V$,~$x \mapsto x + v$ being an isometry.
+
+		\item[\ref{large balls contain small balls everywhere}~$\implies$~\ref{topology is finer}]
+			Let~$U$ be a subset of~$V$ that is open with respect to~$\top{T}_2$.
+			Let~$v$ be a point in~$U$.
+			There exists some radius~$ε > 0$ with~$\ball_2(v, ε) ⊆ U$.
+			It follows that there exists some radius~$δ > 0$ with~$\ball_1(v, δ) ⊆ \ball_2(v, ε)$.
+			This shows that~$U$ is also open with respect to~$\top{T}_1$.
+		\qedhere
+
+	\end{implicationslist}
+\end{proof}
+
+Let now~$𝕂$ be any of the topological skew fields~$ℝ$,~$ℂ$ or~$ℍ$.
+We will show that all norm on a finite-dimensional~\vectorspace{$𝕂$} induce the same topology.
+It suffices to show that all norms on~$𝕂^n$ induce the same topology.
+We will thus show that all norms on~$𝕂^n$ induce the standard topology (i.e., the topology induced by~$\norm{\phdot}_2$.)
+
+We first show that all norms~$\norm{\phdot}_p$ with~$1 ≤ p ≤ ∞$ induce the standard topology, which is true for~$p = 2$ by definition.
+Let~$1 ≤ p < ∞$.
+We observe on the one hand the inequality
+\[
+	\norm{x}_p
+	=
+	\biggl( ∑_{i = 1}^n \abs{x_i}^p \biggr)^{1 / p}
+	≤
+	\biggl( ∑_{i = 1}^n \norm{x}_∞^p \biggr)^{1 / p}
+	=
+	( n \norm{x}_∞^p )^{1 / p}
+	=
+	n^{1 / p} \norm{x}_∞ \,.
+\]
+For every index~$j = 1, \dotsc, n$ we have~$\abs{x_j} ≤ ( \sum_{i = 1}^n \abs{x_i}^p )^{1 / p}$, and therefore on the other hand the inequality
+\[
+	\norm{x}_∞
+	=
+	\max( \abs{x_1}, \dotsc, \abs{x_n} )
+	≤
+	\biggl( \sum_{i = 1}^n \abs{x_i}^p \biggr)^{1 / p}
+	=
+	\norm{x}_p \,.
+\]
+According to \cref{characterizations of equivalence of norms}, the above two inequalities tell us that the two norms~$\norm{\phdot}_p$ and~$\norm{\phdot}_∞$ induce the same topology, for every~$1 ≤ p < ∞$.
+This shows that~$\norm{\phdot}_∞$ induces the standard topology (by considering the case~$p = 2$) and then furthermore that each~$\norm{\phdot}_p$ induces the standard topology.
+
+\begin{lemma}
+	\label{norm is continuous}
+	Let~$V$ be a vector space and let~$\norm{\phdot}$ be a norm on~$V$.
+	The norm~$\norm{\phdot}$ is continuous as a map from~$V$ to~$ℝ$ (with respect to the standard topology on~$ℝ$ and the topology on~$V$ induced by~$\norm{\phdot}$).
+\end{lemma}
+
+\begin{proof}
+	This is a special case of Example~1.13 by choosing~$x = 0$.
+\end{proof}
+
+Let now~$\norm{\phdot}$ be an arbitrary norm on~$𝕂^n$.
+We show that the topology induced by~$\norm{\phdot}$ is both coarser and finer than the standard topology.
+
+For~$C ≔ \max(\norm{e_1}, \dotsc, \norm{e_n})$ we have
+\[
+	\norm{x}
+	=
+	\norm[\Bigg]{ ∑_{i = 1}^n x_i e_i }
+	≤
+	∑_{i = 1}^n \abs{x_i} \norm{e_i}
+	≤
+	C ∑_{i = 1}^n \abs{x_i}
+	=
+	C \norm{x}_1 \,.
+\]
+This shows that the topology induced by~$\norm{\phdot}$ is coarser than the topology induced by~$\norm{\phdot}_1$, i.e., coarser than the standard topology.
+We note that by \cref{norm is continuous} this entails that the norm~$\norm{\phdot}$ is continuous with respect to the standard topologies on~$𝕂^n$ and~$ℝ$.
+
+On the other hand we consider the closed unit ball
+\[
+	S ≔ \{ x ∈ 𝕂^n \suchthat \norm{x}_2 ≤ 1 \} \,.
+\]
+This subspace of~$𝕂^n$ is compact (since it is homeomorphic to the closed unit ball in~$ℝ^m$ for~$m = \dim_ℝ 𝕂 ⋅ n$).
+It follows from this compactness and the continuity of~$\norm{\phdot}$ that~$\norm{\phdot}$ is bounded on~$S$.
+There hence exists some~$C' > 0$ with~$\norm{x} < C'$ for every~$x ∈ S$.
+This tells us that
+\[
+	\{ x ∈ 𝕂^n \suchthat \norm{x}_2 < 1 \}
+	⊆
+	\{ x ∈ 𝕂^n \suchthat \norm{x} < C' \} \,.
+\]
+According to \cref{characterizations of equivalence of norms} this shows that the topology induced by~$\norm{\phdot}$ is finer than the standard topology.
