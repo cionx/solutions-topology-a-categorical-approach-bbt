@@ -1,0 +1,58 @@
+\subsection{Example~2.2}
+
+We denote the given space by
+\[
+	X = \{ 0 \} × [-1, 1] ∪ \{ (x, \sin(1/x)) \suchthat x > 0 \} \,.
+\]
+
+
+
+\subsubsection{$X$ is connected}
+
+The space~$X$ consists of two components:
+the line~$L ≔ \{ 0 \} × [-1, 1]$ and the curve~$C = \{ (x, \sin(1 / x)) \suchthat x > 0 \}$.
+Both subspaces of~$X$ are connected since they are the images of connected spaces under continuous maps, namely
+\[
+	[0, 1] \to L \,, \quad t \mapsto (0, 2t - 1)
+\]
+and
+\[
+	(0, ∞) \to C \,, \quad x \mapsto (x, \sin(1 / x)) \,.
+\]
+(These maps are in fact homeomorphisms).
+
+Let~$f \colon X \to \{ 0, 1 \}$ be a continuous map, where~$\{ 0, 1 \}$ is endowed with the discrete topology.
+The map~$f$ is constant on both~$L$ and~$C$.
+Let~$x ≔ (0, 0)$ and let~$c ≔ f x$.
+The preimage~$f^{-1} \{ c \}$ is an open subset of~$X$ containing~$x$.
+There hence exists some~$ε > 0$ for which the set~$\ball(x, ε) ∩ X$ is contained in~$f^{-1} \{ c \}$.
+The set~$\ball(x, ε) ∩ X$ contains the point~$x$ of the line~$L$ but also points of the curve~$C$.
+It follows that~$f$ is constant with value~$c$, since~$f$ is constant on both~$L$ and~$C$.
+
+This shows that the space~$X$ is connected.
+
+
+
+\subsubsection{$X$ is not path connected}
+
+Let $x_0 ≔ (1/(\pi/2), 1) ∈ C$, and suppose that there exists a path~$γ \colon [0, 1] \to X$ from~$x_0$ to~$x = (0, 0)$.
+Let~$π$ be the projection from~$ℝ^2$ to~$ℝ$ restricted to a continuous map from~$X$ to~$[0, ∞)$.
+The composite~$π γ$ is a path in~$[0, ∞)$ from~$1/(\pi/2)$ to~$0$.
+It follows from repeated usage of the intermediate value theorem that there exist an increasing sequence
+\[
+	\frac{1}{\pi/2} = t_0 < t_1 < t_2 < t_3 < \dotsb ≤ 1
+\]
+with
+\[
+	π γ t_n = \frac{1}{(n + \frac{1}{2}) \pi}
+\]
+for every~$n ≥ 0$.
+It follows that
+\[
+	γ t_n = ( t_n, (-1)^n )
+\]
+for every~$n ≥ 0$.
+The sequence~$(t_n)_n$ is strictly increasing and bonded from above, and thus convergent.
+It follows that the sequence~$(γ t_n)_n$ again converges, because~$γ$ is continuous.
+By projecting onto the second coordinate, we finally find that the sequence~$( (-1)^n )_n$ converges.
+What nonsense!
