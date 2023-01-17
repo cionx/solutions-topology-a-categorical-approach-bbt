@@ -1,0 +1,37 @@
+\subsection{Exercise~1.13}
+
+We need to show that for every topological space~$Z$ and every continuous map~$s \colon Z \to X$ with~$π s = c s$, there exists a unique continuous map~$t$ from~$Z$ to~$S$ with~$f t = s$.
+\[
+	\begin{tikzcd}
+		S
+		\arrow{r}[above]{f}
+		&
+		X
+		\arrow[shift left]{r}[above]{π}
+		\arrow[shift right]{r}[below]{c}
+		&
+		X / {∼}
+		\\
+		{}
+		&
+		Z
+		\arrow[dashed]{ul}[below left]{t}
+		\arrow{u}[right]{s}
+		&
+		{}
+	\end{tikzcd}
+\]
+We observe the chain of equivalences
+\begin{align*}
+	{}&
+	π s = c s \\
+	\iff{}&
+	\text{$s z ∈ f(S)$ for every~$z ∈ Z$} \\
+	\iff{}&
+	\text{there exists a unique map~$\textstyle t \colon Z \to S$ with~$f t = s$} \\
+	\iff{}&
+	\text{there exists a unique continuous map~$\textstyle t \colon Z \to S$ with~$f t = s$} \,.
+\end{align*}
+The first equivalence follows from the definitions of~$π$ and~$c$;
+the second equivalence stems from the injectivity of~$f$;
+the third equivalence comes from the universal property of the subspace topology.
