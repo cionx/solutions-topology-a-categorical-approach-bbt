@@ -31,7 +31,7 @@ is closed in~$ℝ^2$, but the set~$π C = ℝ ∖ \{ 0 \}$ is not closed in~$ℝ
 
 
 
-\subsubsection{b)}
+\subsubsection{b), First Solution}
 
 We consider the continuous surjection
 \[
@@ -44,6 +44,151 @@ This shows that~$f$ is closed.
 But~$f$ is not open:
 the set~$[0, \pi)$ is open in~$[0, 2\pi]$, but its image under~$f$ is not open in~$\sphere^1$.
 
+
+\subsubsection{b), Second Solution}
+
+We construct an example of a continuous surjection~$f \colon X \to S$ that is closed but not open, and where both~$X$ and~$S$ are finite.
+To this end, we make the following observations:
+\begin{itemize*}
+
+	\item
+		If the topology on~$S$ is the discrete one, then~$f$ will automatically be both open and closed.
+		We must therefore choose~$S$ non-discrete.
+
+		Similarly, if the topology on~$X$ is the indiscrete one, then~$f$ will automatically be both open and closed.
+		We must therefore choose~$X$ as non-indiscrete.
+
+
+	\item
+		The space~$X$ must have at least as many points as the space~$S$ for~$f$ to be surjective.
+
+		Suppose for a moment that~$X$ and~$S$ had the same number of points.
+		The continuous surjection~$f$ would then be a continuous bijection.
+		It would then follow from the upcoming part~c) that~$f$ would already be a homeomorphism.
+		This would entail that~$f$ is also open.
+
+		The space~$X$ must therefore have strictly more points than the space~$S$.
+
+\end{itemize*}
+
+We choose~$S$ as the smallest possible non-discrete topological space:
+the two-point indiscrete space~$S = \{ a, b \}$.
+We also choose~$X$ as the smallest possible non-indiscrete topological space with strictly more than two elements:
+the three-point space with set~$X = \{ x, y, z \}$ and topology~$\top{T}_X = \{ ∅, \{ x \}, X \}$.
+The function
+\[
+	f \colon X \to S \,, \quad x, y \mapsto a \,, \quad z \mapsto b
+\]
+is surjective, and it is continuous because the topology on~$S$ is indiscrete.
+The closed subsets of~$X$ are~$∅$,~$\{ y, z \}$ and~$X$, each of which has closed image in~$S$.
+Therefore,~$f$ is closed.
+But~$f$ is not open because~$\{ x \}$ is open in~$X$ while~$f \{ x \} = \{ a \}$ is not.
+See~\cref{continuous surjection between finite sets} for a picture of~$f$.
+\begin{figure}
+	\centering
+	\begin{tikzpicture}[scale = 0.5]
+		% elements
+		\node (x) at (0, 4) {$x$};
+		\node (y) at (0, 2) {$y$};
+		\node (z) at (0, 0) {$z$};
+		\node (a) at (5, 3) {$a$};
+		\node (b) at (5, 1) {$b$};
+		% open sets for x, y, z
+		\draw[black!70] (x) circle (0.8);
+		\draw[black!70] (y) ellipse (1.7 and 3.4);
+		% open sets for a, b
+		\draw[black!70] ($(a)!0.5!(b)$) ellipse (1 and 2);
+		% draw lines
+		\draw (x) -- (a);
+		\draw (y) -- (a);
+		\draw (z) -- (b);
+	\end{tikzpicture}
+	\caption{A continuous surjection beween finite topological spaces that is closed but not open.}
+	\label{continuous surjection between finite sets}
+\end{figure}
+
+%We choose~$S$ as the smallest non-discrete, non-indiscrete space:
+%the Sierpiński space~$S = \{ a, b \}$ whose topology is given by~$\top{T}_S = \{ ∅, \{ a \}, S \}$.
+%As seen above, the desired space~$X$ need to have at least three elements.
+%We make some further observations regarding continuous maps from~$X$ to~$S$.
+%\begin{itemize*}
+%
+%	\item
+%		A continuous map~$f$ from~$X$ to the Sierpiński space~$S$ corresponds to the open subset~$U ≔ f^{-1} \{a\}$ of~$X$.
+%
+%	\item
+%		For~$f$ to be surjective, both the open set~$U$ and the closed set~$X ∖ U$ must be nonempty.
+%
+%	\item
+%		The only non-open subset of~$S$ is~$\{ b \}$.
+%		For~$f$ not to be open, there hence must exist a nonempty open subset~$V$ of~$X$ contained in~$X ∖ U$.
+%
+%	\item
+%		The only non-closed subset of~$S$ is~$\{ a \}$.
+%		For~$f$ to be closed, there hence must not exist a nonempty closed subset~$C$ of~$X$ with~$C ⊆ U$.
+%		Equivalently, there must not exist a proper open subset~$W$ of~$X$ with~$X ∖ U ⊆ W$.
+%
+%\end{itemize*}
+%
+%In other words:
+%we need a topological space~$X$ together with two nonempty open subsets~$U$ and~$V$ such that
+%\begin{itemize*}
+%
+%	\item
+%		$U$ and~$V$ are disjoint,
+%
+%	\item
+%		the only open subset~$W$ of~$X$ with~$X ∖ U ⊆ W$ is~$W = X$.
+%
+%\end{itemize*}
+%
+%If we are given such a space~$X$, then we can identify all points in~$U$ to get a smaller space~$X'$ that also satisfies all these properties.
+%We can then further identify all points in~$V$ to get an even smaller space~$X''$ that once again satisfies all these properties.
+%We may therefore assume that both~$U$ and~$V$ consist of only a single point, say~$U = \{ x \}$ and~$V = \{ y \}$.
+%The second condition, that the only open subset of~$X$ that contains~$X ∖ \{ x \}$ is all of~$X$, is then equivalent to~$X ∖ \{ x \}$ not being open.
+%We can ensure this by simply adding next to the two open points~$\{ x \}$ and~$\{ y \}$ another point~$z$ such that~$\{ y, z \}$ is \emph{not} open in~$X$;
+%this also entails that~$\{ z \}$ cannot be open.
+%
+%We arrive overall at the topological space
+%\[
+%	X ≔ \{ x, y, z \} \,,
+%	\quad
+%	\top{T}_X ≔ \{ ∅, \{ x \}, \{ y \}, \{ x, y \}, X \} \,,
+%\]
+%and the surjective map
+%\[
+%	f \colon X \to S \,, \quad x \mapsto a \,, \quad y, z \mapsto b \,,
+%\]
+%see \cref{continuous surjection between finite sets}.
+%\begin{figure}
+%	\centering
+%	\begin{tikzpicture}[scale = 0.75]
+%		% elements
+%		\node (x) at (0, 4) {$x$};
+%		\node (y) at (0, 2) {$y$};
+%		\node (z) at (0, 0) {$z$};
+%		\node (a) at (5, 3) {$a$};
+%		\node (b) at (5, 1) {$b$};
+%		% open sets for x, y, z
+%		\draw[black!70] (x) circle (0.5);
+%		\draw[black!70] (y) circle (0.5);
+%		\draw[black!70] ($(x)!0.5!(y)$) ellipse (1.1 and 1.9);
+%		\draw[black!70] ([shift={(0, 0.2)}]y) ellipse (1.6 and 3.2);
+%		% open sets for a, b
+%		\draw[black!70] (a) circle (0.5);
+%		\draw[black!70] ($(a)!0.5!(b)$) ellipse (1 and 2);
+%		% draw lines
+%		\draw (x) -- (a);
+%		\draw (y) -- (b);
+%		\draw (z) -- (b);
+%	\end{tikzpicture}
+%	\caption{A continuous surjection that is closed but not open.}
+%	\label{continuous surjection between finite sets}
+%\end{figure}
+%The map~$f$ is continuous since it corresponds to the open subset~$\{ x \}$ of~$X$.
+%There is only one non-closed subset in~$S$, namely~$\{ a \}$, and only one subset of~$X$ that is mapped to~$\{ a \}$, namely~$\{ x \}$.
+%Because~$\{ x \}$ is not closed in~$X$, we find that~$f$ is closed.
+%But~$f$ is not open, since~$\{ y \}$ is an open subset of~$X$ for which~$f \{ y \} = \{ b \}$ is not open in~$S$.
 
 
 
