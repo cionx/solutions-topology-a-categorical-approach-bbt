@@ -1,0 +1,35 @@
+\subsection{Locally Connected Spaces Have Open Connected Components}
+
+The book never defined what a neighbourhood is (only the concept of an open neighbourhood is defined, in Definition~0.2).
+Let’s fix this.
+
+\begin{definition}
+	Let~$X$ be a topological space and let~$x$ be a point in~$X$.
+	A subset~$N$ on~$X$ is a \defemph{neighbourhood} of~$x$ if there exists an open subset~$U$ of~$X$ with~$x ∈ U$ and~$U ⊆ N$.
+\end{definition}
+
+Open sets can be characterized in terms of neighbourhoods:
+
+\begin{proposition}
+	Let~$X$ be a topological space.
+	A subset~$U$ of~$X$ is open if and only if it is a neighbourhood of each of its points.
+\end{proposition}
+
+\begin{proof}
+	If~$U$ is open, then there exists for every point~$x$ in~$X$ an open subset~$V$ of~$X$ with~$x ∈ V$ and~$V ⊆ U$, namely~$V = U$.
+	In other words, the set~$U$ is a neighbourhood for each of its points.
+
+	Suppose conversely that~$U$ is a neighbourhood for each of its points.
+	Then there exists for every point~$x$ in~$U$ an open subset~$V_x$ of~$X$ with~$x ∈ V_x$ and~$V_x ⊆ U$.
+	It follows that~$U = ⋃_{x ∈ X} V_x$ is a union of open subsets of~$X$, and therefore itself open in~$X$.
+\end{proof}
+
+Let~$X$ be a locally connected topological space and let~$C$ be a connected component of~$X$.
+
+Let~$x$ be a point in~$C$.
+The point~$x$ admits by assumption a connected neighbourhood~$N$.
+The connected component~$C$ is a superset of~$N$ because~$N$ is a connected subspace of~$X$ containing~$x$.
+This shows that~$C$ contains a neighbourhood of~$x$, and is therefore itself a neighbourhood of~$x$.
+
+We have shown that the connected component~$C$ is a neighbourhood for each of its points.
+In other words,~$C$ is open.
