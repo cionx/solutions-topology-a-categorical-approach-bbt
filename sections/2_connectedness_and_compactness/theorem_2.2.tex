@@ -1,0 +1,36 @@
+\subsection{Theorem~2.2}
+
+
+
+\subsubsection{Path Connectedness}
+
+Suppose that each~$X_α$ is path connected.
+
+Let~$∼$ be the equivalence relation on~$X$ given by
+\[
+	x ∼ y
+	\iff
+	\text{there exists a path between~$x$ and~$y$ in~$X$} \,.
+\]
+We have already seen underneath Definition~2.2 that~$∼$ is indeed an equivalence relation on~$X$.
+It follows for every index~$α$ and every point~$y$ in~$X_α$ from the path connectedness of~$X_α$ that~$y ∼ x$.
+(We use here the universal property of the subspace topology, which ensures that every path in~$X_α$ is also a path in~$X$.)
+This tells us that every point of~$X$ is equivalent to~$x$ with respect to~$∼$, because~$X$ is covered by the sets~$X_α$.
+By the transitivity of~$∼$, all points of~$X$ are equivalent with respect to~$∼$.
+
+Therefore,~$X$ is path connected.
+
+
+
+\subsubsection{Connected}
+
+Suppose that each~$X_α$ is connected.
+
+Let~$f$ be a continuous map from~$X$ to~$\{ 0, 1 \}$, where~$\{ 0, 1\}$ is endowed with the discrete topology.
+For every index~$α$, the restriction~$\restrict{f}{X_α}$ is a continuos map from~$X_α$ to~$Y$ (because it is the composite of~$f$ and the inclusion map from~$X_α$ to~$X$, which is continuous).
+It follows for every index~$α$ that~$\restrict{f}{X_α}$ is constant because~$X_α$ is connected;
+let~$c_α ∈ \{ 0, 1 \}$ be the constant value of~$\restrict{f}{X_α}$ (we use here that~$X_α$ is nonempty since it contains the point~$x$).
+We have~$f x = c_α$ for every index~$α$, whence all~$c_α$ are equal.
+This tells us that~$f$ is constant on~$⋃_{α ∈ A} X_α = X$.
+
+This shows that~$X$ is connected.
