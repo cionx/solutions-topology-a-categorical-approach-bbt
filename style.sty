@@ -1,6 +1,7 @@
 \usepackage{customtex}
 
 \usepackage{scalerel}
+\usepackage{alphalph}
 
 
 
@@ -24,7 +25,7 @@
 
 
 % printing of counters
-\renewcommand{\theeverything}{\thechapter.\Alph{everything}}
+\renewcommand{\theeverything}{\thechapter.\AlphAlph{\value{everything}}}
 
 
 

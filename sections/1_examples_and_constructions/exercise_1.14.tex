@@ -1,0 +1,59 @@
+\subsection{Exercise~1.14}
+
+
+
+\subsubsection{a)}
+
+\begin{proposition}
+	\label{projections are open}
+	Let~$(X_α)_α$ be a family of topological spaces, and for every index~$β$ let~$π_β$ be the canonical projection map from~$∏_{α ∈ A} X_α$ to~$X_β$.
+	Each map~$π_β$ is open.
+\end{proposition}
+
+\begin{proof}
+	Openness of a map can be checked on a basis.
+	A basis for the product topology is given by the sets~$∏_{α ∈ A} U_α$ with~$U_α = X_α$ for all but finitely many indices, and each~$U_α$ an open subset of~$X_α$.
+	Applying the projection~$π_β$ to such a basis element gives either the set~$U_β$ or~$∅$ (if some factor~$X_α$ with~$α ≠ β$ is empty).
+	In either case, we get an open subset of~$X_β$.
+\end{proof}
+
+It follows from the above \lcnamecref{projections are open} that the projection map
+\[
+	π \colon ℝ^2 \to ℝ \,, \quad (x, y) \mapsto x
+\]
+is open.
+But this map is not closed:
+the set
+\[
+	C ≔ \{ (x, y) ∈ ℝ^2 \suchthat x y = 1 \}
+\]
+is closed in~$ℝ^2$, but the set~$π C = ℝ ∖ \{ 0 \}$ is not closed in~$ℝ$.
+
+
+
+\subsubsection{b)}
+
+We consider the continuous surjection
+\[
+	f \colon [0, 2\pi] \to \sphere^1 \,, \quad t \mapsto \eul^{it} \,.
+\]
+The closed interval~$[0, 2\pi]$ is compact, so every closed subspace~$C$ of~$[0, 2\pi]$ is again compact.
+It follows that~$f C$ is compact, whence~$f C$ is closed in~$\sphere^1$ (since~$\sphere^1$ is a Hausdorff space).
+This shows that~$f$ is closed.
+
+But~$f$ is not open:
+the set~$[0, \pi)$ is open in~$[0, 2\pi]$, but its image under~$f$ is not open in~$\sphere^1$.
+
+
+
+
+\subsubsection{c)}
+
+For every open subset~$U$ of~$Y$, its preimage~$f^{-1} U$ is open in~$X$ by the continuity of~$f$.
+Suppose conversely that~$f^{-1} U$ is open in~$X$.
+
+If~$f$ is open, then it follows from the equality~$U = f f^{-1} U$ (which holds because~$f$ is surjective) that~$U$ is open in~$Y$.
+
+Suppose otherwise that~$f$ is closed.
+For the set~$C ≔ Y ∖ U$ its preimage~$f^{-1} C = X ∖ f^{-1} U$ is closed in~$X$, so~$f f^{-1} C = C$ is closed in~$Y$.
+Therefore,~$U = Y ∖ C$ is open in~$Y$.
