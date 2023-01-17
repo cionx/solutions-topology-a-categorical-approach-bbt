@@ -1,0 +1,67 @@
+\subsection{Theorem~2.9}
+
+\begin{proposition}
+	\label{product with singleton is homeomorphic to original space}
+	Let~$X$ be a topological space and let~$Y ≔ \{ y \}$ be one-point topological space
+	Then~$X × Y ≅ X$.
+\end{proposition}
+
+\begin{proof}
+	The map
+	\[
+		φ \colon X \to X × Y \,, \quad x \mapsto (x, y)
+	\]
+	is continuous in both coordinates by the universal property of the product topology.
+	The map
+	\[
+		ψ \colon X \to X × Y \,, \quad (x, y) \mapsto x
+	\]
+	is the projection onto the first coordinate, and thus also continuous.
+	The two continuous maps~$φ$ and~$ψ$ are mutually inverse, whence~$φ$ is a homeomorphism with inverse given by~$ψ$.
+\end{proof}
+
+Let~$X ≔ \prod_{α ∈ A} X_α$.
+Let~$f$ be a continuous map from~$X$ to~$\{ 0, 1 \}$, where~$\{ 0, 1 \}$ is endowed with the discrete topology.
+We show in the following that~$f$ is constant.
+
+For every point~$x = (x_α)_α$ in~$X$ and every index~$β$ we can consider the set
+\[
+	X_{x, β}
+	≔
+	\{ (y_α)_α ∈ X \suchthat \text{$y_α = x_α$ whenever~$α ≠ β$}  \}
+	=
+	∏_{α ∈ A}
+	\begin{cases*}
+		X_β       & if~$α = β$, \\
+		\{ x_α \} & otherwise.
+	\end{cases*}
+\]
+Under the associativity homeomorphism~$X ≅ X_β × ∏_{α ≠ β} X_α$, the set~$X_{x, β}$ corresponds to~$X_β × \{ (x_α)_{α ≠ β} \}$.
+According to~\cref{product with singleton is homeomorphic to original space}, and because the product topology and subspace topology are compatible, the subspace~$X_{x, β}$ of~$X$ is homeomorphic to~$X_β$ and thus connected.
+It follows that~$f$ is constant on~$X_{x, β}$.
+
+This shows that~$f x = f y$ whenever two elements~$x$ and~$y$ of~$X$ differ only in one coordinate.
+It follows by induction that~$f x = f y$ whenever~$x$ and~$y$ differ only in finitely many coordinates.
+
+Let now~$x = (x_α)_α$ be some point in~$X$.
+We will show that~$f x = f y$ for every~$y ∈ X$.
+To this end we may assume that~$f x = 0$ (because otherwise we can replace the map~$f$ by the map~$f'$ with~$f' y = 1 - f y$).
+The preimage~$V ≔ f^{-1} \{ 0 \}$ is an open subset of~$X$ that contains~$x$.
+There hence exists an open subset~$U$ of~$X$ of the form~$U = ∏_{α ∈ A} U_α$, with~$U_α$ open in~$X_α$ for every~$α$ and~$U_α = X_α$ for all but finitely many~$α$, such that~$x ∈ U$ and~$U ⊆ V$.
+
+Let~$A' ≔ \{ α ∈ A \suchthat U_α = X_α \}$.
+This set is cofinite in~$A$, i.e., all but finitely many elements of~$A$ are contained in~$A'$.
+We note that we can change all coordinates~$x_α$ for~$α ∈ A'$ without leaving the set~$U$, and thus without leaving the preimage~$f^{-1} \{ 0 \}$.
+
+Let~$y = (y_α)_α$ be another point in~$X$.
+To show that~$f y = 0$, we consider the auxiliary point~$z = (z_α)_α$ in~$X$ given by the coordinates
+\[
+	z_α
+	=
+	\begin{cases*}
+		y_α & if~$α ∈ A'$, \\
+		x_α & otherwise.
+	\end{cases*}
+\]
+The point~$z$ is again contained in the set~$U$, and thus contained in~$f^{-1} \{ 0 \}$, so that~$f z = 0$.
+But~$y$ and~$z$ differ only in finitely many entries, whence furthermore~$f y = f z = 0$.
