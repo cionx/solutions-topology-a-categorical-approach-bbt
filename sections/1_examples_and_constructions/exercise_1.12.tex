@@ -1,0 +1,38 @@
+\subsection{Exercise~1.12}
+
+We have the two parallel continuous maps~$r_1, r_2 \to X$.
+We need to show that for every topological space~$Y$ and every continuous map~$s \colon X \to Y$ with~$s r_1 = s r_2$, there exists a unique continuous map~$t$ from~$S$ to~$Y$ with~$t f = s$.
+\[
+	\begin{tikzcd}
+		{}
+		&
+		{}
+		&
+		Y
+		\\
+		R
+		\arrow[shift left]{r}[above]{r_1}
+		\arrow[shift right]{r}[below]{r_2}
+		&
+		X
+		\arrow{ur}[above left]{s}
+		\arrow{r}[above,pos=0.6]{f}
+		&
+		S
+		\arrow[dashed]{u}[right]{t}
+	\end{tikzcd}
+\]
+We have the chain of equivalences
+\begin{align*}
+	{}&
+	s r_1 = s r_2 \\
+	\iff{}&
+	\text{$s x = s x'$ whenever~$f x = f x'$} \\
+	\iff{}&
+	\text{there exists a unique map~$\textstyle t \colon S \to Y$ with~$t f = s$} \\
+	\iff{}&
+	\text{there exists a unique continuous map~$\textstyle t \colon S \to Y$ with~$t f = s$} \,. \\
+\end{align*}
+The first equivalence follows from the definition of~$r_1$ and~$r_2$;
+the second definition stems from the fact that~$f$ is a surjection;
+the third equivalence comes from the universal property of the quotient topology.
