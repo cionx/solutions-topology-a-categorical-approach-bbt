@@ -1,0 +1,17 @@
+\subsection{Theorem~2.12}
+
+Let~$X$ be a topological space.
+We denote the path components of~$X$ by~$P_α$ with~$α ∈ A$, and the connected components by~$C_β$ with~$β ∈ B$.
+We have the set-theoretic decompositions~$X = ∐_{α ∈ A} P_α$ and~$X = ∐_{β ∈ B} C_β$.
+
+Every path component is connected and therefore contained in a connected component.
+It follows that the decomposition~$X = ∐_{α ∈ A} P_α$ is finer than the decomposition~$X = ∐_{β ∈ B} C_β$, i.e., there exists a decomposition~$A = ∐_{β ∈ B} A_β$ with~$C_β = ∐_{α ∈ A_β} P_α$ for every~$β ∈ B$.
+
+Suppose now that~$X$ is locally path connected.
+Every path components~$P_α$ is then open in~$X$.
+It follows that~$C_β = ∐_{α ∈ A_β} P_α$ is a decomposition into pairwise disjoint, nonempty, open subsets of~$X$, and therefore also open subsets of~$C_β$.
+But~$C$ is connected, so this decomposition must be trivial:
+The set~$A_β$ consists of only a single element~$α(β)$, and we have~$C_β = P_{α(β)}$.
+
+The decomposition~$X = ∐_{α ∈ A} P_α$ is therefore not \emph{strictly} finer than the decomposition~$X = ∐_{β ∈ B} C_β$.
+Therefore, both decompositions agree, whence the connected components and path components agree.
