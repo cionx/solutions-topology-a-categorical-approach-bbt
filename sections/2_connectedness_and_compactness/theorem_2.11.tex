@@ -1,0 +1,28 @@
+\subsection{Theorem~2.11}
+
+Suppose first that~$X$ preserves coproducts.
+Then
+\[
+	\Top(X, \{0, 1\})
+	≅
+	\Top(X, \{ \ast \} ⨿ \{ \ast \})
+	≅
+	\Top(X, \{ \ast \}) ⨿ \Top(X, \{ \ast \}) \,.
+\]
+This shows that the only continuous maps from~$X$ to~$\{0, 1\}$ are the constant maps.
+Therefore,~$X$ is connected.
+
+Suppose on the other hand that the space~$X$ is connected.
+Let~$(Y_α)_{α ∈ A}$ be a family of topological spaces, and for every index~$β ∈ A$ let~$ι_β$ be the inclusion map from~$Y_β$ to~$Y ≔ ∐_{α ∈ A} Y_α$.
+
+Let~$f$ be a continuous map from~$X$ to~$Y$.
+For every index~$α$ let~$X_α ≔ f^{-1} Y_α$.
+Each set~$X_α$ is open in~$X$, because each~$Y_α$ is open~$Y$, and we have~$X = ∐_{α ∈ A} X_α$ as sets.
+It follows from the connectedness of the space~$X$ that there exist a unique index~$β ∈ A$ with~$X_β = X$.
+This means that the image of~$f$ is completely contained in~$Y_β$.
+There hence exists a unique map~$g$ from~$X$ to~$Y_β$ with~$f = ι_β g$.
+This map~$g$ is again continuous because the subspace topology on~$Y_β$ induced from~$Y$ agrees with the original topology on~$Y_β$.
+
+We have shown that for every element~$f$ of~$\Top(X, Y)$ there exists a unique index~$α$ and a unique element~$g$ of~$\Top(X, Y_α)$ with~$f = (ι_α)_* g$.
+In other words, the set~$\Top(X, Y)$ together with the maps~$(ι_α)_* \colon \Top(X, Y_α) \to \Top(X, Y)$, where~$α$ ranges through~$A$, serves as the disjoint union of the sets~$\Top(X, Y_α)$.
+That means that the functor~$\Top(X, \ph) \colon \Top \to \Set$ preserves coproducts.
