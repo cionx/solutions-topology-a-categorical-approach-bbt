@@ -1,0 +1,63 @@
+\subsection{Example~2.4}
+
+
+
+\subsubsection{$X$ is path connected}
+
+The horizontal line~$L ≔ [0, 1] × \{ 0 \}$ is homeomorphic to the interval~$[0, 1]$ and therefore path-connected.
+For every~$x ∈ C$, the tooth~$T_x ≔ \{ x \} × [0, 1]$ of the comb~$X$ is also homeomorphic to~$[0, 1]$ and therefore path-connected.
+The line~$L$ and tooth~$T_x$ intersect in the point~$(x, 0)$ of~$X$, and are therefore both contained in the same path component of~$X$.
+
+It follows that the path component of~$X$ that contains~$L$ also contains every tooth~$T_x$ with~$x ∈ C$, and contains therefore all of~$X$.
+In other words, the space~$X$ is path connected.
+
+
+
+\subsubsection{$X$ is not locally path connected}
+
+We start by making an important observation.
+
+Let~$π \colon X \to [0, 1]$ be th projection onto the first coordinate
+Let~$x$ and~$x'$ be two points in~$C$ and let~$γ \colon [0, 1] \to X$ be a path from~$y ≔ (x, 1)$ to~$y' ≔ (x', 1)$.
+There exists a number~$x''$ between~$x$ and~$x'$ that is not contained in~$C$.
+By the intermediate value theorem, there exists some~$t ∈ [0, 1]$ with~$π γ t = x''$.
+The original point~$γ t$ in~$X$ needs to be given by~$γ t = (x'', 0)$ since this is the only preimage of~$x''$ under~$π$.
+
+This tells us that any path between two tips of the comb needs to pass through the horizontal line~$L$ at some point.
+See also \cref{path must pass through the horizontal line}.
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		% horizontal line
+		\draw (-2, 0) node[left] {$\cdots$} -- (5, 0) node[right] {$\cdots$};
+		% vertical lines
+		\draw (-1.5, 0) -- (-1.5, 3) ;
+		\draw (0, 0) -- (0, 3) node[above] {$(x, 1)$};
+		\draw (2, 0) -- (2, 3) node[above] {$(x', 1)$};
+		\draw (4.5, 0) -- (4.5, 3);
+		% the path
+		\draw[very thick, ->] (0, 3) -- (0, 0) -- (2, 0) -- (2, 3);
+		% point between the teeths of the comb
+		\draw (1, 0.1) -- (1, -0.1) node[below] {$(x'', 0)$};
+	\end{tikzpicture}
+	\caption{Every paths between tips must pass through the horizontal line.}
+	\label{path must pass through the horizontal line}
+\end{figure}
+
+Suppose that the space~$X$ were locally path connected.
+We consider then the point~$p ≔ (0, 1)$ in the upper-left corner of the comb, and its open neighbourhood
+\[
+	V ≔ [0, 1] × (1/2, 1]
+\]
+that consists of the open upper half of the comb.
+There exists by assumption a path-connected neighbourhood~$U$ of~$p$ with~$U ⊆ V$.
+There exists a radius~$ε > 0$ with~$\ball(p, ε) ∩ X ⊆ U$.
+For a sufficiently large integer~$n$ we have~$1/n < ε$.
+The two comb tips~$y ≔ (1/(n + 1), 1)$ and~$y' ≔ (1/n, 1)$ are contained in~$\ball(p, ε) ∩ X$, and are therefore contained in~$U$.
+There exists a path~$γ$ from~$y$ to~$y'$ in~$U$ because~$U$ is path connected.
+
+We can regard~$γ$ as a path from~$y$ to~$y'$ in~$X$.
+We have seen above that the path~$γ$ needs to pass through the horizontal line~$L$ at some point.
+But this cannot be, because~$γ$ is completely contained in~$V$ and~$V$ is disjoint to~$L$.
+
+This shows that~$X$ cannot be locally path connected.
