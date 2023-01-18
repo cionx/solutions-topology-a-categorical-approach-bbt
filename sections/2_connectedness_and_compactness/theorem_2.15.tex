@@ -1,0 +1,22 @@
+\subsection{Theorem~2.15}
+
+Let~$f \colon X \to Y$ be a surjective continuous map and suppose that~$X$ is compact.
+We show that~$Y$ is again compact.
+
+Let~$\cover{V}$ be an open cover for~$Y$.
+The collection~$\cover{U} ≔ \{ f^{-1} V \suchthat V ∈ \cover{V} \}$ is an open cover for~$X$.
+By the compactness of~$X$, there exist finitely many sets~$U_1, \dotsc, U_n ∈ \cover{U}$ with~$X = U_1 ∪ \dotsb ∪ U_n$.
+Let~$V_1, \dotsc, V_n ∈ \cover{V}$ with~$U_i = f^{-1} V_i$ for every index~$i$.
+It follows from the surjectivity of~$f$ that~$f U_i = V_i$, and thus
+\[
+	Y
+	=
+	f X
+	=
+	f ⋃_{i = 1}^n U_i
+	=
+	⋃_{i = 1}^n f U_i
+	=
+	⋃_{i = 1}^n V_i \,.
+\]
+This shows that the cover~$\cover{V}$ admits a finite subcover.
