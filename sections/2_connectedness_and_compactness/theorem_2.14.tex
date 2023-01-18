@@ -1,0 +1,88 @@
+\subsection{Theorem~2.14}
+
+We show that for every topological space~$X$ the following conditions are equivalent:
+\begin{equivalenceslist}
+
+	\item
+		\label{space is hausdorff}
+		$X$ is a Hausdorff space.
+
+	\item
+		\label{diagonal set is closed}
+		The diagonal set~$Δ_X = \{ (x, x) \suchthat x ∈ X \}$ is closed in~$X × X$.
+
+	\item
+		\label{diagonal map is closed}
+		The diagonal map~$Δ \colon X \to X × X$,~$x \mapsto (x, x)$ is closed.
+
+\end{equivalenceslist}
+
+We note that two subsets~$U$ and~$V$ of~$X$ are disjoint if and only if the subset~$U × V$ of~$X × X$ is disjoint to~$Δ_X$.
+For the equivalence of~\ref{diagonal set is closed} and~\ref{space is hausdorff} we observe the chain of equivalences
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+	{}&
+	\text{$Δ_X$ is closed} \\
+	\iff{}&
+	\text{$(X × X) ∖ Δ_X$ is open} \\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every~$(x, y) ∈ (X × X) ∖ Δ_X$ \\
+		there exists~$W ⊆ X × X$ open \\
+		with~$(x, y) ∈ W ⊆ (X × X) ∖ Δ_X$
+	\end{tabular}
+	\right. \\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for every~$(x, y) ∈ (X × X) ∖ Δ_X$ \\
+		there exists~$U, V ⊆ X$ open \\
+		with~$(x, y) ∈ U × V ⊆ (X × X) ∖ Δ_X$
+	\end{tabular}
+	\right. \\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		for all~$x, y ∈ X$ with~$x ≠ y$ \\
+		there exists~$U, V ⊆ X$ open \\
+		with~$x ∈ U$,~$y ∈ V$ and~$U$ and~$V$ are disjoint
+	\end{tabular}
+	\right. \\
+	\iff{}&
+	\text{$X$ is Hausdorff} \,.
+\end{align*}
+\endgroup
+
+For the equivalence of~\ref{diagonal set is closed} and~\ref{space is hausdorff} we note that the two maps
+\[
+	φ \colon X \to Δ_X \,, \quad x \mapsto (x, x)
+\]
+and
+\[
+	ψ \colon Δ_X \to X \,, \quad (x, x) \mapsto x
+\]
+are continuous and mutually inverse.
+(The continuity of~$φ$ follows from the universal property of the product topology and the universal property of the subspace topology.
+The map~$ψ$ is continuous because it is the restriction of the canonical projection maps.)
+The maps~$φ$ and~$ψ$ are mutually inverse, whence~$φ$ is a homeomorphism with inverse~$ψ$.
+
+Suppose that~$Δ_X$ is closed in~$X$.
+Then for every subset~$C$ of~$Δ_X$, the set~$C$ is closed in~$Δ_X$ if and only if~$C$ is closed in~$X × X$.
+It follows for every subset~$C$ of~$X$ that
+\begin{align*}
+	\SwapAboveDisplaySkip
+	{}&
+	\text{$C$ is closed in~$X$} \\
+	\iff{}&
+	\text{$φ C$ is closed in~$Δ_X$} \\
+	\iff{}&
+	\text{$φ C$ is closed in~$X × X$} \\
+	\iff{}&
+	\text{$Δ C$ is closed in~$X × X$} \,.
+\end{align*}
+This means that the map~$Δ$ is closed.
+
+If conversely~$Δ$ is closed, then it follows in particular that~$Δ X$ is closed in~$X × X$.
+But~$Δ X = Δ_X$.
