@@ -1,0 +1,102 @@
+\subsection{Theorem~2.19}
+
+We consider first the case that~$X$ is a compact Hausdorff space.
+The complement~$K ≔ X ∖ U$ is a closed subspace of~$X$, and therefore a compact subspace.
+The point~$x$ is not contained in~$K$.
+It follows from Theorem~2.18 that there exist disjoint open subsets~$V$ and~$W$ of~$X$ with~$x ∈ V$ and~$K ⊆ W$.
+We have the chain of inclusions
+\[
+	V ⊆ X ∖ W ⊆ X ∖ K = U \,.
+\]
+The set~$X ∖ W$ is closed and contains~$V$, whence we have~$\closure{V} ⊆ X ∖ W$.
+Consequently,
+\[
+	V ⊆ \closure{W} ⊆ X ∖ W ⊆ U \,,
+\]
+which entails the inclusion~$V ⊆ \closure{V} ⊆ U$.
+The subspace~$\closure{V}$ is compact because it is a closed subspace of the compact space~$X$.
+
+For the general case we will make use of the following two observations:
+
+\begin{lemma}
+	\label{transitivity of neighbourhoods}
+	Let~$X$ be a topological space and let~$x$ be a point in~$X$.
+	Let~$N$ be a neighbourhood of~$x$ in~$X$ and let~$M$ be a neighbourhood of~$x$ in~$N$.
+	Then~$M$ is also a neighbourhood of~$x$ in~$X$.
+\end{lemma}
+
+\begin{proof}
+	Because~$M$ is a neighbourhood of~$x$ in~$N$, there exists an open subset~$U'$ of~$N$ with~$x ∈ U' ⊆ M$
+	By construction of the subspace topology, there exists an open subset~$U$ of~$X$ with~$U' = U ∩ N$.
+	We have~$x ∈ U$ since~$x ∈ U'$.
+
+	There also exists an open subset~$V$ of~$X$ with~$x ∈ V ⊆ N$ because~$N$ is a neighbourhood of~$x$ in~$X$.
+
+	Let~$W ≔ U ∩ V$.
+	This is an open subset of~$X$ with~$x ∈ W$ and
+	\[
+		W = U ∩ V = U ∩ V ∩ N = U' ∩ V ⊆ U' ⊆ M \,.
+	\]
+	This shows that~$M$ is a neighbourhood of~$x$ in~$X$.
+\end{proof}
+
+\begin{lemma}
+	\label{closures in subspaces}
+	Let~$X$ be a topological space, let~$Y$ be a subspace of~$X$ and let~$S$ be a subset of~$Y$.
+	Let~$\cl_X S$ and~$\cl_Y S$ denote the closures of~$S$ in~$X$ and~$Y$ respectively.
+	\begin{enumerate}
+
+		\item
+			We have~$\cl_Y S = Y ∩ \cl_X S$.
+
+		\item
+			If~$Y$ is closed in~$X$, then we have~$\cl_Y S = \cl_X S$.
+
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	We have the chain of equalities
+	\begin{align*}
+		\cl_Y S
+		&=
+		⋂ {} \{ C ⊆ Y \suchthat \text{$C$ is closed with~$S ⊆ C$} \}
+		\\
+		&=
+		⋂ {} \{ Y ∩ C \suchthat \text{$C ⊆ X$ is closed with~$S ⊆ Y ∩ C$} \}
+		\\
+		&=
+		⋂ {} \{ Y ∩ C \suchthat \text{$C ⊆ X$ is closed with~$S ⊆ C$} \}
+		\\
+		&=
+		Y ∩ ⋂ {} \{ C \suchthat \text{$C ⊆ X$ is closed with~$S ⊆ C$} \}
+		\\
+		&=
+		Y ∩ \cl_X S \,,
+	\end{align*}
+	which shows the first equality.
+	If~$Y$ is closed in~$X$ then~$\cl_X S$ is contained in~$Y$, whence~$Y ∩ \cl_X S = \cl_X S$.
+\end{proof}
+
+Let now~$X$ be a locally compact Hausdorff space.
+There exists a neighbourhood~$W$ of~$X$ that is contained in a compact subspace~$K$ of~$X$.
+We note that~$K$ is again a Hausdorff space, and thus a compact Hausdorff space.
+
+The intersection~$U' ≔ U ∩ W$ is an open neighbourhood of~$x$ that is contained in~$K$.
+The set~$U'$ is therefore a neighbourhood of~$x$ in~$K$.
+As seen above, there exists a neighbourhood~$V$ of~$x$ in~$K$ with~$V ⊆ \cl_K V ⊆ U'$ and~$\cl_K V$ compact.
+The set~$V$ has all the desired properties:
+\begin{itemize}
+
+	\item
+		The set~$K$ is a neighbourhood of~$x$ in~$X$ because it contains the open set~$U'$ around~$x$, and~$V$ is a neighbourhood of~$x$ in~$K$.
+		It follows from \cref{transitivity of neighbourhoods} that~$V$ is also a neighbourhood of~$x$ in~$X$.
+		
+	\item
+		We know that~$K$ is closed in~$X$ because~$K$ is compact and~$X$ is a Hausdorff space.
+		It follows from \cref{closures in subspaces} that~$\cl_K V = \cl_X V$.
+
+	\item
+		We have~$\cl_X V = \cl_K V ⊆ U' ⊆ U$.
+
+\end{itemize}
