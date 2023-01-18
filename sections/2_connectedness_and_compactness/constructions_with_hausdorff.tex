@@ -1,0 +1,97 @@
+\subsection{Constructions with Hausdorff Spaces}
+
+
+
+\subsubsection{Topological Property}
+
+\begin{lemma}
+	\label{pull back Hausdorff via injective continuous maps}
+	Let~$X$ and~$Y$ be two topological spaces.
+	Let~$Y$ be a Hausdorff space and suppose that there exists an injective continuous map from~$X$ to~$Y$.
+	Then~$X$ is again a Hausdorff space.
+\end{lemma}
+
+\begin{proof}
+	Let~$f$ be an injective continuous map from~$X$ to~$Y$.
+
+	Let~$x$ and~$x'$ be two distinct points in~$X$.
+	The two points~$f x$ and~$f x'$ in~$Y$ are again distinct because~$f$ is injective.
+	There exist disjoint open neighbourhoods~$V$ and~$V'$ of~$f x$ and~$f x'$ respectively.
+	The preimages~$f^{-1} V$ and~$f^{-1} V'$ are disjoint open neighbourhoods of~$x$ and~$x'$ respectively.
+\end{proof}
+
+Let~$X$ and~$Y$ be two homeomorphic topological spaces.
+It follows from \cref{pull back Hausdorff via injective continuous maps} that~$X$ is a Hausdorff space if and only if~$Y$ is a Hausdorff space.
+
+
+
+\subsubsection{Not a Homotopy Invariant Property}
+
+\begin{lemma}
+	\label{all maps into indiscrete are homotopic}
+	Let~$X$ be a topological space and let~$Y$ be an indiscrete topological space.
+	Every two maps from~$X$ to~$Y$ are homotopic.
+	\qed
+\end{lemma}
+
+It follows from \cref{all maps into indiscrete are homotopic} that all nonempty indiscrete topological spaces are homotopy equivalent.
+The one-point space is a Hausdorff space, whereas the two-point indiscrete topological space is not.
+
+
+
+\subsubsection{Subspaces of Hausdorff Spaces}
+
+Let~$X$ be a Hausdorff space and let~$Y$ be a subspace of~$X$.
+It follows from \cref{pull back Hausdorff via injective continuous maps} that~$Y$ is again a Hausdorff space.
+
+
+
+\subsubsection{Products of Hausdorff Spaces}
+
+Let~$(X_α)_{α ∈ A}$ be a family of topological spaces and suppose that each~$X_α$ is a Hausdorff space.
+Let~$x = (x_α)_α$ and~$y = (y_α)_α$ be two distinct elements of~$∏_{α ∈ A} X_α$.
+This means that there exist some index~$β$ with~$x_β ≠ y_β$.
+The space~$X_β$ is a Hausdorff space, so there exists disjoint open neighbourhoods~$U$ and~$V$ of~$x_β$ and~$y_β$ respectively.
+The preimages~$π_β^{-1} U$ and~$π_β^{-1} V$ are disjoint open neighbourhoods of~$x$ and~$y$ respectively.
+
+
+
+\subsubsection{Coproducts of Hausdorff Spaces}
+
+Let~$(X_α)_α$ be a family of Hausdorff spaces and let~$x$ and~$y$ be two elements of the coproduct~$X ≔ ∐_{α ∈ A} X_α$.
+There exist indices~$α, β ∈ A$ with~$x ∈ X_α$ and~$y ∈ X_β$.
+We distinguish between two cases:
+
+\begin{casedistinction}
+
+	\item
+		Suppose that~$α ≠ β$.
+		Then~$X_α$ and~$X_β$ are disjoint open neighbourhoods of~$x$ and~$y$ in~$X$ respectively.
+
+	\item
+		Suppose that~$α = β$.
+		Then there exist disjoint open neighbourhoods of~$x$ and~$y$ in~$X_α$.
+		These are then also disjoint open neighbourhoods of~$x$ and~$y$ in~$X$.
+
+\end{casedistinction}
+
+
+
+\subsubsection{Quotients of Hausdorff Spaces}
+
+Let~$∼$ be the equivalence relation on~$ℝ$ given by
+\[
+	x ∼ y \iff \text{$x - y$ is rational} \,.
+\]
+That is, for every point~$x$ in~$ℝ$, its equivalence class is~$x + ℚ$.
+
+Let~$U$ be nonempty saturated open subset of~$ℝ$.
+The set~$U$ contains some open interval~$I = (a, b)$ with~$a < b$.
+It follows that~$⋃_{x ∈ I} x + ℚ ⊆ U$ because~$U$ is saturated, but~$⋃_{x ∈ I} x + ℚ = ℝ$ since for every real number~$r$ there exists a rational number~$q$ with~$a < r + q < b$.
+Therefore,~$U = ℝ$.
+
+This shows that the only saturated open subsets of~$ℝ$ are~$∅$ and~$ℝ$.
+This means that the quotient topology on~$ℝ / {∼}$ is indiscrete.
+But~$ℝ / {∼}$ is uncountable since~$ℝ$ is uncountable but each equivalence class with respect to~$ℚ$ is only countable.
+
+So while~$ℝ$ is a Hausdorff space, its quotient~$ℝ / {∼}$ is very much not a Hausdorff space.
