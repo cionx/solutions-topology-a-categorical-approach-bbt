@@ -1,0 +1,66 @@
+\subsection{Constructions with Compactness~(2.3.2)}
+
+\begin{proposition}
+	The unit interval~$[0, 1]$ is compact.
+\end{proposition}
+
+\begin{proof}
+	Let~$\cover{U}$ be an open cover of~$[0, 1]$.
+	Let
+	\[
+		F ≔ \{ u ∈ [0, 1] \suchthat \text{$[0, u]$ is covered by a finite subset of~$\cover{U}$} \} \,,
+	\]
+
+	There exists for every point~$x$ in~$X$ a set~$U$ belonging to~$\cover{U}$ with~$x ∈ U$.
+	For every point~$y ∈ U$, the initial segment~$[0, x]$ is covered by a finite subset of~$\cover{U}$ if and only if the segment~$[0, y]$ is covered by a finite subset of~$U$.
+	Therefore, if~$x ∈ F$, then~$U ⊆ F$, and if otherwise~$x ∈ [0, 1] ∖ F$, then~$U ⊆ [0, 1] ∖ F$.
+	This shows that both~$F$ and~$[0, 1] ∖ F$ are open.
+
+	It follows that either~$F = ∅$ or~$F = [0, 1]$, because~$[0, 1]$ is connected.
+	We know that~$0$ is contained in~$F$, so~$F$ is nonempty.
+	Therefore,~$F = [0, 1]$.
+\end{proof}
+
+
+
+\subsubsection{Subspaces of Compact Spaces}
+
+The interval~$[0, 1]$ is a compact Hausdorff space, and~$(0, 1)$ is a non-closed subspace of~$[0, 1]$.
+The subspace~$(0, 1)$ is therefore not compact.
+
+
+
+\subsubsection{Quotients of Compact Spaces}
+
+Let~$S$ be a quotient space of a compact topological space~$X$.
+The canonical quotient map from~$X$ to~$S$ is surjective and continuous, so it follows from Theorem~2.15 that~$S$ is compact.
+
+
+
+\subsubsection{Coproducts of Compact Spaces}
+
+The book simply claims that \enquote{coproducts of compact spaces are certainly not compact}.
+However, this isn’t quite true:
+coproducts of \emph{finitely} many compact spaces are again compact, as we will now show:
+
+Let~$X_1, \dotsc, X_n$ be finitely many compact topological spaces and let
+\[
+	X ≔ X_1 ⨿ \dotsb ⨿ X_n
+\]
+be their coproduct.
+Let~$\cover{U}$ be an open cover of~$X$.
+Each set~$U$ of~$\cover{U}$ is of the form
+\[
+	U = U_1 ⨿ \dotsb ⨿ U_n
+\]
+for open subsets~$U_i$ of~$X_i$.
+That~$\cover{U}$ is an open cover of~$X$ is equivalent to
+\[
+	\{ U_i \suchthat U ∈ \cover{U} \}
+\]
+being an open cover of~$X_i$ for every~$i = 1, \dotsc, n$.
+It follows for every~$i = 1, \dotsc, n$ that there exists a finite subset~$\cover{U}_i$ of~$\cover{U}$ such that~$\{ U_i \suchthat U ∈ \cover{U}_i \}$ is an open cover of~$X_i$.
+It follows that~$⋃_{i = 1}^n \cover{U}_i$ is a finite subset of~$\cover{U}$ that still covers~$X$.
+
+However, the coproduct of infinitely many nonempty compact spaces is never again compact:
+if~$(X_α)_{α ∈ A}$ is an infinite family of nonempty compact spaces, then~$\{ X_α \suchthat α ∈ A \}$ is an open cover of~$∐_{α ∈ A} X_α$ that does not admit any proper subcover, and hence in particular no finite subcover.
