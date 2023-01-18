@@ -1,0 +1,50 @@
+\subsection{Theorem~2.16}
+
+We have a one-to-one correspondence between collections~$\cover{F}$ of closed subsets of~$X$ and collections~$\cover{U}$ of open subsets of~$X$, given by
+\[
+	\cover{F} = \{ X ∖ U \suchthat U ∈ \cover{U} \} \,,
+	\quad
+	\cover{U} = \{ X ∖ F \suchthat F ∈ \cover{F} \} \,.
+\]
+We note that the collection~$\cover{U}$ is a cover of~$X$ if and only if the intersection of~$\cover{F}$ is empty.
+Similarly, if~$U_1, \dotsc, U_n ∈ \cover{U}$, then~$X$ is covered by~$U_1, \dotsc, U_n$ if and only if~$F_1 ∩ \dotsb ∩ F_n = ∅$ for the corresponding sets~$F_i = X ∖ U_i$ contained in~$\cover{F}$.
+We observe therefore the chain of equivalences
+\begin{align*}
+	{}&
+	\text{$X$ is compact}
+	\\
+	\iff{}&
+	\text{every open cover of~$X$ admits a finite subcover}
+	\\
+	\iff{}&
+	\left\{
+		\begin{tabular}{l}
+			for every collection~$\cover{U}$ of open subsets of~$X$ with~$X = ⋃ \cover{U}$, \\
+			there exist~$U_1, \dotsc, U_n ∈ \cover{U}$ with~$X = U_1 ∪ \dotsb ∪ U_n$
+		\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+		\begin{tabular}{l}
+			for every collection~$\cover{F}$ of closed subsets of~$X$ with~$⋂ \cover{F} = ∅$, \\
+			there exist~$F_1, \dotsc, F_n ∈ \cover{F}$ with~$F_1 ∩ \dotsb ∩ F_n = ∅$
+		\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+		\begin{tabular}{l}
+			for every collection~$\cover{F}$ of closed subsets of~$X$, \\
+			if~$F_1 ∩ \dotsb ∩ F_n ≠ ∅$ for all~$n ≥ 0$ and~$F_1, \dotsc, F_n ∈ \cover{F}$, then~$⋂ \cover{F} ≠ ∅$
+		\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\{
+		\begin{tabular}{l}
+			for every collection~$\cover{F}$ of closed subsets of~$X$, \\
+			if~$\cover{F}$ has the finite intersection property, then~$⋂ \cover{F} ≠ ∅$.
+		\end{tabular}
+	\right.
+\end{align*}
