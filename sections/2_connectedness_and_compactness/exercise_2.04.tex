@@ -1,0 +1,37 @@
+\subsection{Exercise~2.4}
+
+We assume that by~$ℕ$ we mean the positive integers, as this is the convention used in the original reference.
+
+
+
+\subsubsection{The Given Sets Form a Basis}
+
+We denote for all~$a, b ∈ ℕ$ the resulting arithmetic progression by
+\[
+	S(a, b) ≔ a ℕ + b = \{ a k + b \suchthat k ∈ ℕ \} \,.
+\]
+Suppose that two arithmetic progressions~$S(a, b)$ and~$S(c, d)$ are not disjoint.
+Let~$x$ be the least element of the intersection~$S(a, b) ∩ S(c, d)$.
+Then
+\[
+	S(a, b) ∩ S(c, d) = S(x, \lcm(a, c)) \,.
+\]
+
+Suppose now that~$a$ and~$b$ are coprime and that~$c$ and~$d$ are also coprime.
+The element~$x$ is of the form~$ak+ b$ for some~$k ∈ ℕ$, whence~$x$ and~$a$ are again coprime.
+Similarly,~$x$ and~$c$ are again coprime.
+It follows that~$x$ and~$\lcm(a, c)$ are also coprime.
+
+These observations show that the set
+\[
+	\basis{B} = \{ S(a, b) \suchthat \text{$a, b ∈ ℕ$ are coprime} \}
+\]
+is a basis for a topology on~$X$:
+for any two sets belonging to~$\basis{B}$, their intersection is either empty or again belongs to~$\basis{B}$.
+Every element~$b$ of~$ℕ$ is contained in some set belonging to~$\basis{B}$, e.g.,~$S(1, 1)$.
+
+
+
+\subsubsection{The Topology is Connected}
+
+???
