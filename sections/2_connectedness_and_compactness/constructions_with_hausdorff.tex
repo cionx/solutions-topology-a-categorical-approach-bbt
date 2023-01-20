@@ -5,20 +5,24 @@
 \subsubsection{Topological Property}
 
 \begin{lemma}
+	\label{separating points with injective map into a hausdorff space}
+	Let~$X$ be a topological space and let~$Y$ be a Hausdorff space.
+	Let~$x$ and~$x'$ be two points in~$X$ and let~$f \colon X \to Y$ be a continuous map with~$f x ≠ f x'$.
+	Then~$x$ and~$x'$ can be separated via disjoint neighbourhoods.
+\end{lemma}
+
+\begin{proof}
+	There exist disjoint neighbourhoods~$V$ and~$V'$ of~$f x$ and~$f x'$ respectively.
+	The preimages~$f^{-1} V$ and~$f^{-1} V'$ are disjoint neighbourhoods of~$x$ and~$x'$ respectively.
+\end{proof}
+
+\begin{proposition}
 	\label{pull back Hausdorff via injective continuous maps}
 	Let~$X$ and~$Y$ be two topological spaces.
 	Let~$Y$ be a Hausdorff space and suppose that there exists an injective continuous map from~$X$ to~$Y$.
 	Then~$X$ is again a Hausdorff space.
-\end{lemma}
-
-\begin{proof}
-	Let~$f$ be an injective continuous map from~$X$ to~$Y$.
-
-	Let~$x$ and~$x'$ be two distinct points in~$X$.
-	The two points~$f x$ and~$f x'$ in~$Y$ are again distinct because~$f$ is injective.
-	There exist disjoint open neighbourhoods~$V$ and~$V'$ of~$f x$ and~$f x'$ respectively.
-	The preimages~$f^{-1} V$ and~$f^{-1} V'$ are disjoint open neighbourhoods of~$x$ and~$x'$ respectively.
-\end{proof}
+	\qed
+\end{proposition}
 
 Let~$X$ and~$Y$ be two homeomorphic topological spaces.
 It follows from \cref{pull back Hausdorff via injective continuous maps} that~$X$ is a Hausdorff space if and only if~$Y$ is a Hausdorff space.
