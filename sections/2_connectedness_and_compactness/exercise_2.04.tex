@@ -1,24 +1,35 @@
 \subsection{Exercise~2.4}
 
-We assume that by~$ℕ$ we mean the positive integers, as this is the convention used in the original reference.
+The book is not clear on whether~$ℕ$ is supposed to include~$0$ or not.
+In the original paper \autocite{golomb_connected_integers}, the topology is constructed on \enquote{the positive integers}, but allows for the arithmetic progressions~$S(a, b)$ the parameter~$b = 0$.
+
+We will construct the topology on~$X$, which may be chosen as either one of the sets~$ℕ = \{ 0, 1, 2, \dotsc \}$ or~$ℤ_+ = \{ 1, 2, \dotsc \}$, and consider the arithmetic progressions~$S(a, b)$ with~$a ∈ ℤ_+$ and~$b ∈ X$.
+
+(We purposefully exclude~$a = 0$.
+Otherwise, each singleton set~$S(0, b) = \{ b \}$ would be open, whence the topology on~$X$ would be discrete.
+But then~$X$ would be very much disconnected.)
 
 
 
 \subsubsection{The Given Sets Form a Basis}
 
-We denote for all~$a, b ∈ ℕ$ the resulting arithmetic progression by
+We denote for all~$a ∈ ℤ_+$,~$b ∈ X$ the resulting arithmetic progression by
 \[
-	S(a, b) ≔ a ℕ + b = \{ a k + b \suchthat k ∈ ℕ \} \,.
+	S(a, b)
+	≔ a ℕ + b
+	= \{ a k + b \suchthat k ∈ ℕ \}
+	= \{ b, a + b, 2a + b, \dotsc \} \,.
 \]
 Suppose that two arithmetic progressions~$S(a, b)$ and~$S(c, d)$ are not disjoint.
 Let~$x$ be the least element of the intersection~$S(a, b) ∩ S(c, d)$.
 Then
 \[
-	S(a, b) ∩ S(c, d) = S(x, \lcm(a, c)) \,.
+	S(a, b) ∩ S(c, d) = S(\lcm(a, c), x) \,.
 \]
 
 Suppose now that~$a$ and~$b$ are coprime and that~$c$ and~$d$ are also coprime.
-The element~$x$ is of the form~$ak+ b$ for some~$k ∈ ℕ$, whence~$x$ and~$a$ are again coprime.
+The element~$x$ is of the form~$ak+ b$ for some~$k ∈ ℕ$;
+therefore,~$x ≡ b \bmod{a}$, and it follows that~$x$ and~$a$ are again coprime.
 Similarly,~$x$ and~$c$ are again coprime.
 It follows that~$x$ and~$\lcm(a, c)$ are also coprime.
 
@@ -28,10 +39,55 @@ These observations show that the set
 \]
 is a basis for a topology on~$X$:
 for any two sets belonging to~$\basis{B}$, their intersection is either empty or again belongs to~$\basis{B}$.
-Every element~$b$ of~$ℕ$ is contained in some set belonging to~$\basis{B}$, e.g.,~$S(1, 1)$.
+Also, every element~$b$ of~$ℕ$ is contained in some set belonging to~$\basis{B}$, for example the set~$S(1, b)$.
+
+
+
+\subsubsection{Criterion for Nonempty Intersections}
+
+Let us consider two basic open sets~$S(a, b)$ and~$S(c, d)$.
+Their intersection is nonempty if and only if
+\begin{equation}
+	\label{intersection of arithmetic progression is nonempty}
+	\text{there exist~$k, l ∈ ℕ$ with~$k a - l c = d - b$} \,.
+\end{equation}
+
+If the condition~\eqref{intersection of arithmetic progression is nonempty} is satisfied, then it follows that~$d - b$ is divisible by the greatest common divisor of~$a$ and~$c$, which we shall denote by~$g$.
+
+Suppose conversely that the difference~$d - b$ is divisible by~$g$.
+There exists some integer~$n$ (possibly negative) with~$d - b = n g$.
+We also know that there exist integers~$k'$ and~$l'$ with~$g = k' a - l' c$.
+Consequently,
+\[
+	d - b = n g = nk' a - nl' c  \,,
+\]
+and thus~$nk' a + b = nl' c + d$.
+This tells us that the two-sided arithmetic progressions~$ℤ a + b$ and~$ℤ c + d$ intersect.
+
+We observe that whenever we have~$k a + b = l c + d$ for some integers~$k$ and~$l$, then we also have
+\[
+	(k + m c) a + b = (l + m a) c + d
+\]
+for every integer~$m$.
+By choosing~$m$ as positive and sufficiently large, both coefficients~$k + m c$ and~$l + m a$ become natural.
+We thus find that the arithmetic progressions~$S(a, b)$ and~$S(c, d)$ intersect.
+
+Together, we find that~$S(a, b)$ and~$S(c, d)$ intersect if and only if~$\gcd(a, c)$ divides the difference~$b - d$.
+Consequently,~$S(a, b)$ and~$S(c, d)$ intersect whenever~$a$ and~$c$ are coprime.
 
 
 
 \subsubsection{The Topology is Connected}
 
-???
+Let~$U$ and~$V$ be two nonempty open subsets of~$X$ with~$X = U ∪ V$.
+
+There exist arithmetic sequences~$S(a, b)$ and~$S(c, d)$ contained in~$U$ and~$V$ respectively.
+It follows from the assumption~$X = U ∪ V$ that the product~$a c$ belongs to~$U$ or to~$V$.
+
+We may assume that~$a c$ is contained in~$V$.
+Then there exists an arithmetic sequence~$S(e, f)$ with~$a c ∈ S(e, f)$ and~$S(e, f) ⊆ V$.
+It follows from the condition~$a c ∈ S(e, f)$ that~$a c$ is coprime to~$e$.
+Therefore, both~$a$ and~$c$ are coprime to~$e$.
+It follows that~$S(a, b)$ and~$S(e, f)$ intersect, and therefore~$U$ and~$V$ intersect.
+
+We have thus shown that~$U$ and~$V$ cannot be disjoint.
