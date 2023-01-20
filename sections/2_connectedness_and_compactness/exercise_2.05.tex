@@ -1,0 +1,31 @@
+\subsection{Exercise~2.5}
+
+Let~$X ≔ ∏_{α ∈ A} X_α$ and let~$x = (x_α)_α$ and~$y = (y_α)_α$ be two points in~$X$.
+We claim that there exists a path from~$x$ to~$y$ in~$X$ if and only if for every index~$α$ a path from~$x_α$ to~$y_α$ in~$X_α$.
+
+Suppose first that there exists a path~$γ$ from~$x$ to~$y$ in~$X$.
+The canonical projection map~$π_α$ from~$X$ to~$X_α$ is continuous for every index~$α$, whence~$π_α γ$ is a continuous path from~$x_α$ to~$y_α$ in~$X_α$.
+
+Suppose now that every index~$α$ there exists a continuous path~$γ_α$ from~$x_α$ to~$y_α$ in~$X_α$.
+The map
+\[
+	γ \colon [0, 1] \to X \,, \quad t \mapsto (γ_α t)_α
+\]
+is continuous by the universal property of the product topology, with~$γ 0 = x$ and~$γ 1 = y$.
+It is thus a path from~$x$ to~$y$ in~$X$.
+
+This shows that the map
+\[
+	∏_{α ∈ A} \fgroup_0 X_α \to \fgroup_0 X \,,
+	\quad
+	(P_α)_α \mapsto ∏_{α ∈ A} P_α
+\]
+is bijective, with inverse map given by
+\[
+	\fgroup_0 X
+	\to
+	∏_{α ∈ A} \fgroup_0 X_α \,,
+	\quad
+	P \mapsto ( (\fgroup_0 π_α) P )_α \,.
+\]
+In other words, the functor~$\fgroup_0$ preserves products.
