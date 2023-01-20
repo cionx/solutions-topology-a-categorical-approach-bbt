@@ -1,0 +1,58 @@
+\subsection{Exercise~2.6}
+\label{exercise 2.6}
+
+This is nothing special to the connected components:
+
+\begin{proposition}
+	Let~$X$ be a topological space and let~$(X_α)_{α ∈ A}$ be a family of subsets with~$X = ∐_{α ∈ A} X_α$ as sets.
+	Let~$∼$ be the equivalence relation on~$X$ that identifies each~$X_α$ to a single point.
+	The following conditions are equivalent:
+	\begin{equivalenceslist}
+
+		\item
+			\label{is coproduct}
+			The topological space~$X$ is the coproduct of the spaces~$X_α$.
+
+		\item
+			\label{each subspace is open}
+			Each~$X_α$ is open in~$X$.
+
+		\item
+			\label{quotient space is discrete}
+			The quotient space~$X / {∼}$ is discrete.
+
+	\end{equivalenceslist}
+\end{proposition}
+
+\begin{proof}
+	We show that the first two conditions are equivalent, and then that the last two conditions are equivalent.
+	\begin{implicationslist}
+
+	\item[\ref{is coproduct}~$\implies$~\ref{each subspace is open}]
+		Whenever we have an open subset~$U_α$ of~$X_α$ for every index~$α ∈ A$, the set~$∐_{α ∈ A} U_α$ is open in~$X$.
+		For every index~$β$ we may choose these sets~$U_α$ as~$U_β = X_β$ and~$U_α = ∅$ for every~$α ≠ β$ to find that~$∐_{α ∈ A} U_α = X_β$ is open in~$X$.
+
+	\item[\ref{each subspace is open}~$\implies$~\ref{is coproduct}]
+		We need to show that an arbitrary subset~$U$ of~$X$ is open in~$X$ if and only if it is of the form~$U = ∐_{α ∈ A} U_α$ for open subsets~$U_α$ of~$X_α$.
+
+		Suppose that~$U$ is open in~$X$.
+		Then each intersection~$U_α ≔ U ∩ X_α$ is again open in~$X$, and therefore also open in~$X_α$, and we have~$U = ⋃_{α ∈ A} U_α = ∐_{α ∈ A} U_α$.
+
+		Suppose conversely that the set~$U = ∐_{α ∈ A} U_α$ for open subsets~$U_α$ of~$X_α$.
+		Each~$U_α$ is also open in~$X$, because~$U_α$ is open in~$X_α$ and~$X_α$ is open in~$X$.
+		It follows that~$U = ∐_{α ∈ A} U_α = ⋃_{α ∈ A} U_α$ is again open in~$X$.
+
+	\item[\ref{each subspace is open}~$\implies$~\ref{quotient space is discrete}]
+		Each~$X_α$ is a saturated open subset of~$X$.
+		This is equivalent to saying that every point of~$X / {∼}$ is open, i.e., that every singleton subset of~$X / {∼}$ is open.
+		This means that~$X / {∼}$ is discrete.
+
+	\item[\ref{quotient space is discrete}~$\implies~$\ref{each subspace is open}]
+		Let~$α$ be an index.
+		If the set~$X_α$ is empty then it is in particular open in~$X$.
+		If~$X_α$ is nonempty, then its image in~$X / {∼}$ is a single point~$y$.
+		The set~$X_α$ is then the preimage of the singleton set~$\{ y \}$, which is open in~$X / {∼}$, and therefore open in~$X$ by the continuity of the quotient map.
+	\qedhere
+
+	\end{implicationslist}
+\end{proof}
