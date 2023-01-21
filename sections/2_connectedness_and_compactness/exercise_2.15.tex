@@ -1,0 +1,33 @@
+\subsection{Exercise~2.15}
+
+
+
+\subsubsection{a), Counterexample}
+
+Let~$X$ be any non-compact topological space.
+Let~$X^+$ the topological space that results from~$X$ by adding two new points~$ω_1$ and~$ω_2$, and whose open subsets are the open subsets of~$X$ and the entire set~$X^+$.
+The subspace topology on~$X$ induced from~$X^+$ agrees with the original topology on~$X$.
+The only open subsets of~$X^+$ that contains either~$ω_1$ or~$ω_2$ is the entire space~$X^+$.
+
+It follows for the subspace~$A ≔ X ∪ \{ ω_1 \}$ of~$X^+$ that the only open subset that contains~$ω_1$ is the entire space~$A$.
+Every open cover of~$A$ must therefore have the entire space~$A$ as one of its open sets, whence~$A$ is compact.
+We find in the same way that the subspace~$B ≔ X ∪ \{ ω_2 \}$ is also compact.
+
+But the subspace~$A ∩ B = X$ is not compact.
+
+
+
+\subsubsection{a), Sufficient Condition}
+
+If~$X$ is a Hausdorff space, then~$A ∩ B$ is again compact.
+Indeed, both~$A$ and~$B$ are then closed subspaces of~$X$, whence~$A ∩ B$ is a closed subspace of the compact space~$A$, and therefore again compact.
+
+
+
+\subsubsection{b)}
+
+Yes, the union~$A ∪ B$ is again compact.
+To see this, let~$\cover{U}$ be a cover of~$A ∪ B$ by open subsets of~$X$.
+This is equivalent to~$\cover{U}$ being an open cover of both~$A$ and~$B$.
+By the compactness of~$A$ and~$B$, there exist finite subcovers~$\cover{V}$ and~$\cover{W}$ of~$\cover{U}$ for~$A$ and~$B$ respectively.
+The combination~$\cover{V} ∪ \cover{W}$ is a finite subcover of~$\cover{U}$ for~$A ∪ B$.
