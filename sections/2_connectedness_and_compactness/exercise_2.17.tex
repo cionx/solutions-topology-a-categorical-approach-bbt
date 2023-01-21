@@ -1,0 +1,27 @@
+\subsection{Exercise~1.17}
+
+
+
+\subsubsection{The Projection~$X × Y \to X$ is Closed}
+
+Let~$π$ be the canonical projection map from~$X × Y$ to~$X$, i.e., the projection map onto the first coordinate.
+Let~$C$ be a closed subset of~$X × Y$.
+We need to show that the set~$π C$ is again closed.
+To this end, we show that the complement~$X ∖ π C$ is open by showing that this set is a neighbourhood of each of its points.
+
+So let~$x$ be a point in~$X ∖ π C$.
+This means that the fibre~$π^{-1} x = \{ x \} × Y$ is contained in the open subset~$(X × Y) ∖ C$ of~$X × Y$.
+The subspace~$\{ x \} × Y$ of~$X × Y$ is homeomorphic to~$Y$ by \cref{product with singleton is homeomorphic to original space} (page~\pageref{product with singleton is homeomorphic to original space}), and therefore again compact.
+It follows from the Tube Lemma that there exist open subsets~$U ⊆ X$ and~$V ⊆ Y$ with~
+\[
+	\{ x \} × Y ⊆ U × V ⊆ (X × Y) ∖ C \,.
+\]
+The inclusion~$\{ x \} × Y ⊆ U × V$ tells us that~$U$ is an open neighbourhood of~$x$, and that~$Y ⊆ V$ and thus~$V = Y$.
+We have thus found an open neighbourhood~$U$ of~$X$ such that~$U × Y$ is disjoint to~$C$, which tells us that~$U$ is disjoint to~$π C$.
+In other words, the set~$X ∖ π C$ contains the open neighbourhood~$U$ of~$x$.
+
+
+
+\subsubsection{The Projection~$X × Y \to X$ is Not Closed}
+
+We have seen in our solution to \nameref{exercise 1.14} (page~\pageref{exercise 1.14}) that the projection(s) from~$ℝ × ℝ$ to~$ℝ$ are not closed.
