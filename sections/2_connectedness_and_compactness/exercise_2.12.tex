@@ -1,0 +1,19 @@
+\subsection{Exercise~2.12}
+
+There exists for every point~$x$ of~$X$ an open neighbourhood~$U x$ of~$x$ belonging to~$\cover{U}$.
+There hence exists some radius~$δ x > 0$ with~$\ball(x, δ x) ⊆ U x$.
+The open cover~$\{ \ball(x, δ x / 2) \suchthat x ∈ X \}$ admits a finite subcover by the compactness of~$X$.
+Consequently, there exist finitely many points~$x_1, \dotsc, x_n$ in~$X$ with
+\[
+	X = \ball(x_1, δ {x_1} / 2) ∪ \dotsb ∪ \ball(x_n, δ {x_2} / 2) \,.
+\]
+
+Let~$y$ be an arbitrary point in~$X$.
+Then for some index~$i$, the point~$y$ lies in the open ball~$\ball(x_i, δ {x_i} / 2)$.
+It follows for~$ε ≔ \min(δ {x_1} / 2, \dotsc, δ {x_n} / 2)$ (which does not depend on~$y$) from the triangle inequality that
+\[
+	\ball(y, ε)
+	⊆ \ball(x_i, δ {x_i} / 2 + ε)
+	⊆ \ball(x_i, δ {x_i})
+	⊆ U x_i \,.
+\]
