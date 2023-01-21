@@ -1,0 +1,20 @@
+\subsection{Exercise~1.16}
+
+
+
+\subsubsection{First Solution}
+
+We consider for every natural number~$m$ the real-valued sequence~$e^m$ given by~$e^m_n ≔ δ_{mn}$ for every~$n ≥ 0$.
+These sequences~$e^m$ are elements of the closed unit ball~$B$ with~$\norm{e^m - e^k} = \sqrt{2}$ for every two indices~$m$ and~$k$ with~$m ≠ k$.
+The sequence~$(e^m)_m$ does therefore not admit a subsequence that is a Cauchy sequence, and therefore also no convergent subsequence.
+Therefore,~$B$ cannot be compact.
+
+
+
+\subsubsection{Second Solution}
+
+We consider again the elements~$e^m$ of~$B$.
+This time we set~$ε ≔ \sqrt{2}/2$, so that~$\norm{e^m - e^k} ≥ 2ε$ whenever~$m ≠ k$.
+This means that for every point~$x$ on~$B$, the open ball~$\ball(x, ε)$ contains at most one of the~$e^m$.
+But if~$B$ were compact, then the open cover~$\{ \ball(x, ε) \suchthat x ∈ B \}$ would admit a finite subcover, and so at least one of these balls would need to contain infinitely many of the~$e^m$.
+A contradiction!
