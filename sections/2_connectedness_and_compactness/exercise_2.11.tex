@@ -1,0 +1,107 @@
+\subsection{Exercise~2.11}
+
+
+
+\subsubsection{Subspaces}
+
+We know that~$ℝ$ is locally compact but its subspace~$ℚ$ is not.
+
+
+
+\subsubsection{Quotients}
+
+We will use the following criterion for showing that a space is not compact.
+
+\begin{proposition}
+	\label{criterion for non-compactness}
+	Let~$X$ be a topological space.
+	Suppose there exists a sequence~$(x_n)_n$ of pairwise distinct points in~$X$ such that for every~$n ≥ 0$ the set~$\{ x_n, x_{n + 1}, x_{n + 2}, \dotsc \}$ is closed in~$X$.
+	Then~$X$ is not compact.
+\end{proposition}
+
+\begin{proof}
+	For the sets~$U_n ≔ X ∖ \{ x_n, x_{n + 1}, x_{n + 2}, \dotsc \}$ we have the increasing sequence~$U_0 ⊆ U_1 ⊆ U_2 ⊆ \dotsb$ of open proper subsets of~$X$.
+	Therefore,~$\{ U_n \suchthat n ≥ 0 \}$ is an open cover of~$X$ that does not admit a finite subcover.
+\end{proof}
+
+%\begin{proposition}
+%	\label{locally compact hausdorff spaces are regular}
+%	Let~$X$ be a locally compact Hausdorff space, let~$x$ be a point in~$X$ and let~$C$ be a closed subset of~$X$, such that~$x ∉ C$.
+%	Then there exist disjoint open subsets~$U$ and~$V$ of~$X$ with~$x ∈ U$ and~$C ⊆ V$.
+%\end{proposition}
+
+We consider the equivalence relation~$∼$ on~$ℝ$ that identifies all of~$ℤ$ to a single point, and leaves all other points non-identified.
+Let~$X$ be the quotient space~$ℝ / {∼}$.
+We show in the following that~$X$ is not locally compact.
+
+%We observe that~$X$ is again a Hausdorff space.
+%To show this, we need to check that any two distinct points~$\class{x}$ and~$\class{y}$ in~$ℝ$ can be separated by disjoint neighbourhoods.
+%\begin{casedistinction}
+%
+%	\item
+%		Suppose that both~$x$ and~$y$ are non-integral.
+%		Let~$ε, δ > 0$ with
+%		\begin{gather*}
+%			ε < \min( x - \floor{x}, \ceil{x} - x ) \,,
+%			\quad
+%			δ < \min( y - \floor{y}, \ceil{y} - y ) \,,
+%			\\
+%			ε, δ < \abs{x - y} /2 \,.
+%		\end{gather*}
+%		The two open balls~$\ball(x, ε)$ and~$\ball(y, δ)$ are disjoint open subsets of~$ℝ$ that are saturated with respect to~$∼$ (because they are disjoint to~$ℤ$).
+%		The images of~$\ball(x, ε)$ and~$\ball(y, δ)$ in~$X$ are the required neighbourhoods.
+%
+%	\item
+%		Suppose that exactly one of the two points~$x$ and~$y$ is integral.
+%		We may assume that~$x$ is integral, but~$y$ is not.
+%
+%		Let~$ε > 0$ with~$ε < \min( y - \floor{y}, \ceil{y} - y ) / 2$.
+%		The sets~$U ≔ ⋃_{n ∈ ℤ} \ball(n, ε)$ and~$V ≔ \ball(y, ε)$ are then disjoint open subsets of~$ℝ$ that are saturated with respect to~$∼$.
+%		The images of~$U$ and~$V$ in~$X / {∼}$ are the required neighbourhoods.
+%
+%	\item
+%		Suppose that both~$x$ and~$y$ are integral.
+%		This case cannot occur because then~$\class{x} = \class{y}$.
+%
+%\end{casedistinction}
+
+Let~$π$ be the canonical quotient map from~$ℝ$ to~$X$, and let~$x$ be the point in~$X$ corresponding to~$ℤ$, i.e.,~$π^{-1} x = ℤ$.
+Let~$U$ be any open neighbourhood of~$x$ and let~$K$ be any subspace of~$X$ with~$U ⊆ K$.
+We show in the following that~$K$ cannot be compact.
+
+The preimage~$π^{-1} U$ is an open subset of~$ℝ$ that contains~$0$.
+It follows that
+\[
+	⋃_{n ∈ ℤ} {} (n - ε_n, n + ε_n) ⊆ π^{-1} U
+\]
+for some radii~$ε_n > 0$ with~$ε_n < 1$.
+For every~$n ≥ 0$ let~$x'_n ≔ n + ε_n / 2n$, and let~$x_n$ be the image of~$x'_n$ in~$X$.
+Since~$x'_n$ is contained in~$π^{-1} U$, the point~$x_n$ is contained in~$U$, and is therefore contained in~$K$.
+
+The points~$x_n$ are pairwise distinct and non-integral, and therefore non-equivalent with respect to~$∼$.
+Consequently, the sequence~$(x_n)_n$ in~$X$ consists of pairwise different points.
+
+For every~$n ≥ 0$, the set~$\{ x'_n, x'_{n + 1}, x'_{n + 2}, \dotsc \}$ is closed in~$ℝ$ and saturated with respect to the equivalence relation~$∼$.
+Consequently, the set~$\{ x_n, x_{n + 1}, x_{n + 2}, \dotsc \}$ is closed in~$X$, and therefore also closed in~$K$.
+
+It follows from \cref{criterion for non-compactness} that~$K$ is not compact.
+
+
+
+\subsubsection{Products}
+
+Let us suppose that the countable product
+\[
+	X ≔ ℝ × ℝ × ℝ × \dotsb
+\]
+is locally compact.
+Let~$x$ be some point in~$X$.
+The point~$x$ has an open neighbourhood~$U$ that is contained in a compact subspace~$K$ of~$X$.
+The open neighbourhood~$U$ contains a basic open set
+\[
+	V = V_1 × \dotsb × V_n × ℝ × ℝ × \dotsb
+\]
+around~$x$.
+It follows that~$π_{n + 1} K ⊇ π_{n + 1} U ⊇ π_{n + 1} V = ℝ$ and thus~$π_{n + 1} K = ℝ$.
+But~$π_{n + 1} K$ is compact because~$K$ is compact, while~$ℝ$ is not compact.
+A contradiction!
