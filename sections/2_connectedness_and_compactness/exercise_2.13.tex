@@ -1,0 +1,60 @@
+\subsection{Exercise~2.13}
+
+We recall that the given topological space~$X$ is given by the set~$ℤ$ and the sets
+\[
+	S(a, b) ≔ a ℤ + b = \{ a n + b \suchthat n ∈ ℤ \}
+\]
+with~$a, b ∈ ℤ$ and~$a ≠ 0$ as a basis.
+Each of these sets is not only open, but also closed (since the complement of the coset~$a ℤ + b$ is again a union of cosets).
+
+We observe that~$X$ itself is not compact, since it admits a decomposition into infinitely many disjoint open sets:
+\begin{itemize*}
+
+	\item
+		We start with~$U_1 ≔ 2ℤ = S(2, 0)$, which contains every second number.
+
+	\item
+		The set of missing numbers~$2 ℤ + 1$ consist the two disjoint subsets~$4ℤ + 1$ and~$4ℤ - 1$.
+		We set~$U_2 ≔ 4ℤ + 1 = S(4, 1)$.
+
+	\item
+		The now missing set of numbers~$4 ℤ - 1$ can again be split up into~$8ℤ - 1$ and~$8ℤ + 3$.
+		We set~$U_3 ≔ 8ℤ - 1 = S(8, -1)$.
+
+	\item
+		Suppose that we have defined~$U_1, \dotsc, U_n$, each of the form~$U_k = S(2^k, b_k)$ with~$b_k$ not contained in~$U_1 ∪ \dotsb ∪ U_{k - 1}$.
+		Let~$b_{n + 1}$ be an element not contained in~$U_1 ∪ \dotsb ∪ U_n$ and of smallest modulus amongst all such elements;
+		if two such elements exist, then we take the positive one.
+		We define~$U_{n + 1}$ as~$S(2^{n + 1}, b_{n + 1})$.
+
+\end{itemize*}
+We thus have the open cover
+\[
+	X = S(2, 0) ⨿ S(4, 1) ⨿ S(8, -1) ⨿ S(16, 3) ⨿ S(32, -5) ⨿ \dotsb
+\]
+into infinitely many disjoint open subsets.
+This open cover has no proper subcover, and therefore in particular no finite subcover.
+
+We now observe that each of these basic open sets~$X' ≔ S(a, b)$ is homeomorphic to~$X$ via the map
+\[
+	φ \colon X \to X' \,, \quad n \mapsto a n + b \,.
+\]
+To this end, it suffices to show that~$X'$ has a basis given by all sets of the form~$φ S(c, d) = S(ac, ad + b)$ with~$c, d ∈ ℤ$ and~$c ≠ 0$.
+
+A basis for~$X'$ is given by all intersections~$X' ∩ S(c', d')$.
+These intersections are either empty or the sets of the form~$S(e, f)$ with~$S(e, f) ⊆ X' = S(a, b)$.
+(Every such set~$S(e, f)$ occurs by choosing~$S(c', d')$ as~$S(e, f)$.)
+The inclusion~$S(e, f) ⊆ S(a, b)$ tells us that~$e ℤ ⊆ a ℤ + b - f$, which tells us that~$a$ divides~$e$ and also that~$a$ divides~$b - f$ (because the right-hand contains~$0$) and thus also~$f - b$.
+Therefore,~$e = a c$ and~$f - b = a d$ for some integers~$c$ and~$d$.
+The integer~$c$ must be nonzero because~$e$ is nonzero, and we have
+\[
+	S(e, f) = S(ac, ad + b) \,.
+\]
+
+Let us now show that~$X$ is not locally compact:
+Let~$x$ be some point in~$X$, let~$U$ be some open neighbourhood of~$x$ and suppose~$K$ is a compact subspace of~$X$ with~$U ⊆ K$.
+There exists some basic open set~$S(a, b)$ with~$S(a, b) ⊆ U$, and therefore with~$S(a, b) ⊆ K$.
+The set~$S(a, b)$ is closed in~$X$, so it is also closed in~$K$.
+It follows from the compactness of~$K$ that~$S(a, b)$ is again compact.
+But we know that~$S(a, b)$ is homeomorphic to~$X$, which is not compact.
+A contradiction!
