@@ -1,0 +1,27 @@
+\subsection{Exercise~2.14}
+
+We import a standard result from analysis:
+
+\begin{proposition}
+	\label{compact metric spaces are sequentially compact}
+	Let~$X$ be a compact metric space.
+	Every sequence~$(x_n)_n$ in~$X$ admits a convergent subsequence.
+	\qed
+\end{proposition}
+
+Suppose that~$f$ is not surjective.
+Let~$x$ be a point not contained in the image of~$f$.
+The image~$f X$ is again compact and therefore closed in~$X$, since~$X$ is in particular a Hausdorff space.
+There hence exists some radius~$ε > 0$ for which the open ball~$\ball(x, ε)$ is completely contained in~$X ∖ f X$.
+In other words, we have
+\[
+	d( x, f x' ) ≥ ε
+	\qquad
+	\text{for every~$x' ∈ X$.}
+\]
+
+We set~$x_n ≔ f^n x$ for every~$n ≥ 0$ and claim that~$d(x_n, x_m) ≥ ε$ for all~$m, n ≥ 0$ with~$m ≠ n$.
+This then entails that the sequence~$(x_n)_n$ admits no subsequence that is a Cauchy sequence, and therefore admits no convergent subsequence.
+But this contradicts \cref{compact metric spaces are sequentially compact}.
+
+To prove the claim we observe that~$d( x, f^n x ) ≥ ε$ for every~$n ≥ 1$, and therefore also~$d( f^k x, f^{n + k} x) ≥ ε$ for all~$k ≥ 0$,~$n ≥ 1$ because~$f$ is an isometry.
