@@ -1,0 +1,32 @@
+\subsection{Exercise~2.18}
+\label{exercise 2.18}
+
+
+
+\subsubsection{Products}
+
+Let~$(X_α)_{α ∈ A}$ be a family of topological spaces and suppose that each~$X_α$ is a Hausdorff space.
+Let~$x = (x_α)_α$ and~$y = (y_α)_α$ be two distinct elements of~$∏_{α ∈ A} X_α$.
+This means that there exist some index~$β$ with~$x_β ≠ y_β$.
+It follows from \cref{separating two points with map into a hausdorff space} applied to the canonical projection~$π_β$ that there exist disjoint open subsets of~$∏_{α ∈ A} X_α$ separating~$x$ and~$y$.
+
+
+
+\subsubsection{Quotients}
+
+Let~$∼$ be the equivalence relation on~$ℝ$ given by
+\[
+	x ∼ y \iff \text{$x - y$ is rational} \,.
+\]
+That is, for every point~$x$ in~$ℝ$, its equivalence class is~$x + ℚ$.
+
+Let~$U$ be nonempty saturated open subset of~$ℝ$.
+The set~$U$ contains some open interval~$I = (a, b)$ with~$a < b$.
+It follows that~$⋃_{x ∈ I} x + ℚ ⊆ U$ because~$U$ is saturated, but~$⋃_{x ∈ I} x + ℚ = ℝ$ since for every real number~$r$ there exists a rational number~$q$ with~$a < r + q < b$.
+Therefore,~$U = ℝ$.
+
+This shows that the only saturated open subsets of~$ℝ$ are~$∅$ and~$ℝ$.
+This means that the quotient topology on~$ℝ / {∼}$ is indiscrete.
+But~$ℝ / {∼}$ is uncountable since~$ℝ$ is uncountable but each equivalence class with respect to~$ℚ$ is only countable.
+
+So while~$ℝ$ is a Hausdorff space, its quotient~$ℝ / {∼}$ is very much not a Hausdorff space.

@@ -5,7 +5,7 @@
 \subsubsection{Topological Property}
 
 \begin{lemma}
-	\label{separating points with injective map into a hausdorff space}
+	\label{separating two points with map into a hausdorff space}
 	Let~$X$ be a topological space and let~$Y$ be a Hausdorff space.
 	Let~$x$ and~$x'$ be two points in~$X$ and let~$f \colon X \to Y$ be a continuous map with~$f x ≠ f x'$.
 	Then~$x$ and~$x'$ can be separated via disjoint neighbourhoods.
@@ -52,11 +52,7 @@ It follows from \cref{pull back Hausdorff via injective continuous maps} that~$Y
 
 \subsubsection{Products of Hausdorff Spaces}
 
-Let~$(X_α)_{α ∈ A}$ be a family of topological spaces and suppose that each~$X_α$ is a Hausdorff space.
-Let~$x = (x_α)_α$ and~$y = (y_α)_α$ be two distinct elements of~$∏_{α ∈ A} X_α$.
-This means that there exist some index~$β$ with~$x_β ≠ y_β$.
-The space~$X_β$ is a Hausdorff space, so there exists disjoint open neighbourhoods~$U$ and~$V$ of~$x_β$ and~$y_β$ respectively.
-The preimages~$π_β^{-1} U$ and~$π_β^{-1} V$ are disjoint open neighbourhoods of~$x$ and~$y$ respectively.
+We will show in \nameref{exercise 2.18} that products of Hausdorff spaces are again Hausdorff spaces.
 
 
 
@@ -83,19 +79,4 @@ We distinguish between two cases:
 
 \subsubsection{Quotients of Hausdorff Spaces}
 
-Let~$∼$ be the equivalence relation on~$ℝ$ given by
-\[
-	x ∼ y \iff \text{$x - y$ is rational} \,.
-\]
-That is, for every point~$x$ in~$ℝ$, its equivalence class is~$x + ℚ$.
-
-Let~$U$ be nonempty saturated open subset of~$ℝ$.
-The set~$U$ contains some open interval~$I = (a, b)$ with~$a < b$.
-It follows that~$⋃_{x ∈ I} x + ℚ ⊆ U$ because~$U$ is saturated, but~$⋃_{x ∈ I} x + ℚ = ℝ$ since for every real number~$r$ there exists a rational number~$q$ with~$a < r + q < b$.
-Therefore,~$U = ℝ$.
-
-This shows that the only saturated open subsets of~$ℝ$ are~$∅$ and~$ℝ$.
-This means that the quotient topology on~$ℝ / {∼}$ is indiscrete.
-But~$ℝ / {∼}$ is uncountable since~$ℝ$ is uncountable but each equivalence class with respect to~$ℚ$ is only countable.
-
-So while~$ℝ$ is a Hausdorff space, its quotient~$ℝ / {∼}$ is very much not a Hausdorff space.
+We will see in \nameref{exercise 2.18} that quotients of Hausdorff spaces need not be Hausdorff spaces again.
