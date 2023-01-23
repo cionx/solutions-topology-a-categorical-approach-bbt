@@ -1,0 +1,57 @@
+\subsection{Exercise~2.21}
+
+We will use the following generalization of Theorem~2.18.
+
+\begin{proposition}
+	\label{separating compact subspaces of hausdorff spaces}
+	Let~$X$ be a Hausdorff space and let~$K$ and~$L$ be two disjoint compact subspaces of~$X$.
+	There exist disjoint open subsets~$U$ and~$V$ of~$X$ with~$K ⊆ U$ and~$L ⊆ V$.
+\end{proposition}
+
+\begin{proof}
+	We know from Theorem~2.18 that there exists for every point~$x$ in~$L$ disjoint open subsets~$U_x$ and~$V_x$ of~$X$ with~$K ⊆ U_x$ and~$x ∈ V_x$.
+	The resulting open cover~$\{ V_x \suchthat x ∈ L \}$ of~$L$ admits a finite subcover, indexed by points~$x_1, \dotsc, x_n$.
+	We set~$U ≔ ⋂_{i = 1}^n U_{x_i}$ and~$V ≔ ⋃_{i = 1}^n V_{x_i}$.
+\end{proof}
+
+Let~$x$ and~$y$ be two distinct points in~$Y$.
+The fibres~$f^{-1} x$ and~$f^{-1} y$ are disjoint compact subspaces of~$X$.
+It follows from the above \lcnamecref{separating compact subspaces of hausdorff spaces} that there exist disjoint open subsets~$U'$ and~$V'$ of~$X$ with~$f^{-1} x ⊆ U'$ and~$f^{-1} y ⊆ V'$.
+
+We can now proceed in two ways.
+
+\subsubsection{First Argumentation}
+
+We note that the continuous surjection~$f$ is a quotient map because it is closed, see Exercise~1.14.
+So for every saturated open subset of~$X$, its image in~$Y$ is again open.
+We will therefore replace~$U'$ and~$V'$ by smaller open subsets~$U$ and~$V$ that are saturated with respect to~$f$, but still separate the two fibres~$f^{-1} x$ and~$f^{-1} y$.
+
+The complement~$C' ≔ X ∖ U'$ is closed in~$X$.
+Its image~$f C'$ is closed in~$Y$ because~$f$ is closed, and the preimage~$C ≔ f^{-1} f C'$ is again closed in~$X$ because~$f$ is continuous.
+The complement~$U ≔ X ∖ C$ is therefore open in~$X$.
+We have~$C' ⊆ C$ and thus~$U ⊆ U'$.
+The fibre~$f^{-1} x$ is disjoint to~$C'$, so~$x$ is not contained in~$f C'$, and therefore~$C$ is again disjoint to~$f^{-1} x$.
+Consequently, the fibre~$f^{-1} x$ is contained in~$U$.
+Since~$C$ is saturated with respect to~$f$, so is its complement~$U$.
+
+We can construct in the same way an open subset~$V$ of~$X$ such that the fibre~$f^{-1} y$ is contained in~$V$, we have~$V ⊆ V'$, and the set~$V$ is saturated with respect to~$f$.
+
+The image sets~$f U$ and~$f V$ are open in~$Y$ because~$f$ is a quotient map and~$U$ and~$V$ are open and saturated with respect to~$f$.
+The sets~$f U$ and~$f V$ are again disjoint because~$U$ and~$V$ are disjoint and saturated with respect to~$f$.
+Finally,~$x$ lies in~$f U$ while~$y$ lies in~$f V$.
+
+We have thus shown that the points of~$Y$ can be separated by disjoint open sets.
+In other words,~$Y$ is again a Hausdorff space.
+
+\subsubsection{Second Argumentation}
+
+We consider the complements~$C' ≔ X ∖ U'$ and~$D' ≔ X ∖ V'$.
+These are two closed subsets of~$X$ with~$X = C' ∪ D'$ because~$U'$ and~$V'$ are disjoint.
+The image sets~$C ≔ f C'$ and~$D ≔ f D'$ are closed in~$Y$ because the map~$f$ is closed, and they satisfy
+\[
+	C ∪ D = f C' ∪ f D' = f (C' ∪ D') = f X = Y \,.
+\]
+
+The complements~$U ≔ Y ∖ C$ and~$V ≔ Y ∖ D$ are therefore disjoint open subsets of~$Y$.
+The fibre~$f^{-1} x$ lies in~$U'$, is therefore disjoint to~$C'$, whence~$x$ does not lie in~$C$, so that~$x$ lies in~$U$.
+We find in the same way that~$y$ lies in~$V$.
