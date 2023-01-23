@@ -1,0 +1,26 @@
+\subsection{Smallest Open Sets and Largest Closed Sets}
+
+
+
+\subsubsection{Smallest Open Subset}
+
+We consider the subset~$B ≔ [0, 1]$ of~$ℝ$.
+Let~$U$ be any open subset of~$ℝ$ containing~$B$.
+Both end points~$0$ and~$1$ are contained in~$U$, so there exist some radii~$ε, δ > 0$ with~$\ball(0, ε) ⊆ U$ and~$\ball(1, δ) ⊆ U$, and~$ε, δ < 1$.
+It follows that the set~$U$ contains the open interval~$(-ε, 1 + δ) = \ball(0, ε) ∪ B ∪ \ball(1, δ)$.
+It further follows for the radius~$κ ≔ \min(ε, δ) / 2$ that the open interval~$(-κ, 1 + κ)$ is properly contained in~$U$.
+
+This shows that there exists no open subset of~$ℝ$ that is minimal amongst all open subsets of~$ℝ$ that contain~$B$.
+
+
+
+\subsubsection{Largest Closed Subset}
+
+We consider the subset~$B ≔ (0, 1)$ of~$ℝ$.
+Let~$C$ be any closed subset of~$ℝ$ contained in~$B$.
+The elements~$x ≔ \inf C$ and~$\sup C$ are again contained in~$C$, whence~$0 < x, y < 1$.
+It follows that the closed interval~$[x, y]$ is contained in~$B$, with~$C$ contained in~$[x, y]$.
+Let~$x'$ and~$y'$ be two real numbers with~$0 < x' < x$ and~$y < y' < 1$.
+The closed interval~$[x', y']$ is again contained in~$B$, with~$C$ properly contained in~$[x', y']$.
+
+This shows that there exist no closed subset of~$ℝ$ that is maximal amongst all closed subsets of~$ℝ$ that are contained in~$B$.
