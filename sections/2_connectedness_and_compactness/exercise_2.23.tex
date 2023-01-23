@@ -1,0 +1,85 @@
+\subsection{Exercise~2.23}
+
+We generalize Theorem~2.14 (page~49) as follows:
+
+Let~$A$ be an arbitrary index set of cardinality at least two.
+Let~$X^A$ be the product~$∏_{α ∈ A} X$.
+We show that the following conditions on~$X$ are equivalent:
+\begin{equivalenceslist*}
+
+	\item
+		The space~$X$ is a Hausdorff space.
+
+	\item
+		The diagonal set~$Δ_{X, A} = \{ (x_α)_α ∈ X^A \suchthat \text{$x_α = x_β$ for all~$α, β ∈ A$} \}$ is closed in~$X × X$.
+
+	\item
+		The diagonal map~$Δ \colon X \to X^A$,~$x \mapsto (x)_α$ is closed.
+
+\end{equivalenceslist*}
+We first show that the first two conditions are equivalent, and then we show that the last two conditions are equivalent.
+
+Suppose first that~$X$ is a Hausdorff space.
+We then consider for every two indices~$β, γ ∈ A$ the projection map
+\[
+	π_{β γ} \colon X^A \to X × X \,, \quad (x_α)_α \mapsto (x_β, x_γ) \,,
+\]
+which is continuous.
+We know from Theorem~2.14 that the diagonal set~$Δ_X$ in~$X × X$ is closed.
+It follows that
+\[
+	Δ_{X, A} = ⋂_{β, γ ∈ A} π_{β γ}^{-1} Δ_X
+\]
+is closed in~$X^A$.
+
+Suppose now that the diagonal set~$Δ_X$ is closed in~$X^A$.
+We choose an index~$β ∈ A$ and consider the map
+\[
+	f
+	\colon
+	X × X
+	\to
+	X^A \,,
+	\quad
+	(x, y)
+	\mapsto
+	(x_α)_α
+	\quad\text{with}\quad
+	x_α
+	=
+	\begin{cases*}
+		x & if~$α = β$, \\
+		y & otherwise.
+	\end{cases*}
+\]
+This map is continuous, and we have~$Δ_X = f^{-1} Δ_{X, A}$ since~$A$ contains at least one other index apart from~$β$.
+It follows that~$Δ_X$ is closed in~$X × X$.
+According to Theorem~2.14, this shows that~$X$ is a Hausdorff space.
+
+For the second equivalence, we note that the two maps
+\[
+	φ \colon X \to Δ_{X, A} \,, \quad x \mapsto (x)_α
+\]
+and
+\[
+	ψ \colon Δ_{X, A} \to X \,, \quad (x)_α \mapsto x
+\]
+are mutually inverse and continuous, whence~$φ$ is a homeomorphism.
+The map~$φ$ is also the corestriction of~$Δ$ to its image.
+We have therefore the chain of equivalences
+\begin{align*}
+	{}&
+	\text{the map~$Δ$ is closed} \\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		the image of~$Δ$ is closed in~$X^A$, \\
+		and the corestricion of~$Δ$ to its image is closed
+	\end{tabular}
+	\right. \\
+	\iff{}&
+	\text{the set~$Δ X$ is closed and the map~$φ$ is closed} \\
+	\iff{}&
+	\text{the set~$Δ_{X, A}$ is closed} \,,
+\end{align*}
+since the homeomorphism~$φ$ is automatically closed.
