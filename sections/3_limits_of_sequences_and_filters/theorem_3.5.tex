@@ -1,0 +1,31 @@
+\subsection{Theorem~3.5}
+
+The presented proof of Theorem~3.5 can be streamlined thanks to the following observation(s).
+
+\begin{proposition}
+	Let~$X$ be a topological space and let~$x$ be a point in~$X$ admitting a countable neighbourhood basis~$\{ U_n \suchthat n ≥ 0 \}$.
+	For every~$n ≥ 0$ let~$V_n = U_1 ∩ \dotsb ∩ U_n$.
+	Then~$\{ V_n \suchthat n ≥ 0 \}$ is again a neighbourhood basis of~$x$.
+\end{proposition}
+
+\begin{proof}
+	The sets~$V_n$ are again open neighbourhoods of~$x$, since each~$U_n$ is an open neighbourhood of~$x$.
+	There exists for every neighbourhood~$U$ of~$x$ some index~$n$ with~$U_n ⊆ U$.
+	We have~$V_n ⊆ U_n$, and therefore~$V_n ⊆ U$.
+\end{proof}
+
+\begin{corollary}
+	\label{first countable spaces have linearly ordered neighbourhood bases}
+	Let~$X$ be a first countable topological space.
+	Every point~$x$ in~$X$ admits a countable neighbourhood basis~$\{ U_n \suchthat n ≥ 0 \}$ such that~$U_{n + 1} ⊆ U_n$ for every~$n ≥ 0$.
+	\qed
+\end{corollary}
+
+In the presented proof of Theorem~3.5 we may additionally assume that
+\[
+	U_0 ⊇ U_1 ⊇ U_2 ⊇ U_3 ⊇ \dotsb
+	\quad\text{and}\quad
+	V_0 ⊇ V_1 ⊇ V_2 ⊇ V_3 ⊇ \dotsb \,.
+\]
+This then implies that the sequence~$(x_n)_n$ itself converges to both~$x$ and~$y$.
+There is hence no need for subsequences.
