@@ -1,0 +1,17 @@
+\subsection{Theorem~3.6}
+
+In view of Theorem~3.3, it remains to show that for every point~$x$ in~$\closure{A}$ there exists a sequence~$(x_n)_n$ in~$A$ with~$(x_n)_n \to x$.
+
+Let~$\{ U_n \suchthat n ≥ 0 \}$ be a countable neighbourhood basis of~$x$ with
+\[
+	U_0 ⊇ U_1 ⊇ U_2 ⊇ U_3 ⊇ \dotsb \,,
+\]
+which exists by \cref{first countable spaces have linearly ordered neighbourhood bases} (page~\pageref{first countable spaces have linearly ordered neighbourhood bases}).
+Each open neighbourhood~$U_n$ intersects the set~$A$ because~$x$ is in the closure of~$A$ (by \cref{closure via intersection with neighbourhoods}, page~\pageref{closure via intersection with neighbourhoods}).
+There hence exists for every index~$n$ some point~$x_n$ in the intersection~$U_n ∩ A$.
+
+The sequence~$(x_n)_n$ lies completely in~$A$.
+There exists for every neighbourhood~$V$ of~$x$ some index~$N$ with~$U_N ⊆ V$.
+We then have~$x_n ∈ U_n ⊆ U_N ⊆ V$ for every~$n ≥ N$.
+This shows that the sequence~$(x_n)_n$ converges to~$x$.
+
