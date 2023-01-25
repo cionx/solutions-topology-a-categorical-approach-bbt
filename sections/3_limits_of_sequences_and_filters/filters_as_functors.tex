@@ -1,0 +1,28 @@
+\subsection{Filters as Functors}
+
+Given a poset~$P$, a limit of a diagram in~$P$ is simply the meet of all elements that occur in that diagram.
+Consequently, a functor between two posets is continuous (i.e., preserves limits) if and only if it preserves meets.
+
+Given two meet-semilattices~$S$ and~$T$, every continuous functor from~$S$ to~$T$ is a homomorphism of meet-semilattices.
+However, the converse does not hold.
+The problem is that a continuous functor must preserve \emph{all} limits, whereas a homomorphism of meet-semilattices need only preserve finite limits.
+
+For a counterexample, let~$X$ be an infinite set and let~$F$ be the filter of cofinite subsets of~$X$.
+This filter corresponds to a homomorphism of meet-semilattices~$f$ from~$2^X$ to~$𝟚$ given by
+\[
+	f A
+	=
+	\begin{cases*}
+		1 & if~$A$ is cofinite, \\
+		0 & otherwise.
+	\end{cases*}
+\]
+We have for every element~$x$ of~$X$ the cofinite set~$A_x ≔ X ∖ \{ x \}$, and find that
+\[
+	f ⋀_{x ∈ X} {} A_x
+	= f ∅
+	= 0 ≠ 1
+	= ⋀_{x ∈ X} 1
+	= ⋀_{x ∈ X} f A_x \,.
+\]
+This shows that~$f$ does not preserve all meets, even though it is a homomorphism of meet-semilattices.
