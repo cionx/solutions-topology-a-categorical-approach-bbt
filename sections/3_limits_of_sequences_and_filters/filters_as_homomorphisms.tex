@@ -1,0 +1,105 @@
+\subsection{Filters as Homomorphisms}
+
+Let~$𝟚 ≔ \{ 0 < 1 \}$.
+
+We can see that the given statement cannot be correct:
+both constant maps from~$2^X$ to~$𝟚$ satisfy the given definition of a homomorphism of meet-semilattice, but the homomorphism with constant value~$0$ corresponds to the empty collection of subsets of~$X$, which is not a filter.
+
+The source of this problem is that the given definition of a meet-semilattice is not correct (for our purposes):
+we also need the existence of a greatest element.
+
+\begin{definition}
+	A poset~$S$ is a \defemph{meet-semilattice} if
+	\begin{enumerate*}
+%
+		\item
+			every two elements of~$S$ admit a meet, and
+%
+		\item
+			the poset~$S$ admits a greatest element.
+
+	\end{enumerate*}
+	The meet of two elements~$x$ and~$y$ of~$S$ is denoted by~$x ∧ y$.
+	The greatest element of~$S$ is denoted by~$1$ (or by~$⊤$), so that~$x ∧ 1 = x$ for every~$x ∈ S$.
+\end{definition}
+
+\begin{definition}
+	Let~$S$ and~$T$ be two meet-semilattices.
+	A map~$f$ from~$S$ to~$T$ is a \defemph{homomorphism of meet-semilattices} if~$f (x ∧ y) = (f x) ∧ (f y)$ for all~$x, y ∈ X$ and also~$f 1_S = 1_T$.
+\end{definition}
+
+\begin{definition}
+	Let~$P$ and~$Q$ be two posets.
+	A map~$f$ from~$P$ to~$Q$ is \defemph{isotone} if~$f x ≤ f y$ for all~$x, y ∈ P$ with~$x ≤ y$.
+\end{definition}
+
+\begin{proposition}
+	Every homomorphism of meet-semilattices is isotone.
+\end{proposition}
+
+\begin{proof}
+	Let~$S$ and~$T$ be two meet-semilattices and let~$f$ be a homomorphism of meet-semilattices from~$S$ to~$T$.
+	For every two elements~$x$ and~$y$ of~$S$ we have the chain of equivalences and implications
+	\[
+		x ≤ y
+		\iff
+		x ∧ y = x
+		\implies
+		(f x) ∧ (f y) = f x
+		\iff
+		f x ≤ f y \,.
+	\]
+	This shows that~$f$ is isotone.
+\end{proof}
+
+\begin{definition}
+	Let~$S$ be a meet-semilattice.
+	A subset of~$S$ in a \defemph{filter} if it is nonempty, downward directed and upward closed.
+\end{definition}
+
+\begin{proposition}
+	Let~$S$ be a meet-semilattice.
+	A subset~$F$ of~$S$ is a filter if and only if~$1 ∈ F$ and if we have for every two elements~$x$ and~$y$ of~$S$ the equivalence
+	\[
+		x ∧ y ∈ F \iff \text{$x ∈ F$ and~$y ∈ F$} \,.
+	\]
+\end{proposition}
+
+\begin{proof}
+	Suppose that~$F$ is a filter.
+	This entails that~$F$ is upward closed and nonempty, whence~$1$ is contained in~$F$.
+	If~$x ∧ y ∈ F$ then also~$x ∈ F$ and~$y ∈ F$ because~$F$ is upward closed.
+	If on the other hand~$x ∈ F$ and~$y ∈ F$ then~$x ∧ y ∈ F$ because~$F$ is downward directed and upward closed.
+
+	Suppose not that~$1 ∈ F$ and that for every two elements~$x$ and~$y$ of~$F$, we have~$x ∧ y ∈ F$ if and only if~$x, y ∈ F$.
+	We know from the condition~$1 ∈ F$ that~$F$ is nonempty, and the implication~$x, y ∈ F \implies x ∧ y ∈ F$ tells us that~$F$ is downward directed.
+	Given~$x ∈ F$ and~$y ∈ S$ with~$x ≤ y$, we have~$x ∧ y = x ∈ F$ and therefore also~$y ∈ F$.
+\end{proof}
+
+Let~$S$ be a meet-semilattice.
+We know that subsets of~$S$ correspond to maps from~$S$ to~$𝟚$.
+More explicitly, for every subset~$F$ of~$S$, the corresponding function~$f$ is given by
+\[
+	f x
+	=
+	\begin{cases*}
+		1 & if~$x ∈ F$, \\
+		0 & otherwise,
+	\end{cases*}
+\]
+for every~$x ∈ S$, and we have~$F = f^{-1} 1$.
+
+The subset~$F$ of~$S$ is a filter if and only if~$1 ∈ F$, and if for all~$x, y ∈ F$ we have~$x ∧ y ∈ F$ if and only if~$x, y ∈ F$.
+The condition~$1 ∈ F$ is equivalent to~$f(1) = 1$.
+We have for the second condition the chain of equivalences
+\begin{align*}
+	{}&
+	\text{$[x ∧ y ∈ F \iff x, y ∈ F]$ for all~$x, y ∈ S$} \\
+	\iff{}&
+	\text{$[f (x ∧ y) = 1 \iff f x, f y = 1]$ for all~$x, y ∈ S$} \\
+	\iff{}&
+	\text{$[f (x ∧ y) = 1 \iff (f x) ∧ (f y) = 1]$ for all~$x, y ∈ S$} \\
+	\iff{}&
+	\text{$f (x ∧ y) = (f x) ∧ (f y)$ for all~$x, y ∈ S$} \,.
+\end{align*}
+We hence find that~$F$ is a filter in~$S$ if and only if the corresponding map~$f$ from~$S$ to~$𝟚$ is a homomorphism of meet-semilattices.
