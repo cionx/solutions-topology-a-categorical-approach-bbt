@@ -1,0 +1,21 @@
+\subsection{Theorem~3.8}
+
+We check that the filter~$\filter{F}$ does indeed converge to both~$x$ and~$y$.
+By symmetry, it suffices to show that it converges to~$x$.
+
+\begin{proposition}
+	\label{generic criterion for convergence of a filterbase}
+	Let~$X$ be a topological space, let~$x$ be a point in~$X$ and let~$\filterbase{B}$ be a filterbase for a filter~$\filter{F}$ on~$X$.
+	Suppose that for every open neighbourhood~$U$ of~$x$ there exists some set~$B$ belonging to~$\filterbase{B}$ with~$B ⊆ U$.
+	Then the filter~$\filter{F}$ converges to~$x$.
+\end{proposition}
+
+\begin{proof}
+	There exists by assumption for every set~$U$ belonging to~$\top{T}_x$ a set~$B$ belonging to~$\filterbase{B}$ with~$B ⊆ U$.
+	This set~$B$ also belongs to~$\filter{F}$.
+	Because~$\filter{F}$ is upward closed, it follows that~$U$ belongs to~$\filter{F}$.
+	This shows that~$\top{T}_x ⊆ \filter{F}$, so that~$\filter{F}$ converges to~$x$.
+\end{proof}
+
+There exists for every open neighbourhood~$U$ of~$x$ and every open neighbourhood~$V$ of~$y$ some set~$B$ belonging to~$\filterbase{B}$ with both~$B ⊆ U$ and~$B ⊆ V$, namely~$B = U ∩ V$.
+According to \cref{generic criterion for convergence of a filterbase}, this shows that the filter~$\filter{B}$ converges both to~$x$ and to~$y$.
