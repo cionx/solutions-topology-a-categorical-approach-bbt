@@ -1,0 +1,85 @@
+\subsection{Example~3.18}
+
+We have previously defined for every sequence~$(x_n)_n$ in a set~$X$ its eventuality filter~$\event_{(x_n)_n}$.
+We can generalize this construction as follows.
+
+\begin{definition}
+	A poset~$D$ is \defemph{directed} if any two elements of~$D$ admit an upper bound.
+	More explicitly, there exist for any two elements~$α$ and~$β$ of~$D$ another element~$γ$ of~$D$ with~$α, β ≤ γ$.
+\end{definition}
+
+\begin{definition}
+	Let~$X$ be a set.
+	A \defemph{net} in~$X$ is a function~$D \to X$ where~$D$ is a directed set.
+\end{definition}
+
+We denote nets similarly to sequences as~$(x_α)_{α ∈ D}$ or simply as~$(x_α)_α$.
+We observe that sequences are special cases of nets.
+
+\begin{definition}
+	Let~$X$ be a set.
+	\begin{enumerate}
+
+		\item
+			Let~$P$ be a poset and let~$f \colon P \to X$ be a function.
+			Let~$A$ be a subset of~$X$.
+			The function~$f$ is \defemph{eventually in~$A$} if there exists some element~$α$ of~$P$ such that~$f β ∈ A$ for every element~$β$ of~$P$ with~$β ≥ α$.
+
+		\item
+			Let~$(x_α)_α$ be a net in~$X$.
+			The \defemph{eventuality filter}~$\event_{(x_α)_α}$ on~$X$ is given by
+			\[
+				\event_{(x_α)_α}
+				=
+				\{
+					A ⊆ X
+					\suchthat
+					\text{the net~$(x_α)_α$ is eventually in~$A$}
+				\} \,.
+			\]
+
+	\end{enumerate}
+\end{definition}
+
+As the name indicates, the eventuality filter of a net is indeed a filter.
+This can be shown in the same way as for the special case of sequences.
+
+We observe that the poset~$(\mathcal{P}, ⪯)$ is directed, since any two partitions share a common refinement.
+For the two functions~$u, l \colon \mathcal{P} \to ℝ$ we can therefore consider their eventuality filters.
+
+Upward closed subsets of directed sets are again directed.
+Therefore, every filter~$\filter{F}$ in~$(P, ⪯)$ is again directed.
+This allows us to consider the eventuality filters of the restrictions~$\restrict{u}{\filter{F}}$ and~$\restrict{l}{\filter{F}}$.
+% The authors use parentheses for B_u(F)$ and B_l(F), so we follow this choice of notation.
+These filters are precisely~$\filter{B}_u(\filter{F})$ and~$\filter{B}_l(\filter{F})$ respectively.
+These collections of subsets of~$ℝ$ are therefore filters on~$ℝ$.%
+\footnote{
+	Not filters in~$ℝ$ (as a poset), but filters on~$ℝ$ (as a set).
+}
+
+For every filter~$\filter{F}$, both~$\filter{B}_u(\filter{F})$ and~$\filter{B}_l(\filter{F})$ converge to some real number.
+To see this, we observe that the function~$u \colon \mathcal{P} \to ℝ$ is antitone, while the function~$l \colon \mathcal{P} \to ℝ$ is isotone.
+We consider therefore
+\[
+	I_u ≔ \inf_{P ∈ \mathcal{P}} u_P \,,
+	\quad
+	I_l ≔ \sup_{P ∈ \mathcal{P}} l_P \,.
+\]
+These are real numbers because the function~$f$ is bounded and the indexing set~$\mathcal{P}$ is nonempty.
+
+To show that the filter~$\filter{B}_u(\filter{F})$ converges to~$I_u$, let~$U$ be an open neighbourhood of~$I_u$.
+We need to show that~$U$ belongs to~$\filter{B}_u(\filter{F})$.
+
+There exists some~$ε > 0$ with~$(I_u - ε, I_u + ε) ⊆ U$.
+By construction of~$I_u$, there exists some partition~$P$ of~$[a, b]$ with~$I_u ≤ u_P < I_u + ε$.
+There also exists some partition~$P'$ belonging to~$\filter{F}$ because filters are nonempty.
+These two partitions~$P$ and~$P'$ admit a common refinement~$Q$, which is again contained in~$\filter{F}$ because filters are upward closed.
+
+For every partition~$P''$ with~$Q ⪯ P''$ we have~$P ⪯ Q ⪯ P''$, and therefore~$u_{P''} ≤ u_P$ because the map~$u$ is antitone.
+Consequently,~$I_u ≤ u_{P''} < I_u + ε$, and thus~$u_{P''} ∈ U$.
+This shows that~$U$ belongs to~$\filter{B}_u(\filter{F})$.
+
+We have thus shown that every open neighbourhood of~$I_u$ belongs to~$\filter{B}_u(\filter{F})$.
+This tells us that the filter~$\filter{B}_u(\filter{F})$ converges to~$I_u$.
+
+That the filter~$\filter{B}_l(\filter{F})$ converges to~$I_l$ can be shown in the same way.
