@@ -1,0 +1,17 @@
+\subsection{Example~3.15}
+
+Let~$X$ and~$Y$ be two sets, let~$(x_n)_n$ be a sequence in~$X$ and let~$f$ be a map from~$X$ to~$Y$.
+We have for every subset~$B$ of~$Y$ the chain of equivalences
+\begin{align*}
+	{}&
+	B ∈ f_* \event_{(x_n)_n} \\
+	\iff{}&
+	f^{-1} B ∈ \event_{(x_n)_n} \\
+	\iff{}&
+	\text{the sequence~$(x_n)_n$ is eventually in~$f^{-1} B$} \\
+	\iff{}&
+	\text{the sequence~$(f x_n)_n$ is eventually in~$B$} \\
+	\iff{}&
+	B ∈ \event_{(f x_n)_n} \,.
+\end{align*}
+This shows that~$f_* \event_{(x_n)_n} = \event_{(f x_n)_n}$.
