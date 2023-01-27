@@ -1,0 +1,176 @@
+\subsection{Exercise~3.5}
+
+
+
+\subsubsection{a)}
+
+The book forgot to define what a subnet is.
+As discussed in \cite[§Subnets]{nlab_subnets}, there are multiple non-equivalent definitions.
+We will use the strongest of these definitions, as this ensures that our solutions will also work with the other, weaker definitions.
+
+\begin{definition}
+	Let~$P$ and~$Q$ be two preordered sets.
+	A map~$f$ from~$P$ to~$Q$ is \defemph{final} if for every element~$y$ of~$Y$ there exists some element~$x$ of~$X$ with~$f x ≥ y$.
+\end{definition}
+
+\begin{definition}
+	\label{definition of subnet}
+	Let~$X$ be a set and let~$(x_α)_{α ∈ D}$ be a set in~$X$.
+	Let~$D'$ be another directed set and let~$φ$ be an isotone, final function from~$D$ to~$D'$.
+	The net~$(x_{φ β})_{β ∈ D'}$ is a \defemph{subnet} of the net~$(x_α)_{α ∈ D}$.
+\end{definition}
+
+We can now solve the given exercise.
+
+A subsequence of a sequence~$(x_n)_{n ∈ ℕ}$ is, by definition, a sequence~$(x_{k_i})_{i ∈ ℕ}$ where~$k \colon ℕ \to ℕ$ is strictly isotone.
+This entails that~$k_i ≥ i$ for every~$i ∈ ℕ$, whence~$k$ is not only isotone but also final.
+The subsequence~$(x_{k_i})_{i ∈ ℕ}$ is therefore also a subnet.
+
+There are different kinds of examples of subnets of sequences that are not subsequences.
+\begin{itemize*}
+
+	\item
+		Let~$(x_n)_{n ∈ ℕ}$ be any sequence in~$X$.
+		We regard~$ℕ × ℕ$ as a poset with the product order:~$(n, m) ≤ (n', m')$ if and only if both~$n ≤ n'$ and~$m ≤ m'$.
+		This poset is directed since~$ℕ$ is directed.
+		The map
+		\[
+			φ \colon ℕ × ℕ \to ℕ \,, \quad (n, m) \mapsto n + m
+		\]
+		is isotone and final.
+		The resulting subnet
+		\[
+			(x_{φ (n, m)})_{(n, m) ∈ ℕ × ℕ} = (x_{n + m})_{(n, m) ∈ ℕ × ℕ}
+		\]
+		is not a subsequence, since it is not indexed by~$ℕ$ anymore.
+
+	\item
+		One might object that the above counterexample \enquote{is cheating} since the considered subnet is not even a sequence anymore.
+		We give therefore another example.
+
+		Let~$(x_n)_{n ∈ ℕ}$ be a sequence in~$X$ with no repeating values.
+		This entails that its subsequences also have no repeating values.
+		Let~$φ \colon ℕ \to ℕ$ be the map with values
+		\[
+			0 \,, \enspace 0 \,, \enspace
+			1 \,, \enspace 1 \,, \enspace
+			2 \,, \enspace 2 \,, \enspace
+			3 \,, \enspace 3 \,, \enspace
+			4 \,, \enspace 4 \,, \enspace
+			5 \,, \enspace 5 \,, \enspace
+			\dotsc
+		\]
+		The sequence~$(x_{φ n})_{n ∈ ℕ}$ repeats every value twice, and can therefore not be a subsequence of the original sequence~$(x_n)_{n ∈ ℕ}$.
+
+	\item
+		One might object that the above counterexample is still somewhat artificial:
+		it only occurs because in the definition of a subsequence we require~$k \colon ℕ \to ℕ$ to be strictly isotone, whereas in the definition of a subnet we allow~$φ \colon D' \to D$ to be non-strictly isotone.
+		We could therefore try to find a subnet~$(x_{φ α})_{α ∈ D}$ of a sequence~$(x_n)_n$ with~$D = ℕ$ and~$φ$ is injective.
+		But then~$φ$ would already be strictly isotone, and so the subnet would be a subsequence.
+
+\end{itemize*}
+
+If we were to consider a weaker notion of subnets, then other problems could also occur.
+
+\begin{definition}
+	Let~$P$ and~$Q$ be two preordered sets.
+	A map~$f$ from~$P$ to~$Q$ is \defemph{strongly final} if for every element~$y$ of~$Q$ there exists an element~$x$ of~$P$ with~$f x' ≥ y$ for every~$x' ≥ x$.
+\end{definition}
+
+\begin{itemize*}[resume*]
+
+	\item
+		Some authors require the map~$φ$ in the definition of a subnet to only be strongly final.%
+		\footnote{
+			Every isotone, final map is also strongly final.
+			This alternative definition of a subnet is therefore weaker/more general than \cref{definition of subnet}.
+		}
+		In this case, we can consider the map~$φ \colon ℕ \to ℕ$ given by the values
+		\[
+			1 \,, \enspace 0 \,, \enspace
+			3 \,, \enspace 2 \,, \enspace
+			5 \,, \enspace 4 \,, \enspace
+			7 \,, \enspace 6 \,, \enspace
+			9 \,, \enspace 8 \,, \enspace
+			11 \,, \enspace 10 \,, \enspace
+			\dotsc
+		\]
+		In other words, the map~$φ$ swaps the two elements~$2n$ and~$2n + 1$ for every~$n ∈ ℕ$.
+		This map is strongly final and injective.
+		But if~$(x_n)_n$ is once again a sequence without repeating values, then once again the subnet~$(x_{φ n})_{n ∈ ℕ}$ of~$(x_n)_n$ will not be a subsequence.
+
+\end{itemize*}
+
+
+
+\subsubsection{b)}
+
+We have for every element~$(A, a)$ of~$\mathcal{D}$ the inclusion~$A ⊆ A$ and therefore the inequality~$(A, a) ≤ (A, a)$.
+
+Let~$(A, a)$,~$(B, b)$ and~$(C, c)$ be elements of~$\mathcal{D}$ with~$(A, a) ≤ (B, b) ≤ (C, c)$.
+Then~$C ⊆ B ⊆ A$, therefore~$C ⊆ A$, and thus~$(A, a) ≤ (C, c)$.
+
+Let~$(A, a)$ and~$(B, b)$ be two arbitrary elements of~$\mathcal{D}$.
+The sets~$A$ and~$B$ belong to the filter~$\filter{F}$, whence their intersection~$A ∩ B$ again belongs to~$\filter{F}$.
+This intersection must be nonempty, since the filter~$\filter{F}$ is proper (and therefore does not contain the empty set).
+There hence exists some element~$x$ in~$A ∩ B$.
+The pair~$(A ∩ B, x)$ is an element of~$\mathcal{D}$ with both~$(A, a) ≤ (A ∩ B, x)$ and~$(B, b) ≤ (A ∩ B, x)$.
+
+
+
+\subsubsection{c)}
+
+Every set~$A$ belonging to~$\filter{F}$ is nonempty, whence there exists some element~$a$ with~$(A, a) ∈ \mathcal{D}$.
+We have for every subset~$C$ of~$X$ the chain of equivalences
+\begin{align}
+	{}&
+	C ∈ \event_{π_{\filter{F}}}
+	\notag \\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		there exists some~$(A, a) ∈ \mathcal{D}$ \\
+		with~$π_{\filter{F}} (B, b) ∈ C$ for every~$(B, b) ∈ \mathcal{D}$ with~$(B, b) ≥ (A, a)$
+	\end{tabular}
+	\right.
+	\notag \\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		there exists some~$A ∈ \filter{F}$ \\
+		with~$b ∈ C$ for every~$B ∈ \filter{F}$ with~$B ⊆ A$ and every~$b ∈ B$
+	\end{tabular}
+	\right.
+	\notag \\
+	\iff{}&
+	\left\{
+	\begin{tabular}{l}
+		there exists some~$A ∈ \filter{F}$ \\
+		with~$B ⊆ C$ for every~$B ∈ \filter{F}$ with~$B ⊆ A$
+	\end{tabular}
+	\right.
+	\notag \\
+	\iff{}&
+	\label{translate to intersections}
+	\text{there exists some~$A ∈ \filter{F}$ with~$B' ∩ A ⊆ C$ for every~$B' ∈ \filter{F}$} \\
+	\iff{}&
+	\label{use upward closed}
+	C ∈ \filter{F} \,.
+\end{align}
+For the equivalence~\eqref{translate to intersections} we use that~$\filter{F}$ is closed under intersections, and for the equivalence~\eqref{use upward closed} we use that~$\filter{F}$ is upward closed.
+
+
+
+\subsubsection{d)}
+
+Let~$\top{T}$ be the topology on~$X$.
+We have for every point~$x$ in~$X$ the chain of equivalences
+\[
+	π_{\filter{F}} \to x
+	\iff
+	\top{T}_x ⊆ \event_{π_{\filter{F}}}
+	\iff
+	\top{T}_x ⊆ \filter{F}
+	\iff
+	\filter{F} \to x \,.
+\]
