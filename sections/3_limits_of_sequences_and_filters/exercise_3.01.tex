@@ -1,0 +1,32 @@
+\subsection{Exercise~3.1}
+
+
+
+\subsubsection{a)}
+
+Let~$g, g' \colon X \to Y$ be two continuous extensions of~$f$.
+We know from \cref{equalizers into hausdorff spaces are closed} that the set
+\[
+	E ≔ \{ x ∈ X \suchthat g x = g' x \}
+\]
+is closed in~$X$.
+The set~$E$ contains the dense subset~$A$ of~$X$, whence~$E = X$.
+In other words,~$g = g'$.
+
+
+
+\subsubsection{b)}
+Let~$X$ be any topological space and let~$A$ be a proper dense subset of~$X$.
+Let~$Y$ be an indiscrete topological space and let~$f$ be any map from~$A$ to~$Y$.
+The map~$f$ is automatically continuous, and every extension of~$f$ to a map from~$X$ to~$Y$ will also be continuous.
+Such extensions correspond to maps from~$X ∖ A$ to~$Y$.
+So if we additionally require~$Y$ to have at least two distinct elements, then there will be multiple extensions.
+
+
+
+\subsubsection{c)}
+
+The subset~$A ≔ [-1, 1] ∖ \{ 0 \}$ of the closed interval~$X ≔ [-1, 1]$ is dense, and the function~$f \colon A \to ℝ$ given by~$f x = 1 / x$ for every~$x ∈ A$ is continuous.
+Suppose that~$f$ could be extended to a continuous map~$g$ from~$X$ to~$ℝ$.
+The image of~$g$ would be a compact subset of~$ℝ$, and therefore bounded.
+This implies that the image of~$f$ would be bounded in~$ℝ$, which is not the case.
