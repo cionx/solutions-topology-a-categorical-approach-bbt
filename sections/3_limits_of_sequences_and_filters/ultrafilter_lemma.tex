@@ -1,0 +1,40 @@
+\subsection{The Ultrafilter Lemma}
+
+The required upper bound for a chain of filters can also be constructed as explained in the following \lcnamecref{union of chain of filters is again a filter}.
+
+\begin{proposition}
+	\label{union of chain of filters is again a filter}
+	Let~$(\filter{F}_α)_{α ∈ A}$ be a nonempty chain of filters in a poset~$P$.
+	\begin{enumerate}
+
+		\item
+			The union~$⋃_{α ∈ A} \filter{F}_α$ is again a filter in~$P$.
+
+		\item
+			If~$P$ admits a least element and each~$\filter{F}_α$ is proper, then~$⋃_{α ∈ A} \filter{F}_α$ is again proper.
+
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	Let~$\filter{F} ≔ ⋃_{α ∈ A} \filter{F}_α$.
+
+	There exists an index~$α$ in~$A$, and the filter~$\filter{F}_α$ is nonempty.
+	Therefore,~$\filter{F}$ is nonempty.
+
+	Let~$b$ belong to~$\filter{F}$, and let~$c$ be some element of~$P$ with~$b ≤ c$.
+	The element~$b$ belongs to~$\filter{F}_α$ for some index~$α$.
+	It follows that~$c$ also belongs to~$\filter{F}_α$, because~$\filter{F}_α$ is upward closed.
+	Consequently,~$c$ belongs to~$\filter{F}$.
+
+	Let~$b$ and~$c$ be two elements belonging to~$\filter{F}$.
+	This means that there exist indices~$β$ and~$γ$ such that~$b$ belongs to~$\filter{F}_β$ and~$c$ belongs to~$\filter{F}_γ$.
+	We have by assumption either~$\filter{F}_β ⊆ \filter{F}_γ$ or~$\filter{F}_γ ⊆ \filter{F}_β$.
+	It follows that for some index~$α ∈ \{ β, γ \}$ that both~$b$ and~$c$ belong to~$\filter{F}_α$.
+	It then further follows that there exists some element~$a$ belonging to~$\filter{F}_α$ with~$a ≤ b, c$.
+	The element~$a$ again belongs to~$\filter{F}$.
+
+	Suppose now that each~$\filter{F}_α$ is proper, and that~$P$ admits a least element~$0$.
+	That the~$\filter{F}_α$ are proper means that no~$\filter{F}_α$ contains~$0$.
+	Consequently,~$\filter{F}$ again doesn’t contain~$0$, so that~$\filter{F}$ is proper.
+\end{proof}
