@@ -1,0 +1,54 @@
+\subsection{Exercise~3.3}
+\label{exercise 3.3}
+
+The eventuality filter~$\event_{(x_{2n})_n}$ is given by
+\begin{align*}
+	\event_{(x_{2n})_n}
+	&=
+	\{
+		A ⊆ ℝ
+		\suchthat
+		\text{there exists~$N$ with~$x_{2n} ∈ A$ for every~$n ≥ N$}
+	\} \\
+	&=
+	\{
+		A ⊆ R
+		\suchthat
+		\text{there exists~$N$ with~$1 / 2^n ∈ A$ for every~$n ≥ N$}
+	\} \,.
+\end{align*}
+To show that~$\event_{(x_{2n})_n} \to 0$, we need to show that every open neighbourhood~$U$ of~$0$ belongs to~$\event_{(x_{2n})_n}$.
+There exists some~$ε > 0$ with~$(-ε, ε) ⊆ U$ and some~$N$ with~$1 / 2^n < ε$ for every~$n ≥ N$.
+It follows that~$1 / 2^n ∈ U$ for every~$n ≥ N$, whence~$A$ belongs to~$\event_{(x_{2n})_n}$.
+
+The eventuality filter~$\event_{(x_n)_n}$ is given by
+\begin{align*}
+	{}&
+	\event_{(x_n)_n} \\
+	={}&
+	\{
+		A ⊆ ℝ
+		\suchthat
+		\text{there exists~$N$ with~$x_n ∈ A$ for every~$n ≥ N$}
+	\} \\
+	={}&
+	\{
+		A ⊆ ℝ
+		\suchthat
+		\text{there exists~$N$ with~$x_{2n} ∈ A$ for every~$n ≥ N/2$, and~$-1 ∈ A$}
+	\} \\
+	={}&
+	\{
+		A ⊆ ℝ
+		\suchthat
+		\text{there exists~$N'$ with~$x_{2n} ∈ A$ for every~$n ≥ N'$, and~$-1 ∈ A$}
+	\} \\
+	={}&
+	\{
+		A ⊆ ℝ
+		\suchthat
+		\text{$A$ belongs to~$\event_{(x_{2n})_n}$ and~$-1 ∈ A$}
+	\} \,.
+\end{align*}
+We see in particular that~$\event_{(x_{2n})_n} ⊆ \event_{(x_n)_n}$.
+The open neighbourhood~$(-1, 1)$ of~$0$ does not belong to~$\event_{(x_n)_n}$, whence~$\event_{(x_n)_n}$ does not converge to~$0$.
