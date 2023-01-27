@@ -1,0 +1,15 @@
+\subsection{Pushforward of Prime Filters}
+
+\begin{proposition}
+	Let~$X$ and~$Y$ be two sets and let~$f$ be a map from~$X$ to~$Y$.
+	Let~$\filter{F}$ be a prime filter on~$X$.
+	The pushforward filter~$f_* \filter{F}$ is again prime.
+\end{proposition}
+
+\begin{proof}
+	Let~$A$ and~$B$ be two subsets of~$Y$ whose union~$A ∪ B$ belongs to~$f_* \filter{F}$.
+	This means that the preimage~$f^{-1} (A ∪ B)$ belongs to the original filter~$\filter{F}$.
+	But we have~$f^{-1} (A ∪ B) = f^{-1} A ∪ f^{-1} B$, and the filter~$\filter{F}$ is prime.
+	Hence, we find that one of the preimages~$f^{-1} A$ and~$f^{-1} B$ must belong to~$\filter{F}$.
+	Consequently, one of the sets~$A$ and~$B$ belongs to~$f_* \filter{F}$.
+\end{proof}
