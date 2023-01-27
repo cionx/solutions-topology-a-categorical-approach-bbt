@@ -1,29 +1,3 @@
 \subsection{Example~3.4}
 
-\begin{lemma}
-	\label{uniquess of sequential limits is inherited by finer topologies}
-	Let~$X$ be a set and let~$\top{T}_1$ and~$\top{T}_2$ be two topologies on~$X$.
-	Suppose that limits of sequences with respect to~$\top{T}_1$ are unique and that the topology~$\top{T}_2$ is finer than the topology~$\top{T}_1$.
-\end{lemma}
-
-\begin{proof}
-	Let~$(x_n)_n$ be a sequence in~$X$ with limits~$x$ and~$y$ with respect to~$\top{T}_2$.
-	Then~$x$ and~$y$ are also limits of~$(x_n)_n$ with respect to~$\top{T}_1$, since~$\top{T}_1$ is coarser than~$\top{T}_2$.
-	Consequently,~$x = y$.
-\end{proof}
-
-Let~$X$ be the real line together with the cocountable topology.
-Every two proper open subsets of~$X$ intersect (because the union of two countable subsets is again a proper subset of~$X$).
-Therefore, no two points of~$X$ can be separated by disjoint open neighbourhoods:
-the space~$X$ is very much not a Hausdorff space.
-
-Let~$(x_n)_n$ be a sequence in~$X$ that converges to a point~$x$.
-We note that the set~$U ≔ X ∖ \{ x_n \suchthat n ≥ 0 \}$ is open in~$X$, and that the sequence~$(x_n)_n$ never enters the set~$U$.
-Therefore,~$x$ cannot lie in~$U$.
-More generally, every subsequence~$(x_{k_i})_i$ also converges to~$x$, whence~$x$ cannot be contained in~$X ∖ \{ x_{k_i} \suchthat i ≥ 0 \}$.
-
-The point~$x$ must thus be contained in every subsequence of~$(x_n)_n$.
-This is only possible if the sequence~$(x_n)_n$ is eventually constant with value~$x$, i.e., if there exists some index~$N$ with~$x_n = x$ for every~$n ≥ N$.
-
-Consequently, the possible limits of the sequence~$(x_n)_n$ are the same as the limits of the constant sequence~$x, x, \dotsc$
-The cocountable topology is finer than the cofinite topology, so it follows from Theorem~3.1 (and the above \cref{uniquess of sequential limits is inherited by finer topologies}) that~$x$ is the unique limit of~$(x_n)_n$.
+We will verify this example in \nameref{exercise 3.2}.
