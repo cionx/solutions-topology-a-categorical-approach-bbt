@@ -1,0 +1,142 @@
+\subsection{The Functor~\texorpdfstring{$β$}{β}}
+
+
+
+\subsubsection{Functoriality of~$β$}
+
+\begin{proposition}
+	\label{functoriality of pushforward of filters}
+	Let~$X$,~$Y$ and~$Z$ be sets and let~$f \colon X \to Y$ and~$g \colon Y \to Z$ be two maps.
+	\begin{enumerate}
+
+		\item
+			We have~$(\id_X)_* \filter{F} = \filter{F}$ for every filter~$\filter{F}$ on~$X$.
+
+		\item
+			We have~$g_* f_* \filter{F} = (g f)_* \filter{F}$ for every filter~$\filter{F}$ on~$X$.
+
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+
+		\item
+			We have for every subset~$A$ of~$X$ the chain of equivalences
+			\[
+				A ∈ (\id_X)_* \filter{F}
+				\iff
+				\id_X^{-1} A ∈ \filter{F}
+				\iff
+				A ∈ \filter{F} \,,
+			\]
+			and therefore the equality~$(\id_X)_* \filter{F} = \filter{F}$.
+
+		\item
+			We have for every subset~$A$ of~$Z$ the chain of equivalences
+			\begin{align*}
+				A ∈ g_* f_* \filter{F}
+				\iff
+				g^{-1} A ∈ f_* \filter{F}
+				\iff
+				f^{-1} g^{-1} A ∈ \filter{F}
+				&\iff
+				(g f)^{-1} A ∈ \filter{F} \\
+				&\iff
+				A ∈ (g f)_* \filter{F} \,,
+			\end{align*}
+			and therefore the equality~$g_* f_* \filter{F} = (g f)_* \filter{F}$.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
+
+It follows from the above~\lcnamecref{functoriality of pushforward of filters} and Theorem~3.13 that the assignment~$β \colon \Set \to \Set$ is indeed a functor.
+
+
+
+\subsubsection{Naturality of~$α$}
+
+\begin{lemma}
+	\label{pushforward of neighbourhood filter}
+	Let~$(X, \top{T}^X)$ and~$(Y, \top{T}^Y)$ be two topological spaces and let~$f$ be a continuous map from~$(X, \top{T}^X)$ to~$(Y, \top{T}^Y)$.
+	For every point~$x$ in~$X$, we have~$\top{T}^Y_{f x} ⊆ f_* \top{T}^X_x$.
+\end{lemma}
+
+\begin{proof}
+	Let~$U$ be an open neighbourhood of~$f x$.
+	The preimage~$f^{-1} U$ is an open neighbourhood of~$x$ because~$f$ is continuous.
+	Therefore,~$f^{-1} U$ belongs to~$\top{T}^X_x$, which means that~$U$ belongs to~$\top{T}^Y_{f x}$.
+\end{proof}
+
+\begin{proposition}
+	\label{naturality of limit of filters}
+	Let~$X$ be a topological space and let~$\filter{F}$ be a filter on~$X$ converging to some point~$x$ in~$X$.
+	Let~$Y$ be another topological space and let~$f$ be a continuous map from~$X$ to~$Y$.
+	Then the filter~$f_* \filter{F}$ converges to~$f x$.
+\end{proposition}
+
+\begin{proof}
+	Let~$\top{T}^X$ and~$\top{T}^Y$ denote the topologies on~$X$ and~$Y$ respectively.
+	That~$\filter{F}$ converges to~$x$ means that~$\top{T}^X_x ⊆ \filter{F}$.
+	It then follows that
+	\[
+		\top{T}^Y_{f x}
+		⊆
+		f_* \top{T}^X_x
+		⊆
+		f_* \filter{F} \,,
+	\]
+	where the first inclusion follows from~\cref{pushforward of neighbourhood filter}.
+	The inclusion~$\top{T}^Y_{f x} ⊆ f_* \filter{F}$ tells us that the filter~$f_* \filter{F}$ converges to~$f x$.
+\end{proof}
+
+\Cref{naturality of limit of filters} tells us that the assignment~$α_X \colon β X \to X$, where~$X$ is a compact Hausdorff space, is natural.
+The map~$α_X$ is also bijective for every compact Hausdorff space~$X$.
+We have therefore constructed a natural isomorphism between the functor~$β \colon \CptHaus \to \Set$ and the forgetful functor from~$\CptHaus$ to~$\Set$.
+
+
+
+\subsubsection{Naturality of~$η$}
+
+\begin{proposition}
+	\label{pushforward of principal filter}
+	Let~$X$ and~$Y$ be two sets and let~$f$ be a map from~$X$ to~$Y$.
+	For every point~$x$ in~$X$, we have~$f_* P_x = P_{f x}$.
+\end{proposition}
+
+\begin{proof}[First proof]
+	We have for every subset~$A$ of~$Y$ the chain of equivalences
+	\[
+		A ∈ f_* P_x
+		\iff
+		f^{-1} A ∈ P_x
+		\iff
+		x ∈ f^{-1} A
+		\iff
+		f x ∈ A
+		\iff
+		A ∈ P_{f x} \,,
+	\]
+	and therefore the equality~$f_* P_x = P_{f x}$.
+\end{proof}
+
+\begin{proof}[Second proof]
+	Let~$\top{T}^X$ and~$\top{T}^Y$ denote the discrete topologies on~$X$ and~$Y$ respectively.
+	The map~$f$ is continuous with respect to the discrete topologies, and we have~$\top{T}^X_x = P_x$ and~$\top{T}^Y_{f x} = P_{f x}$.
+	It follows from \cref{pushforward of neighbourhood filter} that
+	\[
+		P_{f x}
+		=
+		\top{T}^Y_{f x}
+		⊆
+		f_* \top{T}^X_x
+		=
+		f_* P_x \,.
+	\]
+	We know from Theorem~3.13 that the pushforward~$f_* P_x$ is again an ultrafilter.
+	So~$P_{f x}$ and~$f_* P_x$ are ultrafilters with~$P_{f x} ⊆ f_* P_x$, whence already~$P_{f x} = f_* P_x$.
+\end{proof}
+
+The above \lcnamecref{pushforward of principal filter} tells us that the transformation~$η \colon \id_{\Set} \to β$ given by~$η_X x = P_x$ is natural.
