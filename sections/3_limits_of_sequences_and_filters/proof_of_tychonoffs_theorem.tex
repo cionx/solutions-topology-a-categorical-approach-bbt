@@ -1,0 +1,29 @@
+\subsection{Proof of Tychonoff’s Theorem}
+
+Let us make an observation made in the presented proof more explicit.
+
+\begin{proposition}
+	Let~$(X_α)_α$ be a family of topological spaces with product~$X ≔ ∏_{α ∈ A} X_α$, and for every index~$α$ let~$π_α$ be the canonical projection from~$X$ to~$X_α$.
+	Let~$\filter{F}$ be a filter in~$X$ and let~$x = (x_α)_α$ be a point in~$X$.
+	The filter~$\filter{F}$ converges to the point~$x$ if and only if for every index~$α$ the filter~$(π_α)_* \filter{F}$ converges to~$x_α$.
+\end{proposition}
+
+In other words:
+convergence of filters on product spaces works component\-wise.
+
+\begin{proof}
+	If the filter~$\filter{F}$ converges to the point~$x$, then for every index~$α$ its pushforward~$(π_α)_* \filter{F}$ converges to the point~$π_α x = x_α$, by the continuity of~$π_α$ and Theorem~3.10.
+
+	Suppose conversely that for every index~$α$ the pushforward~$(π_α)_* \filter{F}$ converges to the point~$x_α$.
+	To show that the original filter~$\filter{F}$ converges to the point~$x$, we need to show that every open neighbourhood~$V$ of~$x$ is contained in~$\filter{F}$.
+
+	There exists a basic open neighbourhood~$U$ of~$x$ with~$U ⊆ V$.
+	This neighbourhood~$U$ is thus of the form
+	\[
+		U = π_{α_1}^{-1} U_1 ∩ \dotsb ∩ π_{α_n}^{-1} U_n
+	\]
+	for some distinct indices~$α_1, \dotsc, α_n$ and open subsets~$U_i$ of~$X_{α_i}$.
+	By assumption,~$U_i$ belongs to~$(π_α)_* \filter{F}$ for every index~$i$, which means that the preimage~$π_{α_i}^{-1} U_i$ belongs to~$\filter{F}$ for every index~$i$.
+	It follows that~$U$ again belongs to~$\filter{F}$ because filters are closed under taking intersections.
+	It further follows that~$V$ belongs to~$\filter{F}$ because filters are upward closed.
+\end{proof}
