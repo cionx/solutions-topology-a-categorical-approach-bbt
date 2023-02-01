@@ -1,0 +1,480 @@
+\subsection{Exercise~3.9}
+
+
+
+\subsubsection{Hausdorff implies KC}
+
+We have seen that in Corollary~2.18.1 that in a Hausdorff space, compact subspaces are closed.
+
+
+
+\subsubsection{KC does not imply Hausdorff}
+
+We consider an uncountable set~$X$ with the cocountable topology, i.e., the closed subsets of~$X$ are the countable subsets and the entire space.
+We have seen in Exercise~3.2 that~$X$ is not a Hausdorff space (since it is uncountable).
+
+But we claim that every infinite set~$Y$ together with the cocountable topology is a KC space.
+
+We observe that for every subspace~$Z$ of~$Y$, the topology on~$Z$ is again the cocountable topology.
+Consequently, if~$Z$ is infinite, then it is not compact:
+there then exists an infinite sequence~$z_0, z_1, z_2, \dotsc$ of pairwise distinct points in~$Z$, and the closed subsets~$C_n ≔ \{ z_k \suchthat k ≥ n \}$ of~$Z$ satisfy the Finite Intersection Property even though the overall intersection~$⋂_{n ≥ 0} C_n$ is empty.
+
+The compact subspaces of~$Y$ are therefore precisely the finite subspaces, all of which are closed in~$Y$.
+
+
+
+\subsubsection{KC implies US}
+
+\begin{lemma}
+	\label{compact spaces from convergent sequences}
+	Let~$X$ be a topological space and let~$(x_n)_n$ be a convergent sequence in~$X$ with limit~$x$.
+	The subspace~$\{ x_n \suchthat n ≥ 0 \} ∪ \{ x \}$ of~$X$ is compact.
+\end{lemma}
+
+\begin{proof}
+	We denote the proposed set by~$K$.
+	Let~$\cover{U}$ be a cover of~$K$ by open subsets of~$X$.
+	There exists some set~$U_∞$ belonging to~$\cover{U}$ with~$x ∈ U_∞$, and there exists some~$N$ with~$x_n ∈ U_∞$ for every~$n ≥ N$.
+	There exists for every~$n = 0, \dotsc, N - 1$ some set~$U_n$ belonging to~$\cover{U}$ with~$x_n ∈ U_n$.
+	We have thus found a finite subcover of~$\cover{U}$, namely~$\{ U_0, \dotsc, U_{N - 1}, U_∞ \}$.
+\end{proof}
+
+Let~$X$ be a KC space.
+
+For every point~$x$ in~$X$, the singleton space~$\{ x \}$ is compact, and therefore closed in~$X$.
+This tells us that~$x$ is the unique limit of the constant sequence~$x, x, x, \dotsc$
+
+Let now~$(x_n)_n$ be a sequence in~$X$ that converges to two points~$x$ and~$y$.
+For every~$N$, the truncated sequence~$(x_n)_{n ≥ N}$ again converges to~$x$.
+Therefore, the set~$K_n ≔ \{ x_n \suchthat n ≥ N \} ∪ \{ x \}$ is compact by the above \lcnamecref{compact spaces from convergent sequences}, and thus closed because~$X$ is a KC space.
+It follows from Theorem~3.3 that~$y$ is contained in each~$K_n$.
+It follows that either~$x = y$ or there exist infinitely many indices~$n$ with~$x_n = y$.
+In the second case, the constant sequence~$y, y, y, \dotsc$ is a subsequence of~$(x_n)_n$ and therefore again converges to~$x$.
+But we have already seen that~$y$ is the unique limit of~$y, y, y, \dotsc$
+So~$x = y$ even in the second case.
+
+
+
+\subsubsection{US does not imply KC}
+
+Let~$ω_1$ be the first uncountable ordinal.
+We will make use of the following properties of~$ω_1$:
+\begin{enumerate*}
+
+	\item
+		$ω_1$ is a linear poset.%
+		\footnote{
+			By \enquote{linear} we mean that any two elements are comparable.
+		}
+
+	\item
+		$ω_1$ is, in fact, well-ordered:
+		every nonempty subset of~$ω_1$ admits a least element.%
+		\footnote{
+			Well-ordered posets are necessarily linear, since for every two elements~$x$ and~$y$ the set~$\{ x, y \}$ admits a least element.
+			If this least element is~$x$, then~$x ≤ y$, and otherwise~$y ≤ x$.
+		}
+
+	\item
+		$ω_1$ is uncountable as a set.
+
+	\item
+		For every element~$α$ of~$ω_1$, the set~$\{ β ∈ ω_1 \suchthat β ≤ α \}$ is only countable.
+
+\end{enumerate*}
+
+\begin{definition}
+	For every poset~$P$ let~$P^+$ be the extension of~$P$ to a poset with underlying set~$P ⨿ \{ -∞, ∞ \}$ and additional inequalities~$-∞ < x$ and~$x < ∞$ for every~$x ∈ P$.
+\end{definition}
+
+We note that for every linear poset~$L$, the extended poset~$L^+$ is again linear.
+If~$W$ is a well-ordered poset, then the poset~$W^+$ will again be well-ordered.
+
+\begin{definition}
+	Let~$L$ be a linear poset.
+	For every two elements~$x$ and~$y$ of~$L^+$, the open interval~$(x, y)$ is given by
+	\[
+		(x, y) ≔ \{ z ∈ L \suchthat x < z < y \} \,.
+	\]
+\end{definition}
+
+Finite intersections of open intervals are again open intervals, whence the collection of open intervals is a basis for a topology.
+
+\begin{definition}
+	Let~$L$ be a linear poset.
+	The \defemph{order topology} on~$L$ is the topology with basis given by all open intervals in~$L$.
+\end{definition}
+
+\begin{proposition}
+	\label{order topology is hausdorff}
+	Let~$L$ be a linear set endowed with the order topology.
+	Then~$L$ is a Hausdorff space.
+\end{proposition}
+
+\begin{proof}
+	Let~$x$ and~$y$ be two distinct elements of~$L$ with~$x < y$.
+	We distinguish between two cases.
+
+	Suppose first that there exists an element~$z$ of~$L$ with~$x < z < y$.
+	Then the half-open intervals~$(-∞, z)$ and~$(z, ∞)$ are disjoint open neighbourhoods of~$x$ and~$y$ respectively.
+
+	Suppose now that such an element~$z$ does not exist.
+	Then the half-open intervals~$(-∞, y)$ and~$(x, ∞)$ are disjoint open neighbourhoods of~$x$ and~$y$ respectively.
+\end{proof}
+
+The ordinal~$ω_1$ has the useful property that it cannot be exhausted by any single sequence:
+
+\begin{lemma}
+	\label{cannot exhaust omega by a sequence}
+	There exists for every sequence~$(x_n)_n$ in~$ω_1$ an element~$y$ of~$ω_1$ with~$y > x_n$ for every index~$n$.
+\end{lemma}
+
+\begin{proof}
+	Let~$(x_n)_n$ be an arbitrary sequence in~$ω_1$.
+	For every index~$n$, the half-open interval~$(-∞, x_n]$ is countable.
+	Consequently, the union~$⋃_{n ≥ 0} {} (-∞, x_n]$ is again countable.
+	But~$ω_1$ is uncountable, so there exists some element~$y$ of~$ω_1$ not contained in this union.
+	This element satisfies~$y > x_n$ for every index~$n$.
+\end{proof}
+
+Let us now consider the poset~$ω_1 + 1$ that arises from~$ω_1$ by adding a new element~$Ω$ with~$Ω > x$ for every~$x ∈ ω_1$.
+We note that~$ω_1 + 1$ is again well-ordered.
+
+\begin{corollary}
+	\label{Omega is not a limit from below}
+	A sequence in~$ω_1 + 1$ converges to the point~$Ω$ (with respect to the order topology) if and only if it is eventually constant with value~$Ω$.
+\end{corollary}
+
+\begin{proof}
+	If the sequence~$(x_n)_n$ is eventually constant with value~$Ω$, then~$(x_n)_n$ converges to~$Ω$.
+
+	Let conversely~$(x_n)_n$ be any sequence in~$ω_1 + 1$ that is not eventually constant with value~$Ω$.
+	The sequence~$(x_n)_n$ then admits a subsequence~$(x_{k_i})_i$ that never takes on the value~$Ω$ at all.
+	This means that the subsequence~$(x_{k_i})_i$ is entirely contained in~$ω_1$.
+	It follows from \cref{cannot exhaust omega by a sequence} that there exists some element~$y$ of~$ω_1$ with~$y > x_{k_i}$ for every index~$i$.
+	The open interval~$(y, ∞)$ is an open neighbourhood of~$Ω$ that doesn’t contain any term of the subsequence~$(x_{k_i})_i$, whence this subsequence doesn’t converge to~$Ω$.
+	Consequently, the original sequence~$(x_n)_n$ doesn’t converge to~$Ω$.
+\end{proof}
+
+We observe that by adding the point~$Ω$ to~$ω_1$, the resulting space becomes compact.
+
+\begin{lemma}
+	\label{compactness of bounded ordinals}
+	Let~$W$ be a well-ordered poset admitting a greatest element~$Ω$.
+	Then~$W$ is compact in the order topology.
+\end{lemma}
+
+\begin{proof}
+	Let~$\cover{U}$ be an open cover of~$W$ and let
+	\[
+		S
+		≔
+		\left\{
+			x ∈ W^+
+			\suchthat*
+			\begin{tabular}{l}
+				the open interval~$(x, ∞)$ can be covered \\
+				by finitely many sets belonging to~$\cover{U}$
+			\end{tabular}
+		\right\} \,.
+	\]
+	The set~$S$ is nonempty since it contains~$∞$, because~$(∞, ∞) = ∅$.
+	The poset~$W^+$ is again well-ordered, because~$W$ is well-ordered, whence the set~$S$ admits a least element~$s$.
+
+	The greatest element~$Ω$ of~$W$ is also contained in~$S$, since~$(Ω, ∞) = ∅$.
+	We have therefore~$s < Ω < ∞$, so either~$s = -∞$ or~$s ∈ W$.
+	If~$s = -∞$ then we find that~$(s, ∞) = (-∞, ∞) = W$ admits a finite subcover.
+	
+	Suppose now that~$s ∈ W$.
+	There exist finitely many sets~$U_1, \dotsc, U_n$ belonging to~$\cover{U}$ that cover~$(s, ∞)$.
+	But because~$s ∈ W$ there also exists an open set~$U_0$ belonging to~$\cover{U}$ with~$s ∈ U_0$.
+	This open set~$U_0$ contains an open interval~$(x, y)$ around~$s$, where~$x, y ∈ W^+$ with~$x < y$.
+	We find that~$(x, ∞) = (x, y) ∪ (s, ∞)$ is covered by the finitely many sets~$U_0, \dotsc, U_n$, whence~$x ∈ S$.
+	But~$x < s$ since~$s ∈ (x, y)$, and~$s$ is the minimal element of~$S$.
+	A contradiction!
+\end{proof}
+
+We see that the space~$ω_1 + 1$ together with the order topology is a compact Hausdorff space, but that the additional point~$Ω$ of~$ω_1 + 1$ cannot be reached by sequences in~$ω_1$.
+We can therefore destroy the Hausdorff property without changing the sequential properties of the space~$ω_1 + 1$.
+For this, we will use the following general construction (\cref{duplicating a point}).
+
+\begin{lemma}
+	\label{factorization of quotient map}
+	Consider the following diagram of topological spaces and continuous maps:
+	\[
+		\begin{tikzcd}[column sep = small]
+			X
+			\arrow{rr}[above]{f}
+			\arrow{dr}[below left]{h}
+			&
+			{}
+			&
+			Y
+			\arrow{dl}[below right]{g}
+			\\
+			{}
+			&
+			Z
+			&
+			{}
+		\end{tikzcd}
+	\]
+	Suppose the map~$f$ is a surjective quotient map.
+	Then the map~$g$ is a surjective quotient map if and only if the composite~$h = g f$ is a surjective quotient map.
+\end{lemma}
+
+\begin{proof}
+	We have~$g Y = g f X = h X$ by the surjectivity of~$f$, whence~$g$ is surjective if and only if~$h$ is surjective.
+	We have also the chain of equivalences
+	\begin{align*}
+		{}&
+		\text{$g$ is a quotient map}
+		\\
+		\iff{}&
+		\left\{
+		\begin{tabular}{l}
+			for every topological space~$W$ and every map~$k \colon Z \to W$, \\
+			the map~$k$ is continuous if and only if the map~$k g$ is continuous
+		\end{tabular}
+		\right.
+		\\
+		\iff{}&
+		\left\{
+		\begin{tabular}{l}
+			for every topological space~$W$ and every map~$k \colon Z \to W$, \\
+			the map~$k$ is continuous if and only if the map~$k g f$ is continuous
+		\end{tabular}
+		\right.
+		\\
+		\iff{}&
+		\left\{
+		\begin{tabular}{l}
+			for every topological space~$W$ and every map~$k \colon Z \to W$, \\
+			the map~$k$ is continuous if and only if the map~$k h$ is continuous
+		\end{tabular}
+		\right.
+		\\
+		\iff{}&
+		\text{$h$ is a quotient map} \,.
+	\end{align*}
+	This proves the assertion.
+\end{proof}
+
+\begin{proposition}[Duplicating a point]
+	\label{duplicating a point}
+	Let~$X$ be a topological space and let~$x_0$ be a point in~$X$ such that the singleton set~$\{ x_0 \}$ is closed.
+	Let
+	\[
+		Y ≔ ( X ∖ x_0 ) ⨿ \{ x_1, x_2 \}
+	\]
+	and let~$\top{T}$ be the collection of subsets of~$Y$ consisting of the following sets:
+	\begin{itemize*}
+
+		\item
+			Those open subsets of~$X$ not containing~$x$.
+
+		\item
+			For every open subset~$U$ of~$X$ containing~$x$ the three sets
+			\[
+				(U ∖ x_0) ∪ \{ x_1 \} \,,
+				\quad
+				(U ∖ x_0) ∪ \{ x_2 \} \,,
+				\quad
+				(U ∖ x_0) ∪ \{ x_1, x_2 \} \,.
+			\]
+
+	\end{itemize*}
+	Then the following hold:
+	\begin{enumerate}
+
+		\item
+			The collection~$\top{T}$ is a topology on~$Y$.
+
+		\item
+			The subspace~$Y ∖ x_1$ is homeomorphic to~$X$ by identifying~$x_2$ with~$x$.
+			Similarly, the subspace~$Y ∖ x_2$ is homeomorphic to~$X$ by identifying~$x_1$ with~$x$.
+
+		\item
+			The map from~$Y$ to~$X$ that identifies both~$x_1$ and~$x_2$ with the original point~$x$ is a quotient map.
+
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	We denote the points of the coproduct~$X ⨿ X$ by~$(x, i)$ with~$x ∈ X$ and~$i ∈ \{ 1, 2 \}$, indicating in which summand the point lies.
+
+	\begin{enumerate}
+
+		\item
+			Let~$∼$ be the equivalence relation on~$X ⨿ X$ that identifies for every point~$x$ of~$X$ with~$x ≠ x_0$ the two points~$(x, 1)$ and~$(x, 2)$, and let~$Y' ≔ (X ⨿ X) / {∼}$.
+
+			The open subsets of~$Y'$ correspond to open saturated subsets of~$X ⨿ X$.
+			These open saturated sets are the following, see \cref{four kinds of open saturated sets}.
+			\begin{itemize*}
+
+				\item
+					For every open subset~$U$ of~$X$ not containing~$x_0$ the set~$U ⨿ U$.
+
+				\item
+					For every open subset~$U$ of~$X$ containing~$x_0$ the three sets
+					\[
+						(U ∖ x_0) ⨿ U \,, \quad U ⨿ (U ∖ x_0) \,, \quad U ⨿ U \,.
+					\]
+					(We use here that~$\{ x_0 \}$ is closed, to conclude that~$U ∖ x_0$ is again open.)
+
+			\end{itemize*}
+			\begin{figure}
+				\centering
+				\begin{tikzpicture}[scale = 1.2]
+					% lines
+					\draw (-1, 0) -- (1, 0);
+					\draw (-1, 1) -- (1, 1);
+					% points
+					\draw[fill] (0, 0) circle (0.04);
+					\draw[fill] (0, 1) circle (0.04);
+					% open sets
+					\draw[(-), thick] (-0.8, 0) -- (-0.2, 0);
+					\draw[(-), thick] ( 0.8, 0) -- ( 0.2, 0);
+					\draw[(-), thick] (-0.8, 1) -- (-0.2, 1);
+					\draw[(-), thick] ( 0.8, 1) -- ( 0.2, 1);
+				\end{tikzpicture}
+				\qquad
+				\begin{tikzpicture}[scale = 1.2]
+					% lines
+					\draw (-1, 0) -- (1, 0);
+					\draw (-1, 1) -- (1, 1);
+					% points
+					\draw[fill] (0, 0) circle (0.04);
+					\draw[fill] (0, 1) circle (0.04);
+					% open sets
+					\draw[(-), thick] (-0.6, 0) -- (0.6, 0);
+					\draw[(-), thick] (-0.6, 1) -- (-0.04, 1);
+					\draw[(-), thick] (0.04, 1) -- (0.6, 1);
+				\end{tikzpicture}
+				\qquad
+				\begin{tikzpicture}[scale = 1.2]
+					% lines
+					\draw (-1, 0) -- (1, 0);
+					\draw (-1, 1) -- (1, 1);
+					% points
+					\draw[fill] (0, 0) circle (0.04);
+					\draw[fill] (0, 1) circle (0.04);
+					% open sets
+					\draw[(-), thick] (-0.6, 0) -- (-0.04, 0);
+					\draw[(-), thick] (0.04, 0) -- (0.6, 0);
+					\draw[(-), thick] (-0.6, 1) -- (0.6, 1);
+				\end{tikzpicture}
+				\qquad
+				\begin{tikzpicture}[scale = 1.2]
+					% lines
+					\draw (-1, 0) -- (1, 0);
+					\draw (-1, 1) -- (1, 1);
+					% points
+					\draw[fill] (0, 0) circle (0.04);
+					\draw[fill] (0, 1) circle (0.04);
+					% open sets
+					\draw[(-), thick] (-0.6, 0) -- (0.6, 0);
+					\draw[(-), thick] (-0.6, 1) -- (0.6, 1);
+				\end{tikzpicture}
+				\caption{The four kinds of open saturated subsets of~$X ⨿ X$.}
+				\label{four kinds of open saturated sets}
+			\end{figure}
+			The open subsets of~$Y'$ are therefore the following:
+			\begin{itemize*}
+
+				\item
+					For every open subset~$U$ of~$X$ not containing~$x_0$ the set
+					\[
+						\{ [x, 1] \suchthat x ∈ U \}
+						=
+						\{ [x, 2] \suchthat x ∈ U \} \,.
+					\]
+
+				\item
+					For every open subset of~$X$ containing~$x_0$ the three sets
+					\begin{gather*}
+						\{ \class{x, 1} \suchthat x ∈ U, x ≠ x_0 \} ∪ \{ \class{x_0, 2} \}
+						=
+						\{ \class{x, 2} \suchthat x ∈ U \} \,, \\
+						\{ \class{x, 2} \suchthat x ∈ U, x ≠ x_0 \} ∪ \{ \class{x_0, 1} \}
+						=
+						\{ \class{x, 1} \suchthat x ∈ U \} \,, \\
+						\{ \class{x, 1} \suchthat x ∈ U, x ≠ x_0 \} ∪ \{ \class{x_0, 1}, \class{x_0, 2} \} \,.
+					\end{gather*}
+
+			\end{itemize*}
+
+			We have a bijection between~$Y$ and~$Y'$:
+			for every point~$x$ of~$X$ with~$x ≠ x_0$, the point~$x$ in~$Y$ corresponds to the point~$\class{x, 0} = \class{x, 1}$ in~$Y'$;
+			the two points~$x_1$ and~$x_2$ in~$Y$ correspond to the points~$\class{x_0, 1}$ and~$\class{x_0, 2}$ in~$Y'$ respectively.
+			Under this bijection, the open subsets of~$Y'$ correspond precisely to the sets belonging to~$\top{T}$.
+			Therefore,~$\top{T}$ is a topology on~$Y$.
+
+		\item
+			It follows from the explicit description of~$\top{T}$ and the explicit description of the subspace topology that~$Y ∖ x_1$ has the following open subsets:
+			\begin{itemize*}
+
+				\item
+					Every open subset of~$X$ that doesn’t contain the point~$x$ is also an open subset of~$Y ∖ x_1$.
+
+				\item
+					For every open subset~$U$ of~$X$ that contains the point~$x$, the sets
+					\begin{gather*}
+						( (U ∖ x_0) ∪ \{ x_1 \} ) ∖ x_1 = U ∖ x_0 \,,
+						\\
+						( (U ∖ x_0) ∪ \{ x_2 \} ) ∖ x_1 = (U ∖ x_0) ∪ \{ x_2 \} \,,
+						\\
+						( (U ∖ x_0) ∪ \{ x_1, x_2 \} ) ∖ x_1 = (U ∖ x_0) ∪ \{ x_2 \}
+					\end{gather*}
+					are open in~$Y ∖ x_1$.
+
+			\end{itemize*}
+			The open subsets of~$Y ∖ x_1$ are hence the open subsets of~$X$, but with~$x$ replaced by~$x_2$.
+			Consequently, the map from~$X$ to~$Y ∖ x_1$ that replaces~$x$ with~$x_2$ is a homeomorphism.
+
+			For~$Y ∖ x_2$ the argumentation is the same.
+
+		\item
+			Let~$∇$ be the codiagonal map from~$X ⨿ X$ to~$X$, given by~$∇ (x, i) = x$ for every point~$x$ in~$X$ and every~$i = 1, 2$.
+			The map~$∇$ is continuous, and it factors through a continuous map~$p$ from~$Y'$ to~$X$.
+
+			The map~$∇$ is in fact a quotient map, since for every subset~$U$ of~$X$, the set~$U$ is open in~$X$ if and only if its preimage~$∇^{-1} U = U ⨿ U$ is open in~$X ⨿ X$.
+			It follows from \cref{factorization of quotient map} that the map~$p$ is again a quotient map.
+			Under the homeomorphism between~$Y'$ and~$Y$, the surjective quotient map~$p$ corresponds to the proposed map that identifies~$x_1$ and~$x_2$ with~$x$.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
+
+\begin{example}
+	Duplicating the point~$0$ of the real line~$ℝ$ results in the line with two origins.
+\end{example}
+
+We consider now the space~$X ≔ ω_1 + 1$ with its special point~$Ω$.
+We use \cref{duplicating a point} to replace the point~$Ω$ by two points~$Ω_1$ and~$Ω_2$, resulting in a topological space~$Y$ whose underlying set is given by~$ω_1 ⨿ \{ Ω_1, Ω_2 \}$.
+
+We observe that for every point~$y$ in~$Y$, the singleton set~$\{ y \}$ is closed:
+If~$y ∈ ω_1$, then~$\{ y \}$ is closed in~$X$ because~$X$ is a Hausdorff space;
+consequently,~$X ∖ y$ is open in~$X$, whence~$((X ∖ y) ∖ Ω) ∪ \{ Ω_1, Ω_2 \}$ is open in~$Y$;
+but this set is just~$Y ∖ y$.
+If~$y = Ω_1$, then~$Y ∖ y = (X ∖ Ω) ∪ \{ Ω_2 \}$ is open in~$Y$ because~$X$ is open in~$X$.
+For~$y = Ω_2$ we can argue in the same way.
+
+The subspace~$Y ∖ Ω_1$ of~$Y$ is homeomorphic to~$X$, which is compact by \cref{compactness of bounded ordinals}.
+But~$Y ∖ Ω_1$ is not closed in~$Y$ because~$\{ Ω_1 \}$ is not open in~$Y$, since~$\{ Ω \}$ is not open in~$X$.
+Therefore,~$Y$ is not a KC space.
+
+Limits of sequences in~$Y$ are still unique, making~$Y$ a US space.
+
+To see this, let~$(x_n)_n$ be a sequence in~$Y$ with limits~$x$ and~$y$.
+Let~$p$ be the surjective quotient map from~$Y$ to~$X$ that identifies the two points~$Ω_1$ and~$Ω_2$ back into the single point~$Ω$.
+The sequence~$(p x_n)_n$ in~$X$ converges to~$p x$ and to~$p y$ by the continuity of~$p$.
+Limits in~$X$ are unique, because~$X$ is a Hausdorff space, so~$p x = p y$.
+This tells us that either~$x, y ∈ ω_1$ with~$x = y$ or~$x, y ∈ \{ Ω_1, Ω_2 \}$.
+
+In the second case we have~$p x, p y = Ω$.
+We have seen above that the sequence~$(p x_n)_n$ is thus eventually constant with value~$Ω$.
+Consequently, the original sequence~$(x_n)_n$ is eventually contained in~$p^{-1} Ω = \{ Ω_1, Ω_2 \}$.
+This entails that the sequence~$(x_n)_n$ admits a constant subsequence~$(x_{k_i})_i$.
+This subsequence also converges to both~$x$ and~$y$, but we have already seen that limits of constant sequences in~$Y$ are unique.
+Therefore,~$x = y$.
