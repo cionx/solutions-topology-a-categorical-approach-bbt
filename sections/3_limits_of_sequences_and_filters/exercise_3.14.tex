@@ -1,0 +1,87 @@
+\subsection{Exercise~3.14}
+
+The given formula
+\[
+	\text{\enquote{$ α ≔ \{ \text{ordinals~$β < α$} \} $}}
+\]
+doesn’t make sense since it defines~$α$ in terms of itself, and since no order has been defined so far on the class of ordinals.
+This formula also seems requires some form of transfinite recursion to already be available.
+
+For our purposes, we call a well-ordered set~$S$ is an ordinal if (and only if) it satisfies~$x = \{ y ∈ S \suchthat y < x \}$ for every element~$x$ of~$S$.
+Ordinals are thus well-ordered sets that have a very specific set-theoretic form.
+As examples, the only one-element ordinal is~$\{ ∅ \}$, the only two-element ordinal is~$\{ ∅, \{ ∅ \} \}$, and the only three-element ordinal is~$\{ ∅, \{ ∅ \}, \{ ∅, \{ ∅ \} \} \}$.
+Any two isomorphic ordinals must already be set-theoretically equal (both in terms of their elements and their order relation), and every well-ordered set is isomorphic to precisely one ordinal.%
+\footnote{
+	This is not at all obvious, and needs some transfinite induction/recursion to establish.
+}
+It follows from this definition that every ordinal is the set of all its predecessors, i.e.,~$α = \{ β \suchthat \text{$β$ is an ordinal with~$β < α$} \}$ for every ordinal~$α$.
+
+
+
+\subsubsection{(i)}
+
+Suppose that there exists a cardinal~$κ$ that is strictly larger than any ordinal.
+We can consider for every set~$X$ its power set, and for every subset~$A$ of~$X$ we can consider the set of all well-orders on~$A$.
+This allows us to consider the set~$W$ of all well-ordered sets whose underlying set is a subset of~$κ$.
+Let~$∼$ be the equivalence relation on~$W$ for which two elements~$A$ and~$B$ of~$W$ are equivalent if and only if they are isomorphic.
+By choice of~$κ$, the elements of~$W / {∼}$ are in bijection with the ordinals.
+But this would imply that the ordinals form a set, which contradicts the Burali-Forti paradox.
+
+
+
+\subsubsection{(ii)}
+
+Let~$α$ be an arbitrary ordinal.
+The collection
+\[
+	S_α ≔ \{ β \suchthat \text{$β$ is an ordinal with~$β ≤ α$} \}
+\]
+is a set (namely~$α ∪ \{ α \}$, i.e., the successor of~$α$).
+Suppose that for some element~$β$ of~$S_α$ the property~$P β$ were to be false, i.e., suppose that the set
+\[
+	F ≔ \{ β ∈ S_α \suchthat \text{$P β$ is false} \}
+\]
+were nonempty.
+The set~$S_α$ is well-ordered, so there would exist some minimal element~$β$ of~$F$.
+But by assumption~$β$ can be neither~$0$, nor a successor ordinal, nor a limit ordinal.
+So~$β$ cannot exist!
+
+This shows that the statement~$P β$ is true for every ordinal~$α$ and every ordinal~$β$ with~$β ≤ α$.
+Consequently,~$P α$ is true for every ordinal~$α$.
+
+
+
+
+\subsubsection{(iii)}
+
+The given function~$f$ satisfies~$f a > a$ for every element~$a$ of~$\mathcal{P}$.
+
+The author has absolutely no idea how one is supposed to solve this part of the exercise with only transfinite induction.
+Instead, we will use transfinite recursion, which is proven in~\autocite[§16, p.~53]{halmos_naive_set_theory} using transfinite induction.
+
+The set~$\mathcal{P}$ is nonempty, so there exists by assumption an element~$x$ of~$\mathcal{P}$.
+We define in the following for every ordinal~$α$ an element~$f^α x$ of~$\mathcal{P}$ such that~$f^α x < f^β x$ whenever~$α < β$.
+
+We start (as usual) with~$f^0 x ≔ x$.
+In terms of successor ordinals, we define~$f^{α + 1} x ≔ f f^α x$ for every ordinal~$α$.
+For every ordinal~$β < α + 1$ we then have~$β ≤ α$ and thus
+\[
+	f^β x ≤ f^α x < f f^α x = f^{α + 1} x \,.
+\]
+Given now a limit ordinal~$λ$, we have already defined~$f^α$ for every ordinal~$α$ with~$α < λ$, and the set~$C_α ≔ \{ f^α \suchthat α < λ \}$ is a chain in~$\mathcal{P}$.
+There then exists an upper bound~$u_λ$ for~$C_α$ in~$\mathcal{P}$, and we define~$f^λ ≔ f u_λ$.
+For every ordinal~$α$ with~$α < λ$ we have
+\[
+	f^α x ≤ u_λ < f u_λ \,.
+\]
+
+For every ordinal~$α$ we have a chain of length~$α$ in~$\mathcal{P}$, given by the function
+\[
+	α \to \mathcal{P} \,, \quad β \mapsto f^β x \,.
+\]
+This function is in particular injective, whence we have~$\card{α} ≤ \card{\mathcal{P}}$ for every ordinal~$α$.
+But we know from part~(i) of this exercise that there exists for every cardinal~$κ$ some ordinal~$α$ with~$κ ≤ \card{α}$.
+It follows that~$κ ≤ \card{\mathcal{P}}$ for every cardinal~$κ$, which is wrong.
+
+This contradiction shows that the function~$f$ cannot exist.
+Hence, Zorn’s lemma must hold.
