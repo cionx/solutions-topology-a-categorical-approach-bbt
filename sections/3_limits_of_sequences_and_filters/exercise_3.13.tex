@@ -1,0 +1,94 @@
+\subsection{Exercise~3.13}
+
+The book confuses the roles of the lattices:
+in the lattice on the left there are maximal filters that are not prime, but every prime filter is also maximal.
+In the lattice on the right there are prime filters that are not maximal, but every maximal filter is also prime.
+
+We will use the following observation to simplify our argumentation.
+
+\begin{definition}
+	Let~$P$ be a poset.
+	A filter~$\filter{F}$ in~$P$ is \defemph{principal} if there exists an element~$x$ of~$P$ with~$\filter{F} = \{ y ∈ P \suchthat y ≥ x \}$.
+\end{definition}
+
+\begin{proposition}
+	Let~$P$ be a poset admitting binary meets (and thus finite meets by induction).
+	Every finite filter in~$P$ if principal.
+\end{proposition}
+
+\begin{proof}
+	Let~$\filter{F}$ be a filter in~$P$ consisting of finitely many elements~$x_1, \dotsc, x_n$.
+	The meet~$x ≔ x_1 ∧ \dotsb ∧ x_n$ exists in~$P$, and it is again contained in~$\filter{F}$.
+	It follows that~$\filter{F} = \{ y ∈ P \suchthat y ≥ x \}$ because~$\filter{F}$ is upward closed.
+\end{proof}
+
+\begin{corollary}
+	In a finite lattice, every filter is principal.%
+	\footnote{
+		By a \defemph{lattice} we mean poset in which every two elements admit both a meet and a join, and which admits both a greatest element and a least element.
+	}
+	\qed
+\end{corollary}
+
+
+\subsubsection{Prime but not maximal}
+
+The filters in the first lattice are
+\[
+	\{ ⊤ \} \,, \quad
+	\{ x, ⊤ \} \,, \quad
+	\{ y, ⊤ \} \,, \quad
+	\{ z, ⊤ \} \,, \quad
+	\{ ⊥, x, y, z \} \,.
+\]
+The last filter is improper and therefore neither maximal nor prime.
+The filters~$\{ x, ⊤ \}$,~$\{ y, ⊤ \}$ and~$\{ z, ⊤ \}$ are maximal, but they are not prime;
+we have, for example,~$y ∨ z = ⊤ ∈ \{ x, ⊤ \}$ but neither~$y$ nor~$z$ is an element of~$\{ x, ⊤ \}$.
+The filter~$\{ ⊤ \}$ is neither maximal nor prime.
+
+
+
+
+\subsubsection{Maximal but not prime}
+
+The Hasse diagram of the second lattice is somewhat misleading, it should be drawn as follows instead:
+\[
+	\begin{tikzcd}[row sep = normal]
+		⊤
+		\\
+		v
+		\arrow[dash]{u}
+		\\
+		u
+		\arrow[dash]{u}
+		\\
+		\arrow[dash]{u}
+		⊥
+	\end{tikzcd}
+\]
+This makes it clear that we are dealing with a linear poset.
+
+\begin{proposition}
+	In a linear poset, every proper filter is prime.
+\end{proposition}
+
+\begin{proof}
+	Let~$\filter{F}$ be a filter in a linear poset~$L$.
+	Let~$x$ and~$y$ be two elements of~$L$ such that~$x ∨ y$ belongs to~$\filter{F}$.
+	We have~$x ∨ y = \max(x, y) ∈ \{ x, y \}$ because~$L$ is linear, and therefore either~$x ∈ \filter{F}$ or~$y ∈ \filter{F}$.
+\end{proof}
+
+The filters on the second lattice are
+\[
+	\{ ⊤ \} \,, \quad
+	\{ v, ⊤ \} \,, \quad
+	\{ u, v, ⊤ \} \,, \quad
+	\{ ⊥, u, v, ⊤ \} \,.
+\]
+The last filter is improper and therefore neither maximal nor prime.
+The filter~$\{ u, v, ⊤ \}$ is maximal and also prime.
+The filters~$\{ v, ⊤ \}$ and~$\{ ⊤ \}$ are prime, but not maximal.
+
+
+
+% TODO: Proof of the note?
