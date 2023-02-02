@@ -1,0 +1,121 @@
+\subsection{Exercise~3.10}
+
+\begin{proposition}
+	Let~$X$ be a metric space.
+	For every point~$x$ in~$X$ and every radius~$ε > 0$, the closed ball~$\cball(x, ε) = \{ y ∈ X \suchthat d(x, y) ≤ ε \}$ is closed.%
+	\footnote{
+		It is, however, not generally true that~$\cball(x, ε)$ is the closure of~$\ball(x, ε)$!
+	}
+\end{proposition}
+
+\begin{proof}
+	The map~$f \colon X \to ℝ$ given by~$f y = d(x, y)$ is continuous, the closed interval~$[0, ε]$ is closed in~$ℝ$, and we have~$\cball(x, ε) = f^{-1} [0, ε]$.
+\end{proof}
+
+\begin{corollary}
+	Let~$X$ be a metric space.
+	Then~$\closure{\ball(x, ε)} ⊆ \cball(x, ε)$ for every point~$x$ in~$X$ and every radius~$ε > 0$.
+	\qed
+\end{corollary}
+
+Let~$X$ be a complete metric space and let~$V_1, V_2, V_3, \dotsc$ be countably many open dense subsets of~$X$.
+We will show that their intersection~$⋂_{n = 1}^∞ V_n$ is again dense in~$X$.
+This then also entails the case in which we are only given finitely many open dense subsets~$V_1, \dotsc, V_m$ of~$X$, by setting~$V_i = X$ for every~$n > m$.
+
+The finite case is easier to prove than the general case.
+We will therefore first give a separate proof of the finite case.
+
+\subsubsection{Finite case}
+
+Let~$V$ and~$W$ be two open dense subsets of~$X$.
+To show that the intersection~$V ∩ W$ is again dense in~$X$ we need to show that every nonempty open subset~$U$ of~$X$ intersects~$V ∩ W$.
+In other words, we need to show that the intersection~$U ∩ (V ∩ W) = U ∩ V ∩ W$ is nonempty.
+The first intersection~$U ∩ V$ is again open in~$X$, and it is nonempty because~$V$ is dense in~$X$.
+It further follows that~$(U ∩ V) ∩ W = U ∩ V ∩ W$ is nonempty because~$W$ is dense in~$X$.
+
+For the general finite case we can now use induction.
+
+We also want to point out that this argumentation for the finite case works in every topological space.
+
+\subsubsection{Infinite case}
+
+Suppose now that we are given countable infinitely many open dense subsets~$V_1, V_2, V_3, \dotsc$ of~$X$.
+We show in the following that every nonempty open subset~$U$ of~$X$ intersects the intersection~$⋂_{n ≥ 1} V_n$.
+To this end we show that there exists a point~$x$ in~$X$ that lies both in~$U$ and in~$V_n$ for every~$n ≥ 1$.
+
+We set~$U_0 ≔ U$.
+The set~$U_0$ intersects the dense subset~$V_1$, whence there exists some point~$x_1$ in~$U_0 ∩ V_1$.
+The intersection~$U_0 ∩ V_1$ is again open, so there exists some radius~$ε_1 > 0$ with~$\ball(x, 2 ε_1) ⊆ U_0 ∩ V_1$.
+We set
+\[
+	U_1 ≔ \ball(x_1, ε_1) \,.
+\]
+We have not only~$U_1 ⊆ U_0 ∩ V_1 ⊆ U_0$, but also
+\[
+	\closure{U_1}
+	=
+	\closure{\ball(x_1, ε_1)}
+	⊆
+	\cball(x_1, ε_1)
+	⊆
+	\ball(x_1, 2 ε_1)
+	⊆
+	U_0 ∩ V_1
+	⊆
+	U_0, V_1 \,.
+\]
+
+We now repeat the above step:
+the set~$U_1$ is nonempty and open and thus intersects the dense subset~$V_2$.
+There hence exists a point~$x_2$ in~$U_1 ∩ V_2$.
+The intersection~$U_1 ∩ V_2$ is again open in~$X$, so there exists some radius~$ε_2 > 0$ with~$\ball(x, 2 ε_2) ⊆ U_1 ∩ V_2$.
+We set~$U_2 ≔ \ball(x_2, ε_2)$ and observe that~$U_2 ⊆ U_1$ and~$\closure{U_2} ⊆ U_1, V_2$.
+
+By continuing in this fashion we arrive at a sequence of points~$x_1, x_2, x_3, \dotsc$ in~$X$ and radii~$ε_1, ε_2, ε_3, \dotsc > 0$ such that the open balls~$U_n = \ball(x_n, ε_n)$ form a decreasing sequence
+\[
+	U ⊇ U_1 ⊇ U_2 ⊇ U_3 ⊇ U_4 ⊇ \dotsb \,,
+\]
+for which~$\closure{U_n} ⊆ V_n$ for every~$n ≥ 1$ and also~$\closure{U_1} ⊆ U_0 = U$.
+\begin{figure}
+	\centering
+	\begin{tikzpicture}
+		% outer circle
+		\coordinate (0) at (0, 0);
+		\draw[gray] (0) circle (4);
+		\draw[fill] (0) circle (0.05);
+		% first inner circle
+		\coordinate (1) at ($(0) + (-45:2.4)$);
+		\draw[gray] (1) circle (0.8);
+		\draw[fill] (1) circle (0.04);
+		% second inner circle
+		\coordinate (2) at ($(1) + (45:0.4)$);
+		\draw[gray] (2) circle (0.2);
+		\draw[fill] (2) circle (0.03);
+	\end{tikzpicture}
+	\caption{The points~$x_1, x_2, x_3, \dotsc$ and the open balls~$\ball(x_i, ε_i)$ around them.}
+	\label{decreasing sequence of open balls}
+\end{figure}
+As we successively choose the radii~$ε_n$, we may also require that~$ε_n ≤ ε_{n - 1} / 2$ for every~$n > 1$ to ensure that the sequence~$(ε_n)_n$ tends to zero.%
+\footnote{
+	\Cref{decreasing sequence of open balls} seems to suggest that this happens automatically.
+	And indeed, in a normed vector space the inclusion~$\ball(y, δ) ⊆ \ball(x, ε)$ implies the inequality~$δ ≤ ε$, whence it follows from the inclusion~$\ball(x_n, 2 ε_n) ⊆ U_{n - 1} = \ball(x_{n - 1}, ε_{n - 1})$ that~$2 ε_n < ε_{n - 1}$ and thus~$ε_n < ε_{n - 1} / 2$.
+
+	However, the implication~$\ball(y, δ) ⊆ \ball(x, ε) \implies δ ≤ ε$ does not hold in arbitrary metric spaces.
+	Suppose for example that~$X$ is endowed with the discrete metric, which is also automatically complete.
+	Then~$\ball(y, δ) = X = \ball(x, ε)$ for any two points~$x$ and~$y$ and all radii~$δ, ε > 1$.
+
+	In our case, if we then also have~$U = X$ and~$V_n = X$ for every~$n ≥ 1$, then we could have~$ε_1 = ε_2 = ε_3 = \dotsb > 1$.
+	The sequence~$(ε_n)_n$ would then not tend to~$0$.
+}
+
+Let~$V ≔ ⋂_{k ≥ 1} V_k$.
+We claim that the sequence~$(x_n)_n$ converges and that its limit point lies in the intersection~$U ∩ V$.
+
+We observe that for every~$n ≥ 1$ the truncated subsequence~$(x_k)_{k ≥ n}$ is completely contained in the open ball~$U_n = \ball(x_n, ε_n)$, whence~$d( x_k, x_l ) < 2 ε_n$ for all~$k, l ≥ n$.
+It follows that the sequence~$(x_n)_n$ is a Cauchy sequence because the sequence~$(ε_n)_n$ tends to zero.
+It further follows that the sequence~$(x_n)_n$ converges to some point~$x$ in~$X$ because the metric space~$X$ is complete.
+
+That the truncated sequence~$(x_k)_{k ≥ n}$ is contained in~$U_n$ entails that it is contained in~$\closure{U_n}$.
+The limit point~$x$ is therefore again contained in~$\closure{U_n}$ by Theorem~3.3, from which it follows that~$x$ is contained in~$V_n$.
+As this holds for every~$n ≥ 1$, we find that~$x$ lies in~$V$.
+But~$x$ also lies in~$\closure{U_1} ⊆ U_0 = U$.
