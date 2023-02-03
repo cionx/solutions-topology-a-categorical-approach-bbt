@@ -1,0 +1,42 @@
+\subsection{Pullbacks in~\texorpdfstring{$\Set$}{Set}}
+
+We consider a diagram
+\[
+	\begin{tikzcd}
+		{}
+		&
+		X
+		\arrow{d}[right]{f}
+		\\
+		Y
+		\arrow{r}[above]{g}
+		&
+		Z
+	\end{tikzcd}
+\]
+in~$\Set$, and the set
+\[
+	P
+	≔
+	\{ (x, y) ∈ X × Y \suchthat f x = g y \}
+	=
+	\{ v ∈ X × Y \suchthat f π_X v = g π_Y v \} \,.
+\]
+Let~$π_X$ and~$π_Y$ be the projection maps from~$X × Y$ to~$X$ and~$Y$ respectively, let~$i$ be the inclusion map from~$P$ to~$X × Y$, and let~$p_X ≔ π_X i$ and~$p_Y ≔ π_Y i$.
+For every set~$W$, we have bijections
+\begin{align*}
+	{}&
+	\{ \textstyle\text{maps~$h \colon W \to P$} \} \\
+	≅{}&
+	\{ \textstyle\text{maps~$k \colon W \to X × Y$ with~$k W ⊆ P$} \} \\
+	={}&
+	\{ \textstyle\text{maps~$k \colon W \to X × Y$ with~$f π_X h = g π_Y h$} \} \\
+	≅{}&
+	\{ \textstyle\text{pairs of maps~$k_1 \colon W \to X$ and~$k_2 \colon W \to Y$ with~$f k_1 = g k_2$} \} \,,
+\end{align*}
+given by
+\[
+	h \mapsto i h \mapsto (π_X i h, π_Y i h) = (p_X h, p_Y h) \,.
+\]
+This shows that there exists for all maps~$k_1 \colon W \to X$ and~$k_2 \colon W \to Y$ with~$f k_1 = g k_2$ a unique map~$h \colon W \to P$ with~$k_1 = p_X h$ and~$k_2 = p_Y h$.
+In other words, the set~$P$ together with the two maps~$p_X$ and~$p_Y$ satisfies the universal property of the pullback.
