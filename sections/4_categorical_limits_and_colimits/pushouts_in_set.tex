@@ -1,0 +1,56 @@
+\subsection{Pushouts in~\texorpdfstring{$\Set$}{Set}}
+
+Let
+\[
+	\begin{tikzcd}
+		Z
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{g}
+		&
+		X
+		\\
+		Y
+		&
+		{}
+	\end{tikzcd}
+\]
+be a diagram of sets and maps between them.
+Let~$i_X$ and~$i_Y$ be the canonical inclusion maps from~$X$ and~$Y$ to~$X ⨿ Y$ respectively, and let~$p$ be the quotient map from~$X ⨿ Y$ to~$(X ⨿ Y) / {∼} ≕ C$.
+Let~$j_X ≔ p i_X$ and~$j_Y ≔ p i_Y$.
+We have
+\[
+	j_X f = p i_X f = p i_Y g = j_Y g
+\]
+whence the diagram
+\[
+	\begin{tikzcd}
+		Z
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{g}
+		&
+		X
+		\arrow{d}[right]{j_X}
+		\\
+		Y
+		\arrow{r}[below]{j_X}
+		&
+		C
+	\end{tikzcd}
+\]
+commutes.
+We also have for every set~$W$ the chain of bijections
+\begin{align*}
+	{}&
+	\{ \text{maps~$h \colon C \to W$} \} \\
+	≅{}&
+	\{ \text{maps~$k \colon X ⨿ Y \to W$ compatible with~$∼$} \} \\
+	={}&
+	\{ \text{maps~$k \colon X ⨿ Y \to W$ with~$k i_X f = k i_Y g$} \} \\
+	≅{}&
+	\{ \text{pairs of maps~$k_1 \colon X \to W$ and~$k_2 \colon Y \to W$ with~$k_1 f = k_2 g$} \}
+\end{align*}
+given by
+\[
+	h \mapsto h p \mapsto (h p i_X, h p i_Y) = (h j_X, h j_Y) \,.
+\]
+This shows that the set~$C$ together with the two maps~$j_X$ and~$j_y$ is a pushout of the two maps~$f$ and~$g$.
