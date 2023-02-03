@@ -1,0 +1,56 @@
+\subsection{Inverse Limits in~\texorpdfstring{$\Set$}{Set}}
+
+We consider a diagram
+\begin{equation}
+	\label{inverse limit diagram}
+	\begin{tikzcd}[sep = normal]
+		X_1
+		&
+		X_2
+		\arrow{l}[above]{f_1}
+		&
+		X_3
+		\arrow{l}[above]{f_2}
+		&
+		\dotsb
+		\arrow{l}
+	\end{tikzcd}
+\end{equation}
+of sets and maps between them.
+Let
+\begin{align*}
+	L
+	≔{}&
+	\{
+		\textstyle (x_n)_n ∈ ∏_{n ≥ 1} X_n
+		\suchthat
+		\text{$f_n x_{n + 1} = x_n$ for every~$n ≥ 1$}
+	\} \\
+	={}&
+	\{
+		\textstyle z ∈ ∏_{n ≥ 1} X_n
+		\suchthat
+		\text{$f_n π_{n + 1} z = π_n z$ for every~$n ≥ 1$}
+	\}
+\end{align*}
+and let~$i$ be the inclusion map from~$L$ into the product~$∏_{n ≥ 1} X_n$.
+For every index~$k$ let~$π_k$ be the canonical projection map from the product~$∏_{n ≥ 1} X_n$ onto its factor~$X_k$, and let~$p_k ≔ π_k i$.
+
+We have~$f_n p_{n + 1} = f_n π_{n + 1} i = π_n i = p_n$ for every index~$n ≥ 1$, whence~$(L, (p_n)_n)$ is a cone on the diagram~\eqref{inverse limit diagram}.
+
+We also have for every set~$Y$ a chain of bijections
+\begin{align*}
+	{}&
+	\{ \textstyle\text{maps~$h \colon Y \to L$} \} \\
+	≅{}&
+	\{ \textstyle\text{maps~$k \colon Y \to ∏_{n ≥ 1} X_n$ with~$k Y ⊆ L$} \} \\
+	={}&
+	\{ \textstyle\text{maps~$k \colon Y \to ∏_{n ≥ 1} X_n$ with~$f_n π_{n + 1} k = π_n k$ for every~$n ≥ 1$} \} \\
+	≅{}&
+	\{ \textstyle\text{sequences~$(k_n)_n$ of maps~$k_n \colon Y \to X_n$ with~$f_n k_{n + 1} = k_n$ for every~$n ≥ 1$} \}
+\end{align*}
+given by
+\[
+	h \mapsto i h \mapsto (π_n i h)_n = (p_n h)_n \,.
+\]
+This shows that the set~$L$ together with the maps~$(p_n)_n$ is a limit of the diagram~\eqref{inverse limit diagram}.
