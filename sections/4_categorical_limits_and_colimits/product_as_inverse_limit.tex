@@ -1,0 +1,88 @@
+\subsection{The Product~\texorpdfstring{$∏_{n ∈ ℕ} ℝ$}{∏\_{n ∈ ℕ} ℝ} as an Inverse Limit}
+
+We consider the diagram
+\begin{equation}
+	\label{inverse limits of Rns}
+	\begin{tikzcd}[sep = normal]
+		ℝ
+		&
+		ℝ^2
+		\arrow{l}[above]{f_1}
+		&
+		ℝ^3
+		\arrow{l}[above]{f_2}
+		&
+		ℝ^4
+		\arrow{l}[above]{f_3}
+		&
+		\dotsb
+		\arrow{l}
+	\end{tikzcd}
+\end{equation}
+where for every integer~$n ≥ 1$ the map~$f_n$ is given by
+\[
+	f_n (x_1, \dotsc, x_n, x_{n + 1})
+	=
+	(x_1, \dotsc, x_n) \,.
+\]
+For every integer~$n ≥ 1$ and all~$k = 1, \dotsc, n$ let~$π^{(n)}_k$ be the canonical projection from~$ℝ^n$ onto its~\nth{$k$} factor.
+For every integer~$m ≥ 1$ let~$π_m$ be the projection from the product~$∏_{n ≥ 1} ℝ$ onto its~\nth{$m$} factor, and let~$π_{(m)}$ be the projection from~$∏_{n ≥ 1} ℝ$ onto~$ℝ^m$ given by
+\[
+	π_{(m)} (x_1, x_2, x_3, \dotsc) = (x_1, \dotsc, x_m) \,.
+\]
+We observe that
+\[
+	π^{(n)}_k π_{(n)} = π_k
+\]
+for all integers~$n ≥ k ≥ 1$.
+We have now for every topological space~$X$ the chain of bijections
+\begin{align*}
+	{}&
+	\left\{
+		\begin{tabular}{l}
+			sequences~$(g^{(n)})_{n ≥ 1}$ of continuous maps~$g^{(n)} \colon X \to ℝ^n$ \\[0.3em]
+			with~$f_n g^{(n + 1)} = g^{(n)}$ for every~$n ≥ 1$
+		\end{tabular}
+	\right\}
+	\\
+	={}&
+	\left\{
+		\begin{tabular}{l}
+			sequences~$(g^{(n)})_{n ≥ 1}$ of continuous maps~$g^{(n)} \colon X \to ℝ^n$ \\[0.3em]
+			with~$π^{(n)}_k f_n g^{(n + 1)} = π^{(n)}_k g^{(n)}$ for all~$n ≥ k ≥ 1$
+		\end{tabular}
+	\right\}
+	\\
+	≅{}&
+	\left\{
+		\begin{tabular}{l}
+			families~$(g^{(n)}_k)_{n ≥ k ≥ 1}$ of continuous maps~$g^{(n)}_k \colon X \to ℝ$ \\[0.3em]
+			with~$g^{(n + 1)}_k = g^{(n)}_k$ for all~$n ≥ k ≥ 1$
+		\end{tabular}
+	\right\}
+	\\
+	≅{}&
+	\{ \textstyle\text{families~$(g_k)_{k ≥ 1}$ of continuous maps~$g_k \colon X \to ℝ$} \}
+	\\
+	≅{}&
+	\{ \textstyle \text{continuous maps~$g \colon X \to \prod_{k ≥ 1} ℝ$} \}
+\end{align*}
+that is given by from bottom to top by
+\begin{align*}
+	g
+	\mapsfrom
+	( π_k g )_{k ≥ 1}
+	\mapsfrom
+	( π_k g )_{n ≥ k ≥ 1}
+	\mapsfrom
+	{}&
+	( ⟨π_1 g, \dotsc, π_n g⟩ )_{n ≥ 1} \\
+	={}&
+	( ⟨π_1^{(n)} π_{(n)} g, \dotsc, π_n^{(n)} π_{(n)} g⟩ )_{n ≥ 1} \\
+	={}&
+	( ⟨π_1^{(n)}, \dotsc, π_n^{(n)}⟩ π_{(n)} g )_{n ≥ 1} \\
+	={}&
+	( π_{(n)} g )_{n ≥ 1} \,,
+\end{align*}
+where we use that~$⟨π^{(n)}_1, \dotsc, π^{(n)}_n⟩ = \id_{ℝ^n}$.
+This shows that the product~$\prod_{n ≥ 1} ℝ$ together with the continuous maps~$π^{(n)}$, where~$n ≥ 1$, is a limit for the diagram~\eqref{inverse limits of Rns}.
