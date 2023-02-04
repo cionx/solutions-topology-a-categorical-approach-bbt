@@ -1,0 +1,310 @@
+\subsection{Example~4.1}
+
+We consider the diagram
+\begin{equation}
+	\label{direct limit diagram}
+	\begin{tikzcd}[sep = normal]
+		ℝ
+		\arrow{r}[above]{f_1}
+		&
+		ℝ^2
+		\arrow{r}[above]{f_2}
+		&
+		ℝ^3
+		\arrow{r}[above]{f_3}
+		&
+		ℝ^4
+		\arrow{r}
+		&
+		\dotsb
+	\end{tikzcd}
+\end{equation}
+where for every~$n ≥ 1$ the map~$f_n$ is given by
+\[
+	f_n (x_1, \dotsc, x_n) = (x_1, \dotsc, x_n, 0) \,.
+\]
+For every~$k ≥ 1$ let~$ι_k$ be the inclusion map from~$ℝ^k$ into the direct sum
+\[
+	⨁_{n ≥ 1} ℝ
+	=
+	\{
+		(x_1, \dotsc, x_n, 0, 0, \dotsc)
+		\suchthat
+		n ≥ 0,
+		x_1, \dotsc, x_n ∈ ℝ
+	\} \,,
+\]
+given by
+\[
+	ι_k (x_1, \dotsc, x_k) = (x_1, \dotsc, x_k, 0, 0, \dotsc) \,.
+\]
+
+
+
+\subsubsection{On the Level of Sets}
+
+The maps~$ι_n$ with~$n ≥ 1$ satisfy the compatibility condition
+\[
+	ι_{n + 1} f_n = ι_n
+\]
+for every~$n ≥ 1$.
+The set~$⨁_{n ≥ 1} ℝ$ together with the maps~$ι_n$ is therefore a cocone on the diagram~\eqref{direct limit diagram} in~$\Set$.
+
+
+For every~$n ≥ 1$ let~$R_n$ be the image of the map~$ι_n$, that is,
+\[
+	R_n
+	≔ \im ι_n
+	= \{ (x_1, \dotsc, x_n, 0, 0, \dotsc) \suchthat x_1, \dotsc, x_n ∈ ℝ \} \,.
+\]
+The sets~$R_n$ form an increasing filtration of the set~$⨁_{n ≥ 1} ℝ$:
+we have
+\[
+	R_1 ⊆ R_2 ⊆ R_3 ⊆ \dotsb
+	\quad\text{and}\quad
+	⨁_{n ≥ 1} ℝ = ⋃_{n ≥ 1} R_n \,.
+\]
+
+For every index~$k ≥ 1$ let~$i_k$ denote the restriction of~$ι_k$ to a map from~$ℝ^k$ to~$R_k$, let~$j_k$ denote the inclusion map from~$R_k$ to~$⨁_{n ≥ 1} ℝ$, and let~$f'_k$ denote the inclusion map from~$R_k$ to~$R_{k + 1}$.
+We have hence the following commutative diagram for every~$k ≥ 1$:
+\[
+	\begin{tikzcd}[column sep = tiny]
+		ℝ^k
+		\arrow{rr}[above]{f_k}
+		\arrow{d}[left]{i_k}
+		\arrow[bend right, out = 255, in = 250]{ddr}[left]{ι_k}
+		&
+		{}
+		&
+		ℝ^{k + 1}
+		\arrow{d}[right]{\,i_{k + 1}}
+		\arrow[bend left, out = -255, in = -250]{ddl}[right]{\;ι_{k + 1}}
+		\\
+		R_k
+		\arrow{rr}[above]{f'_k}
+		\arrow{dr}[below left]{j_k}
+		&
+		{}
+		&
+		R_{k + 1}
+		\arrow{dl}[below right]{j_{k + 1}}
+		\\
+		{}
+		&
+		⨁_{n ≥ 1} ℝ
+		&
+		{}
+	\end{tikzcd}
+\]
+The maps~$i_k$ are bijective.
+It follows that we have for every set~$X$ a chain of bijections
+\begin{align*}
+	\SwapAboveDisplaySkip
+	{}&
+	\{ \textstyle\text{maps $g \colon ⨁_{n ≥ 1} ℝ \to X$} \} \\
+	≅{}&
+	\left\{
+		\begin{tabular}{l}
+			sequences~$(g_n)_n$ of maps $g_n \colon R_n \to X$ \\
+			with~$\restrict{g_{n + 1}}{\im ι_n} = g_n$ for all~$n ≥ 1$
+		\end{tabular}
+	\right\} \\
+	={}&
+	\left\{
+		\begin{tabular}{l}
+			sequences~$(g_n)_n$ of maps $g_n \colon R_n \to X$ \\
+			with~$g_{n + 1} f'_n = g_n$ for all~$n ≥ 1$
+		\end{tabular}
+	\right\} \\
+	≅{}&
+	\left\{
+		\begin{tabular}{l}
+			sequences~$(h_n)_n$ of maps $h_n \colon ℝ^n \to X$ \\
+			with~$h_{n + 1} i_{n + 1}^{-1} f'_n = h_n i_n^{-1}$ for all~$n ≥ 1$
+		\end{tabular}
+	\right\} \\
+	={}&
+	\left\{
+		\begin{tabular}{l}
+			sequences~$(h_n)_n$ of maps $h_n \colon ℝ^n \to X$ \\
+			with~$h_{n + 1} f_n i_n^{-1} = h_n i_n^{-1}$ for all~$n ≥ 1$
+		\end{tabular}
+	\right\} \\
+	={}&
+	\left\{
+		\begin{tabular}{l}
+			sequences~$(h_n)_n$ of maps $h_n \colon ℝ^n \to X$ \\
+			with~$h_{n + 1} f_n = h_n$ for all~$n ≥ 1$
+		\end{tabular}
+	\right\} \\
+\end{align*}
+given by
+\[
+	g
+	\mapsto
+	( \restrict{g}{R_n} )_n
+	=
+	( g j_n )_n
+	\mapsto
+	( g j_n i_n )_n
+	=
+	( g ι_n )_n \,.
+\]
+This shows that the set~$⨁_{n ≥ 1} ℝ$ together with the maps~$ι_n$ is a colimit of the diagram~\eqref{direct limit diagram}.
+
+
+
+\subsubsection{On the Level of Vector Spaces}
+
+Each of the maps~$f_n$ is linear, whence~\eqref{direct limit diagram} is a diagram in~$\Vect{ℝ}$.
+
+Each of the maps~$ι_n$ is linear, whence~$⨁_{n ≥ 1} ℝ$ together with the maps~$ι_n$ is a cocone of the diagram~\eqref{direct limit diagram} in~$\Vect{ℝ}$.
+To show that this cocone is a colimit, we need to show that we have for every vector space~$V$ a bijection
+\begin{align*}
+	{}&
+	\{ \textstyle\text{linear maps~$g \colon ⨁_{n ≥ 1} ℝ \to V$} \} \\
+	≅{}&
+	\left\{
+		\begin{tabular}{l}
+			sequences~$(g_n)_n$ of linear maps $g_n \colon ℝ^n \to V$ \\
+			with~$g_{n + 1} f_n = g_n$ for every~$n ≥ 1$
+		\end{tabular}
+	\right\}
+\end{align*}
+given by~$g \mapsto (g ι_n)_n$.
+We already know that we have this bijection for maps between underlying sets, so it suffices to check that a map~$g \colon ⨁_{n ≥ 1} ℝ \to V$ is linear if and only if each composite~$g ι_n$ is linear.
+
+If~$g$ is linear, then each composite~$g ι_n$ is again linear because~$ι_n$ is linear.
+
+Suppose now that each composite~$g ι_n$ is linear.
+Each~$R_n$ is a linear subspace of~$⨁_{n ≥ 1} R_n$, and each map~$i_n$ is an isomorphism of vector spaces.
+So equivalently, each composite~$g ι_n i_n^{-1} = g j_n i_n i_n^{-1} = g j_n = \restrict{g}{R_n}$ is linear.
+It follows from the following \lcnamecref{checking linearity on a filtration of subspaces} that~$g$ is therefore linear.
+
+\begin{lemma}
+	\label{checking linearity on a filtration of subspaces}
+	Let~$V$ be a vector space and let~$(U_α)_{α ∈ A}$ be a family of subspaces of~$V$.
+	Let~$W$ be another vector space and let~$f$ be a map from~$V$ to~$W$.
+	Suppose that the following conditions hold:
+	\begin{itemize}
+
+		\item
+			There exists for every two indices~$α$ and~$β$ another index~$γ$ with~$U_α, U_β ⊆ U_γ$.
+
+		\item
+			The vector space~$V$ is covered by the subspaces~$U_α$:
+			we have~$V = ⋃_{α ∈ A} U_α$.
+
+		\item
+			The restriction~$\restrict{f}{U_α}$ is linear for every index~$α$.
+
+	\end{itemize}
+	The map~$f$ is then linear.
+\end{lemma}
+
+\begin{proof}
+	Let~$x$ and~$y$ be two vectors in~$V$.
+	There exists two indices~$α$ and~$β$ with~$x ∈ U_α$ and~$y ∈ U_β$.
+	There further exists some index~$γ$ with~$U_α, U_β ⊆ U_γ$.
+	We have~$x, y ∈ U_γ$, and hence also~$x + y ∈ U_γ$.
+	We find that
+	\[
+		f (x + y)
+		=
+		\restrict{f}{U_γ} (x + y)
+		=
+		\restrict{f}{U_γ} x + \restrict{f}{U_γ} y
+		=
+		f x + f y \,.
+	\]
+	This shows that the map~$f$ is additive.
+
+	There exists for every scalar~$λ$ and every vector~$v$ in~$V$ some index~$α$ such that~$x ∈ U_α$, and therefore also~$λ x ∈ U_α$.
+	We find that
+	\[
+		f λ x
+		=
+		\restrict{f}{U_α} λ x
+		=
+		λ \restrict{f}{U_α} x
+		=
+		λ f x \,.
+	\]
+	This shows that the map~$f$ is homogeneous.
+\end{proof}
+
+
+
+\subsubsection{On the Level of Topological Spaces}
+
+Each of the maps~$f_n$ is continuous, whence~\eqref{direct limit diagram} is a diagram~$\Top$.
+
+We want to endow the direct sum~$⨁_{n ≥ 1} ℝ$ with a topology such that~$⨁_{n ≥ 1} ℝ$ together with the maps~$ι_n$ is a colimit of the diagram~\eqref{direct limit diagram} in~$\Top$.
+This topology on~$⨁_{n ≥ 1} ℝ$ must therefore satisfy the following two conditions:
+\begin{itemize*}
+
+	\item
+		The resulting topological space~$⨁_{n ≥ 1} ℝ$ together with the maps~$ι_n$ needs to be a cocone of the diagram~\eqref{direct limit diagram} in~$\Top$.
+
+		We already know that~$ι_{n + 1} f_n = ι_n$ for every~$n ≥ 1$, so this condition is equivalent to each map~$ι_n$ being continuous.
+
+	\item
+		We need to have for every topological space~$X$ a bijection
+		\begin{align*}
+			{}&
+			\{ \textstyle\text{continuous maps~$g \colon ⨁_{n ≥ 1} ℝ \to X$} \} \\
+			≅{}&
+			\left\{
+				\begin{tabular}{l}
+					sequences~$(g_n)_n$ of continuous maps $g_n \colon ℝ^n \to X$ \\
+					with~$g_{n + 1} f_n = g_n$ for every~$n ≥ 1$
+				\end{tabular}
+			\right\}
+		\end{align*}
+		given by~$g \mapsto (g ι_n)_n$.
+
+		We already know that we have this bijection for maps between underlying sets.
+		This condition is therefore equivalent to~$g \colon ⨁_{n ≥ 1} ℝ \to X$ being continuous if and only if each composite~$g ι_n$ is continuous.
+
+\end{itemize*}
+
+For every~$n ≥ 1$ let~$\top{T}_n$ be the topology on~$ℝ^n$.
+The induced topology
+\[
+	\top{T} ≔ ⋀_{n ≥ 1} {} (ι_n)_* \top{T}_n
+\]
+(in the sense of \cref{universal properties for pullback and pushforward of topologies} and \cref{notation for infima and suprema of topologies}) is the finest topology on the set~$⨁_{n ≥ 1} ℝ$ with respect to which each~$ι_n$ is continuous.
+For every topological space~$(X, \top{T}_X)$ and every map~$g \colon ⨁_{n ≥ 1} ℝ \to X$ we have the chain of equivalences
+\begin{align*}
+	{}&
+	\text{$g$ is continuous with respect to~$\top{T}$ and~$\top{T}_X$} \\
+	\iff{}&
+	g^* \top{T}_X ⊆ \top{T} \\
+	\iff{}&
+	\textstyle g^* \top{T}_X ⊆ ⋀_{n ≥ 1} {} (ι_n)_* \top{T}_n \\
+	\iff{}&
+	\text{$g^* \top{T}_X ⊆ (ι_n)_* \top{T}_n$ for every~$n ≥ 1$} \\
+	\iff{}&
+	\text{$\top{T}_X ⊆ g_* (ι_n)_* \top{T}_n$ for every~$n ≥ 1$} \\
+	\iff{}&
+	\text{$\top{T}_X ⊆ (g ι_n)_* \top{T}_n$ for every~$n ≥ 1$} \\
+	\iff{}&
+	\text{$g ι_n$ is continuous with respect to~$\top{T}_n$ and~$\top{T}_X$ for every~$n ≥ 1$} \,.
+\end{align*}
+We have thus found the desired topology on~$⨁_{n ≥ 1} ℝ$:
+it is given by~$⋀_{n ≥ 1} {} (ι_n)_* \top{T}_n$, which is also the finest topology making all~$ι_n$ continuous.
+We have more explicitly for every subset~$U$ of~$⨁_{n ≥ 1} ℝ$ the chain of equivalences
+\begin{align*}
+	{}&
+	U ∈ \top{T} \\
+	\iff{}&
+	\textstyle\text{$U ∈ ⋀_{n ≥ 1} {} (ι_n)_* \top{T}_n$} \\
+	\iff{}&
+	\text{$U ∈ (ι_n)_* \top{T}_n$ for every~$n ≥ 1$} \\
+	\iff{}&
+	\text{$ι_n^{-1} U ∈ \top{T}_n$ for every~$n ≥ 1$} \\
+	\iff{}&
+	\text{$ι_n^{-1} U$ is open in~$ℝ^n$ for every~$n ≥ 1$} \\
+	\iff{}&
+	\text{$U ∩ ℝ^n$ is open in~$ℝ^n$ for every~$n ≥ 1$} \,.
+\end{align*}
