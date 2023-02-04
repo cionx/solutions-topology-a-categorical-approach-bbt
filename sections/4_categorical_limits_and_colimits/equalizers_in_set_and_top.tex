@@ -1,0 +1,84 @@
+\subsection{Construction of Equalizers in~\texorpdfstring{$\Set$}{Set} and~\texorpdfstring{$\Top$}{Top}}
+
+
+
+\subsubsection{In~\texorpdfstring{$\Set$}{Set}}
+
+We consider the diagram
+\begin{equation}
+	\label{equalizer diagram}
+	\begin{tikzcd}
+		X
+		\arrow[shift left]{r}[above]{f}
+		\arrow[shift right]{r}[below]{g}
+		&
+		Y
+	\end{tikzcd}
+\end{equation}
+in~$\Set$, the subset
+\[
+	E ≔ \{ x ∈ X \suchthat f x = g x \}
+\]
+of~$X$ and the inclusion map~$i$ from~$E$ to~$X$.
+We have~$f i = g i$, and we have for every set~$Z$ and every map~$h \colon X \to Y$ the chain of equivalences
+\begin{align*}
+	{}&
+	f h = g h
+	\iff
+	\text{$h Z ⊆ E$}
+	\iff
+	\textstyle\text{there exists a map~$h' \colon Z \to E$ with~$h = i h'$} \,,
+\end{align*}
+see~\cref{universal property of equalizer as diagram}.
+\begin{figure}
+	\[
+		\begin{tikzcd}
+			{}
+			&
+			Z
+			\arrow{d}[right]{h}
+			\arrow[dashed]{dl}[above left]{h'}
+			&
+			{}
+			\\
+			E
+			\arrow{r}[above, pos = 0.6]{i}
+			&
+			X
+			\arrow[shift left]{r}[above]{f}
+			\arrow[shift right]{r}[below]{g}
+			&
+			Y
+		\end{tikzcd}
+	\]
+	\caption{Universal property of the equalizer.}
+	\label{universal property of equalizer as diagram}
+\end{figure}
+The map~$h'$ in question is then unique because the map~$i$ is injective and thus a monomorphism in~$\Set$.
+
+This shows that the set~$E$ together with the map~$i$ is a limit of the diagram~\eqref{equalizer diagram} in~$\Set$.
+
+
+
+\subsubsection{In~\texorpdfstring{$\Top$}{Top}}
+
+Suppose now that~\eqref{equalizer diagram} is a diagram in~$\Top$.
+
+We can then endow~$E$ with the subspace topology induced from the topology of~$X$.
+This ensures that the inclusion map~$i$ is continuous, and that more generally a map~$h'$ from~$X$ to~$E$ is continuous if and only if its composite~$i h'$ is continuous.
+The bijection
+\[
+	\{ \text{maps~$\textstyle h' \colon Z \to E$} \}
+	≅
+	\{ \text{maps~$\textstyle h \colon Z \to X$ with~$f h = g h$} \} \,,
+	\quad
+	h' \mapsto i h'
+\]
+therefore restricts to a bijection
+\begin{align*}
+	{}&
+	\{ \textstyle \text{continuous maps~$h' \colon Z \to E$} \} \\
+	≅{}&
+	\{ \textstyle \text{continuous maps~$h \colon Z \to X$ with~$f h = g h$} \} \,.
+\end{align*}
+This shows that the topological space~$E$ together with the map~$i$ is a limit of the diagram~\eqref{equalizer diagram} in~$\Top$.
