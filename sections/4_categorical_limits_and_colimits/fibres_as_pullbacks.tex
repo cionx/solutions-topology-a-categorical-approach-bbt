@@ -1,0 +1,84 @@
+\subsection{Fibres as Pullbacks}
+
+We consider the following diagram of sets and maps between them:
+\[
+	\begin{tikzcd}
+		{}
+		&
+		\ast
+		\arrow{d}[right]{f}
+		\\
+		Y
+		\arrow{r}[above]{g}
+		&
+		Z
+	\end{tikzcd}
+\]
+Let~$i$ be the inclusion map from the fibre~$g^{-1} z$ into~$Y$.
+The resulting diagram
+\[
+	\begin{tikzcd}
+		g^{-1} z
+		\arrow{r}
+		\arrow{d}[left]{i}
+		&
+		\ast
+		\arrow{d}[right]{f}
+		\\
+		Y
+		\arrow{r}[above]{g}
+		&
+		Z
+	\end{tikzcd}
+\]
+commutes.
+Let~$W$ be another set and let~$h_1 \colon W \to \ast$ and~$h_2 \colon W \to Y$ be two maps such that the diagram
+\[
+	\begin{tikzcd}
+		W
+		\arrow{r}[above]{h_1}
+		\arrow{d}[left]{h_2}
+		&
+		\ast
+		\arrow{d}[right]{f}
+		\\
+		Y
+		\arrow{r}[above]{g}
+		&
+		Z
+	\end{tikzcd}
+\]
+commutes.
+The commutativity of this diagram means that the composite~$g h_2$ is constant with value~$z$.
+There hence exists a unique map~$h$ from~$W$ into the fibre~$g^{-1} z$ with~$h_2 = i h$.
+This map~$h$ makes the overall diagram
+\[
+	\begin{tikzcd}
+		W
+		\arrow[bend left]{drr}[above right]{h_1}
+		\arrow[bend right]{ddr}[below left]{h_2}
+		\arrow{dr}[above right]{h}
+		&[-1em]
+		{}
+		&
+		{}
+		\\
+		{}
+		&
+		g^{-1} z
+		\arrow{r}
+		\arrow{d}[left]{i}
+		&
+		\ast
+		\arrow{d}[right]{f}
+		\\
+		{}
+		&
+		Y
+		\arrow{r}[above]{g}
+		&
+		Z
+	\end{tikzcd}
+\]
+commute.
+This shows that the fibre~$g^{-1} z$ together with the map~$g^{-1} z \to \ast$ and the inclusion map~$i \colon g^{-1} z \to Y$ is a pullback of the two maps~$f$ and~$g$.
