@@ -1,0 +1,103 @@
+\subsection{Limits in~\texorpdfstring{$\Set$}{Set} and~\texorpdfstring{$\Top$}{Top}}
+
+
+
+\subsubsection{In~\texorpdfstring{$\Set$}{Set}}
+
+Let~$F \colon \cat{D} \to \Set$ be a diagram in~$\Set$.
+
+For every object~$Y$ of~$\cat{D}$ let~$π_Y$ be the canonical projection from the product~$∏_{X ∈ \cat{D}} F X$ onto its factor~$F Y$.
+Let~$E$ be the subset of the product~$∏_{X ∈ \cat{D}} F X$ given by
+\begin{align*}
+	{}&
+	E \\
+	≔{}&
+	\{
+		\textstyle (a_X)_X ∈ \prod_{X ∈ \cat{D}} F X
+		\suchthat
+		\text{$(F f) a_X = a_Y$ for every morphism~$f \colon X \to Y$ in~$\cat{D}$}
+	\} \\
+	={}&
+	\{
+		\textstyle a ∈ ∏_{X ∈ \cat{D}} F X
+		\suchthat
+		\text{$(F f) π_X a = π_Y a$ for every morphism~$f \colon X \to Y$ in~$\cat{D}$}
+	\} \,.
+\end{align*}
+Let~$ι$ be the inclusion map from~$E$ into the product~$∏_{X ∈ \cat{D}} F X$, and for every object~$X$ of the indexing category~$\cat{D}$ let~$p_X$ be the composite~$π_X ι$.
+
+We have for every morphism~$f \colon X \to Y$ in~$\cat{D}$ the equalities
+\[
+	(F f) p_X
+	=
+	(F f) π_X ι
+	=
+	π_Y ι
+	=
+	p_Y \,.
+\]
+This tells us that the set~$E$ together with the maps~$p_X$, where~$X$ ranges over the objects of~$\cat{D}$, is a cone on~$F$.
+We have more generally for every set~$S$ the chain of bijections
+\begin{align*}
+	{}&
+	\{ \text{maps~$\textstyle h \colon S \to E$} \} \\
+	≅{}&
+	\{ \text{maps~$\textstyle k \colon S \to ∏_{X ∈ \cat{D}} F X$ with~$k S ⊆ E$} \} \\
+	={}&
+	\left\{
+		\begin{tabular}{l}
+			maps~$k \colon S \to ∏_{X ∈ \cat{D}} F X$ with~$(F f) π_X k = π_Y k$ \\
+			for every morphism~$f \colon X \to Y$ in~$\cat{D}$
+		\end{tabular}
+	\right\} \\
+	≅{}&
+	\left\{
+		\begin{tabular}{l}
+			families~$(k_X)_{X ∈ \cat{D}}$ of maps~$k_X \colon S \to F X$ with~$(F f) k_X = k_Y$ \\
+			for every morphism~$f \colon X \to Y$ in~$\cat{D}$
+		\end{tabular}
+	\right\}
+\end{align*}
+given by
+\[
+	h \mapsto ι h \mapsto (π_X ι h)_{X ∈ \cat{D}} = (p_X h)_{X ∈ \cat{D}} \,.
+\]
+This tells us that the set~$E$ together with the maps~$p_X$, where~$X$ ranges over the objects of~$\cat{D}$, is a limit of the diagram/functor~$F$.
+
+
+
+\subsubsection{In~$\Top$}
+
+Suppose now that the codomain of the functor~$F$ is~$\Top$ instead of~$\Set$.
+
+We endow the product~$∏_{X ∈ \cat{D}} F X$ with the product topology, which makes the projection maps~$π_X$ continuous.
+We further endow~$E$ with the subspace topology induced from the product topology, which makes the inclusion map~$ι$ continuous.
+It follows that the maps~$p_X = π_X ι$ are continuous.
+
+Let~$S$ be another topological space.
+A map~$h \colon S \to E$ is continuous if and only if the composite~$h π$ is continuous, and a map~$k \colon S \to ∏_{X ∈ \cat{D}} F X$ is continuous if and only if each composite~$π_X k$ is continuous.
+We hence find that the bijection
+\begin{align*}
+	{}&
+	\{ \text{maps~$\textstyle h \colon S \to E$} \} \\
+	≅{}&
+	\left\{
+		\begin{tabular}{l}
+			families~$(k_X)_{X ∈ \cat{D}}$ of maps~$k_X \colon S \to F X$ with~$(F f) k_X = k_Y$ \\
+			for every morphism~$f \colon X \to Y$ in~$\cat{D}$
+		\end{tabular}
+	\right\}
+\end{align*}
+given by~$h \mapsto (p_X h)_{X ∈ \cat{D}}$ restricts to a bijection
+\begin{align*}
+	{}&
+	\{ \text{continuous maps~$\textstyle h \colon S \to E$} \} \\
+	≅{}&
+	\left\{
+		\begin{tabular}{l}
+			families~$(k_X)_{X ∈ \cat{D}}$ of continuous maps~$k_X \colon S \to F X$ \\
+			with~$(F f) k_X = k_Y$ for every morphism~$f \colon X \to Y$ in~$\cat{D}$
+		\end{tabular}
+	\right\} \,.
+\end{align*}
+This tells us that the topological space~$E$ together with the projection maps~$p_X$, where~$X$ ranges over the objects of~$\cat{D}$, is a limit of the diagram~$F$ in~$\Top$.
